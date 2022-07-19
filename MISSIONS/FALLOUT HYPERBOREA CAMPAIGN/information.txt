@@ -11,4 +11,7 @@ Mission 01 had an open-world structure
 	Random events and dynamic enemy spawning
 	
 Persistent Inventory System 
-	(objects placed in a bank persisted between server shut-downs)
+	Objects placed in a bank/vault object persisted between server shut-downs
+	
+Dynamic Ruins and Lootable Containers
+	Map is made more apocalyptic by randomly hiding buildings, replacing them with ruins, and spawning randomized loot containers around
