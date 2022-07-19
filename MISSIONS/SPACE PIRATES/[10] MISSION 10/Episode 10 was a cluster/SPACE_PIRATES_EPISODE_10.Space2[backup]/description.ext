@@ -1,0 +1,17 @@
+class CfgMusic
+{
+	tracks[] = {};
+	class warpNoise
+	{
+		name = "warpNoise"; // Name for mission editor
+		sound[] = {"sfx\warp.ogg", db + 0, 1.0};
+	};
+};
+
+respawnDelay=12;
+respawnOnStart=1;
+joinUnassigned=0;
+disabledAI=1;
+
+briefing = 1;
+debriefing = 1;

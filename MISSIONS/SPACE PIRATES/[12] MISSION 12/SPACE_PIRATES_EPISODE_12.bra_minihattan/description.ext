@@ -1,0 +1,67 @@
+class CfgMusic
+{
+	tracks[] = {};
+	class armyOfTigers
+	{
+		name = "armyOfTigers"; // Name for mission editor
+		sound[] = {"@easterEggBeerLabels2021\spacePiratesFinaler\armyOfTigers.ogg", db + 0, 1.0};
+	};
+	class decadeDance
+	{
+		name = "decadeDance"; // Name for mission editor
+		sound[] = {"@easterEggBeerLabels2021\spacePiratesFinaler\decadeDance.ogg", db + 0, 1.0};
+	};
+	class gloryOrGold
+	{
+		name = "gloryOrGold"; // Name for mission editor
+		sound[] = {"@easterEggBeerLabels2021\spacePiratesFinaler\gloryOrGold.ogg", db + 0, 1.0};
+	};
+	class manTheCannons
+	{
+		name = "manTheCannons"; // Name for mission editor
+		sound[] = {"@easterEggBeerLabels2021\spacePiratesFinaler\manTheCannons.ogg", db + 0, 1.0};
+	};
+	class paris
+	{
+		name = "paris"; // Name for mission editor
+		sound[] = {"@easterEggBeerLabels2021\spacePiratesFinaler\paris.ogg", db + 0, 1.0};
+	};
+	class puritania
+	{
+		name = "puritania"; // Name for mission editor
+		sound[] = {"@easterEggBeerLabels2021\spacePiratesFinaler\puritania.ogg", db + 0, 1.0};
+	};
+	class puritaniaRemix
+	{
+		name = "puritaniaRemix"; // Name for mission editor
+		sound[] = {"@easterEggBeerLabels2021\spacePiratesFinaler\puritaniaRemix.ogg", db + 0, 1.0};
+	};
+	class readyToDie
+	{
+		name = "readyToDie"; // Name for mission editor
+		sound[] = {"@easterEggBeerLabels2021\spacePiratesFinaler\readyToDie.ogg", db + 0, 1.0};
+	};
+	class sexualizer
+	{
+		name = "sexualizer"; // Name for mission editor
+		sound[] = {"@easterEggBeerLabels2021\spacePiratesFinaler\sexualizer.ogg", db + 0, 1.0};
+	};
+	class stormTheCastle
+	{
+		name = "stormTheCastle"; // Name for mission editor
+		sound[] = {"@easterEggBeerLabels2021\spacePiratesFinaler\stormTheCastle.ogg", db + 0, 1.0};
+	};
+	class takeControl
+	{
+		name = "takeControl"; // Name for mission editor
+		sound[] = {"@easterEggBeerLabels2021\spacePiratesFinaler\takeControl.ogg", db + 0, 1.0};
+	};
+};
+
+respawnDelay=12;
+respawnOnStart=1;
+joinUnassigned=0;
+disabledAI=1;
+
+briefing = 1;
+debriefing = 1;
