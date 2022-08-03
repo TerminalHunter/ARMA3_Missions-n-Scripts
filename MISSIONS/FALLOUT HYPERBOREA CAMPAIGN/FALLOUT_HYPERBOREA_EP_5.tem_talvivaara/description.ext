@@ -1,0 +1,18 @@
+class CfgMusic
+{
+	tracks[] = {};
+	class happyAccidents
+	{
+		name = "happyAccidents"; // Name for mission editor
+		sound[] = {"HAPPYACCIDENTS.ogg", db + 0, 1.0};
+	};
+
+};
+
+respawnDelay=20;
+respawnOnStart=1;
+joinUnassigned=0;
+disabledAI=1;
+
+briefing = 1;
+debriefing = 1;

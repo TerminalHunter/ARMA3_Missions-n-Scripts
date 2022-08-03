@@ -1,0 +1,3576 @@
+version=53;
+class EditorData
+{
+	moveGridStep=1;
+	angleGridStep=0.2617994;
+	scaleGridStep=1;
+	autoGroupingDist=10;
+	toggles=1;
+	class ItemIDProvider
+	{
+		nextID=41;
+	};
+	class MarkerIDProvider
+	{
+		nextID=3;
+	};
+	class Camera
+	{
+		pos[]={10025.352,129.92088,9231.3086};
+		dir[]={-0.23476446,-0.14827703,0.96070838};
+		up[]={-0.035204124,0.98894238,0.1440641};
+		aside[]={0.97144467,9.5035648e-007,0.2373911};
+	};
+};
+binarizationWanted=0;
+addons[]=
+{
+	"A3_Modules_F_Curator_Curator",
+	"A3_Characters_F",
+	"A3_Weapons_F",
+	"WW2_Assets_c_Weapons_InfantryWeapons_c",
+	"tfar_handhelds",
+	"fallout_uniform_02",
+	"IA_Armour_Patch_Aftermath",
+	"snow_obj",
+	"CUP_Desert2_Config",
+	"CUP_Misc3_Config",
+	"WW2_Objects_c_Misc_WW2_SimpleObjects_c_CUP",
+	"AM_Items",
+	"Apalon_buffel",
+	"A3_Modules_F_Multiplayer",
+	"A3_Ui_F",
+	"WW2_Core_c_IF_Gui_c"
+};
+class AddonsMetaData
+{
+	class List
+	{
+		items=16;
+		class Item0
+		{
+			className="A3_Modules_F_Curator";
+			name="Arma 3 Zeus Update - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item1
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item2
+		{
+			className="A3_Weapons_F";
+			name="Arma 3 Alpha - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item3
+		{
+			className="WW2_Assets_c_Weapons_InfantryWeapons_c";
+			name="WW2_Assets_c_Weapons_InfantryWeapons_c";
+		};
+		class Item4
+		{
+			className="tfar_handhelds";
+			name="tfar_handhelds";
+			url="https://github.com/michail-nikolaev/task-force-arma-3-radio";
+		};
+		class Item5
+		{
+			className="fallout_uniform_02";
+			name="Fallout uniform #02";
+			author="AFTERMATH Team";
+			url="https://steamcommunity.com/id/sterben_top";
+		};
+		class Item6
+		{
+			className="IA_Armour_Patch_Aftermath";
+			name="Fallout uniform #02 Ace Patch by Irish Ace";
+			author="The Irish Ace";
+			url="https://steamcommunity.com/id/Irish_Ace/";
+		};
+		class Item7
+		{
+			className="snow_obj";
+			name="snow_obj";
+		};
+		class Item8
+		{
+			className="CUP_Desert2_Config";
+			name="CUP_Desert2_Config";
+		};
+		class Item9
+		{
+			className="CUP_Misc3_Config";
+			name="CUP_Misc3_Config";
+		};
+		class Item10
+		{
+			className="WW2_Objects_c_Misc_WW2_SimpleObjects_c_CUP";
+			name="WW2_Objects_c_Misc_WW2_SimpleObjects_c_CUP";
+		};
+		class Item11
+		{
+			className="AM_Items";
+			name="AM_Items";
+		};
+		class Item12
+		{
+			className="Apalon_buffel";
+			name="Apalon_buffel";
+		};
+		class Item13
+		{
+			className="A3_Modules_F";
+			name="Arma 3 Alpha - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item14
+		{
+			className="A3_Ui_F";
+			name="Arma 3 - User Interface";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item15
+		{
+			className="WW2_Core_c_IF_Gui_c";
+			name="WW2_Core_c_IF_Gui_c";
+		};
+	};
+};
+randomSeed=15599731;
+class ScenarioData
+{
+	author="TerminalHunter";
+	disabledAI=1;
+	respawn=3;
+};
+class CustomAttributes
+{
+	class Category0
+	{
+		name="Multiplayer";
+		class Attribute0
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+					class value
+					{
+						items=2;
+						class Item0
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="MenuPosition";
+							};
+						};
+						class Item1
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Counter";
+							};
+						};
+					};
+				};
+			};
+		};
+		nAttributes=1;
+	};
+};
+class Mission
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.15000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		wavesForced=1;
+		windForced=1;
+		year=2007;
+		month=7;
+		hour=10;
+		minute=20;
+		startFogDecay=0.014;
+		forecastFogDecay=0.014;
+	};
+	class Entities
+	{
+		items=21;
+		class Item0
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={10004.172,126,9237.5918};
+				angles[]={0,5.5790958,0};
+			};
+			id=0;
+			type="ModuleCurator_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleCurator_F_Owner";
+					expression="_this setVariable ['Owner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="zoos";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleCurator_F_Forced";
+					expression="_this setVariable ['Forced',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleCurator_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleCurator_F_Addons";
+					expression="_this setVariable ['Addons',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=2;
+						};
+					};
+				};
+				nAttributes=4;
+			};
+		};
+		class Item1
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=16;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10032.373,126.00144,9232.1494};
+						angles[]={0,5.6970568,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Ranger@7th Reconnaissance";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=2;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10031.998,126.00144,9229.543};
+						angles[]={0,5.8037014,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Ranger@7th Reconnaissance";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=3;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10033.648,126.00144,9230.5293};
+						angles[]={0,5.7547398,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Ranger@7th Reconnaissance";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=4;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10030.489,126.00144,9231.3809};
+						angles[]={0,5.8285427,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Ranger@7th Reconnaissance";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=5;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10030.849,126.00144,9233.877};
+						angles[]={0,5.7382679,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Ranger@7th Reconnaissance";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=6;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+				class Item5
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10025.699,126.00144,9228.5322};
+						angles[]={0,5.8122692,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Ranger@7th Reconnaissance";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=7;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+				class Item6
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10027.312,126.00144,9229.499};
+						angles[]={0,5.7454195,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Ranger@7th Reconnaissance";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=8;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+				class Item7
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10029.304,126.00144,9230.4424};
+						angles[]={0,5.6394882,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Ranger@7th Reconnaissance";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=9;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+				class Item8
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10029.164,126.00144,9232.9414};
+						angles[]={0,5.760067,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Ranger@7th Reconnaissance";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=10;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+				class Item9
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10024.394,126.00144,9230.1865};
+						angles[]={0,5.7752266,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Ranger@7th Reconnaissance";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=11;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+				class Item10
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10026.109,126.00144,9231.0049};
+						angles[]={0,5.6950445,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Ranger@7th Reconnaissance";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=12;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+				class Item11
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10027.716,126.00144,9232.126};
+						angles[]={0,5.6950445,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Ranger@7th Reconnaissance";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=13;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+				class Item12
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10026.786,126.00144,9226.9746};
+						angles[]={0,5.8122692,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Ranger@7th Reconnaissance";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=14;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+				class Item13
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10028.398,126.00144,9227.9404};
+						angles[]={0,5.7454195,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Ranger@7th Reconnaissance";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=15;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+				class Item14
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10030.391,126.00144,9228.8857};
+						angles[]={0,5.6394882,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Ranger@7th Reconnaissance";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=16;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+				class Item15
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10034.344,126.00144,9233.7959};
+						angles[]={0,5.7133532,0};
+					};
+					side="West";
+					flags=6;
+					class Attributes
+					{
+						name="zoos";
+						description="Ranger TerminalHunter@7th Reconnaissance";
+						isPlayer=1;
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=17;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.99000001;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male06ENG";
+								};
+							};
+						};
+						class Attribute5
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute6
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						nAttributes=7;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1;
+		};
+		class Item2
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10009.859,126.80167,9261.7305};
+				angles[]={0,5.4830151,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=18;
+			type="snow_obj_snowman";
+		};
+		class Item3
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10017.793,127.22006,9234.8662};
+				angles[]={0,4.7683372,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{[this, playerArsenal] call ace_arsenal_fnc_initBox;  " \n "this addAction [""Jack Shack Arsenal"", {[(_this select 0), player] call ace_arsenal_fnc_openBox;},[],1.5,true,true,"""",""true"",10,false,"""",""""]; this addAction[""Save Current Loadout as Respawn Loadout"",""saveLoadout.sqf"",[],1.5,true,true,"""",""true"",10,false,"""",""""];}";
+				name="JackShack2";
+			};
+			id=19;
+			type="Land_Toilet";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_cargo_size";
+					expression="[_this,_value] call ace_cargo_fnc_setSize;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item4
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10012.083,126.51496,9243.6777};
+				angles[]={0,4.0433521,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=20;
+			type="Props_AM_containerSW";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[""ACE_EntrenchingTool"",""ACE_packingBandage"",""Aftermath_Duct_Tape""],[10,20,5]],[[],[]]],false]";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ace_cargo_size";
+					expression="[_this,_value] call ace_cargo_fnc_setSize;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item5
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10040.178,128.23138,9242.9756};
+				angles[]={0,2.4544492,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=21;
+			type="buffel_02";
+			atlOffset=7.6293945e-006;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item6
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10043.815,128.23138,9246.3223};
+				angles[]={0,2.4510989,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=22;
+			type="buffel_02";
+			atlOffset=7.6293945e-006;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item7
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10012.556,128.78392,9245.6475};
+				angles[]={0,3.998316,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				init="call{this addAction[""Take Down Tent"",{deleteVehicle storageTent},[],1.5,true,true,"""",""true"",10,false,"""",""""];}";
+				name="storageTent";
+			};
+			id=23;
+			type="Props_AM_cl_caesarstent05White";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_refuel_fuelCargo";
+					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=-1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ace_isRepairFacility";
+					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairFacility', _value, true]}";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ace_isMedicalFacility";
+					expression="_this setVariable [""ace_medical_isMedicalFacility"",_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ace_cargo_size";
+					expression="[_this,_value] call ace_cargo_fnc_setSize;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=4;
+			};
+		};
+		class Item8
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10024.282,128.78392,9266.7939};
+				angles[]={0,2.4443619,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				init="call{this addAction[""Take Down Tent"",{deleteVehicle barracksTent},[],1.5,true,true,"""",""true"",10,false,"""",""""];}";
+				name="barracksTent";
+			};
+			id=24;
+			type="Props_AM_cl_caesarstent04White";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isRepairFacility";
+					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairFacility', _value, true]}";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ace_isMedicalFacility";
+					expression="_this setVariable [""ace_medical_isMedicalFacility"",_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ace_cargo_size";
+					expression="[_this,_value] call ace_cargo_fnc_setSize;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=3;
+			};
+		};
+		class Item9
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10034.089,128.8017,9255.877};
+				angles[]={0,5.5574179,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				init="call{this addAction[""Take Down Tent"",{deleteVehicle barracksTent2},[],1.5,true,true,"""",""true"",10,false,"""",""""];}";
+				name="barracksTent2";
+			};
+			id=25;
+			type="Props_AM_cl_caesarstent02White";
+			atlOffset=7.6293945e-006;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isRepairFacility";
+					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairFacility', _value, true]}";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ace_isMedicalFacility";
+					expression="_this setVariable [""ace_medical_isMedicalFacility"",_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ace_cargo_size";
+					expression="[_this,_value] call ace_cargo_fnc_setSize;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=3;
+			};
+		};
+		class Item10
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={10024.801,126,9247.9297};
+				angles[]={0,5.5790958,0};
+			};
+			name="initRespawnPoint";
+			id=26;
+			type="ModuleRespawnPosition_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleRespawnPosition_F_Marker";
+					expression="_this setVariable ['Marker',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleRespawnPosition_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Temporary Forward Operating Base";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleRespawnPosition_F_Side";
+					expression="_this setVariable ['Side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleRespawnPosition_F_ShowNotification";
+					expression="_this setVariable ['ShowNotification',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleRespawnPosition_F_Type";
+					expression="_this setVariable ['Type',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				nAttributes=5;
+			};
+		};
+		class Item11
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10010.205,126.51496,9245.8574};
+				angles[]={0,4.0433521,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=27;
+			type="Props_AM_containerSW";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[""ToolKit""],[9]],[[],[]]],false]";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ace_cargo_size";
+					expression="[_this,_value] call ace_cargo_fnc_setSize;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item12
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10015.087,126.51496,9243.5801};
+				angles[]={0,3.2291553,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=28;
+			type="Props_AM_containerSW";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""AM_HuntingRifle""],[4]],[[""10Rnd_308_Mag""],[40]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ace_cargo_size";
+					expression="[_this,_value] call ace_cargo_fnc_setSize;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item13
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10010.695,126.51496,9248.9531};
+				angles[]={0,4.9158459,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=29;
+			type="Props_AM_containerSW";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[""TCGM_BikePack_win""],[16]]],false]";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ace_cargo_size";
+					expression="[_this,_value] call ace_cargo_fnc_setSize;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item14
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10039.099,127.26426,9256.4531};
+				angles[]={0,3.3349526,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=30;
+			type="Land_chartross";
+		};
+		class Item15
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10017.662,127.22006,9232.3242};
+				angles[]={0,4.7683439,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{[this, playerArsenal] call ace_arsenal_fnc_initBox;  " \n "this addAction [""Jack Shack Arsenal"", {[(_this select 0), player] call ace_arsenal_fnc_openBox;},[],1.5,true,true,"""",""true"",10,false,"""",""""]; this addAction[""Save Current Loadout as Respawn Loadout"",""saveLoadout.sqf"",[],1.5,true,true,"""",""true"",10,false,"""",""""];}";
+				name="JackShack1";
+			};
+			id=31;
+			type="Land_Toilet";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_cargo_size";
+					expression="[_this,_value] call ace_cargo_fnc_setSize;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item16
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={10019.268,126,9232.0664};
+				angles[]={0,5.5790958,0};
+			};
+			name="jackShackRespawn1";
+			id=32;
+			type="ModuleRespawnPosition_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleRespawnPosition_F_Marker";
+					expression="_this setVariable ['Marker',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleRespawnPosition_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Jack Shack #1";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleRespawnPosition_F_Side";
+					expression="_this setVariable ['Side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleRespawnPosition_F_ShowNotification";
+					expression="_this setVariable ['ShowNotification',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleRespawnPosition_F_Type";
+					expression="_this setVariable ['Type',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				nAttributes=5;
+			};
+		};
+		class Item17
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={10019.401,126,9234.7422};
+				angles[]={0,5.5790958,0};
+			};
+			name="jackShackRespawn2";
+			id=33;
+			type="ModuleRespawnPosition_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleRespawnPosition_F_Marker";
+					expression="_this setVariable ['Marker',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleRespawnPosition_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Jack Shack #2";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleRespawnPosition_F_Side";
+					expression="_this setVariable ['Side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleRespawnPosition_F_ShowNotification";
+					expression="_this setVariable ['ShowNotification',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleRespawnPosition_F_Type";
+					expression="_this setVariable ['Type',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				nAttributes=5;
+			};
+		};
+		class Item18
+		{
+			dataType="Marker";
+			position[]={11928.514,149.76343,15410.429};
+			name="marker_0";
+			text="ENEMY SPAWN AREA";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorRed";
+			a=500;
+			b=500;
+			id=38;
+			atlOffset=-3.2365723;
+		};
+		class Item19
+		{
+			dataType="Marker";
+			position[]={13626.554,19.98,8910.9785};
+			name="marker_1";
+			text="Attack Zone - Enemies will get here around 35 minutes after start";
+			type="mil_end";
+			colorName="ColorRed";
+			id=39;
+		};
+		class Item20
+		{
+			dataType="Marker";
+			position[]={11925.752,167.46985,15379.31};
+			name="marker_2";
+			text="Enemy Spawn Zone";
+			type="LIB_mil_flag";
+			colorName="ColorEAST";
+			id=40;
+			atlOffset=14.469849;
+		};
+	};
+};

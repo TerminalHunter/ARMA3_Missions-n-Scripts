@@ -1,0 +1,20 @@
+removeAllWeapons player;
+removeGoggles player;
+removeHeadgear player;
+removeVest player;
+removeUniform player;
+removeAllAssignedItems player;
+clearAllItemsFromBackpack player;
+removeBackpack player;
+
+//player setUnitLoadout(player getVariable["Saved_Loadout",[]]);
+player linkItem "ItemMap";
+player linkItem "TFAR_rf7800str";
+player linkItem "ItemCompass";
+player linkItem "TFAR_microdagr";
+player addVest (player getVariable["Saved_Vest","AM_AvBagInvis"]);
+player addUniform (player getVariable["Saved_Uniform","armor_ncr_trooper_01_winter_uniform"]);
+player addHeadgear (player getVariable["Saved_Headgear","armor_ncr_trooper_helm_winter"]);
+player addBackpack (player getVariable["Saved_Backpack",""]);
+player addGoggles (player getVariable["Saved_Facewear",""]);
+player addItem (player getVariable["Saved_HMD",""]);

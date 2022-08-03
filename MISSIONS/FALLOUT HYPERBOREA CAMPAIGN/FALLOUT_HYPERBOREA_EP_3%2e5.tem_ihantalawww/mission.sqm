@@ -1,0 +1,5310 @@
+version=54;
+class EditorData
+{
+	moveGridStep=1;
+	angleGridStep=0.2617994;
+	scaleGridStep=1;
+	autoGroupingDist=10;
+	toggles=513;
+	class ItemIDProvider
+	{
+		nextID=217;
+	};
+	class LayerIndexProvider
+	{
+		nextID=1;
+	};
+	class Camera
+	{
+		pos[]={2060.6587,6.1446605,181.48582};
+		dir[]={0.89433998,-0.055270158,-0.44399163};
+		up[]={0.049510621,0.99846953,-0.024579167};
+		aside[]={-0.44466862,3.7159771e-007,-0.89570832};
+	};
+};
+binarizationWanted=0;
+sourceName="FALLOUT_HYPERBOREA_EP_3%2e5";
+addons[]=
+{
+	"A3_Characters_F",
+	"A3_Weapons_F",
+	"tfar_handhelds",
+	"fallout_uniform_02",
+	"IA_Armour_Patch_Aftermath",
+	"snow_obj",
+	"CUP_Desert2_Config",
+	"CUP_Misc3_Config",
+	"WW2_Objects_c_Misc_WW2_SimpleObjects_c_CUP",
+	"AM_Items_2",
+	"A3_Modules_F_Multiplayer",
+	"TF_Snow_Module",
+	"AM_Items",
+	"CUP_CAStructures_E_Misc_Misc_Interier",
+	"A3_Props_F_Tank_Military_TankAcc",
+	"A3_Modules_F_Intel",
+	"Aftermath_ace_medical",
+	"A3_Structures_F_EPA_Civ_Camping",
+	"A3_Structures_F_System",
+	"Apalon_buffel",
+	"Valor_Plane_F",
+	"FVL_2k35_ace"
+};
+class AddonsMetaData
+{
+	class List
+	{
+		items=21;
+		class Item0
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item1
+		{
+			className="A3_Weapons_F";
+			name="Arma 3 Alpha - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item2
+		{
+			className="tfar_handhelds";
+			name="tfar_handhelds";
+			url="https://github.com/michail-nikolaev/task-force-arma-3-radio";
+		};
+		class Item3
+		{
+			className="fallout_uniform_02";
+			name="Fallout uniform #02";
+			author="AFTERMATH Team";
+			url="https://steamcommunity.com/id/sterben_top";
+		};
+		class Item4
+		{
+			className="IA_Armour_Patch_Aftermath";
+			name="Fallout uniform #02 Ace Patch by Irish Ace";
+			author="The Irish Ace";
+			url="https://steamcommunity.com/id/sterben_top";
+		};
+		class Item5
+		{
+			className="snow_obj";
+			name="snow_obj";
+		};
+		class Item6
+		{
+			className="CUP_Desert2_Config";
+			name="CUP_Desert2_Config";
+		};
+		class Item7
+		{
+			className="CUP_Misc3_Config";
+			name="CUP_Misc3_Config";
+		};
+		class Item8
+		{
+			className="WW2_Objects_c_Misc_WW2_SimpleObjects_c_CUP";
+			name="WW2_Objects_c_Misc_WW2_SimpleObjects_c_CUP";
+		};
+		class Item9
+		{
+			className="AM_Items_2";
+			name="AM_Items_2";
+		};
+		class Item10
+		{
+			className="A3_Modules_F";
+			name="Arma 3 Alpha - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item11
+		{
+			className="TF_Snow_Module";
+			name="TF_Snow_Module";
+		};
+		class Item12
+		{
+			className="AM_Items";
+			name="AM_Items";
+		};
+		class Item13
+		{
+			className="CUP_CAStructures_E_Misc_Misc_Interier";
+			name="CUP_CAStructures_E_Misc_Misc_Interier";
+		};
+		class Item14
+		{
+			className="A3_Props_F_Tank";
+			name="Arma 3 Tank - Decorative and Mission Objects";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item15
+		{
+			className="Aftermath_ace_medical";
+			name="Aftermath_ace_medical";
+			author="Otto";
+		};
+		class Item16
+		{
+			className="A3_Structures_F_EPA";
+			name="Arma 3 Survive Episode - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item17
+		{
+			className="A3_Structures_F";
+			name="Arma 3 - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item18
+		{
+			className="Apalon_buffel";
+			name="Apalon_buffel";
+		};
+		class Item19
+		{
+			className="Valor_Plane_F";
+			name="Valor_Plane_F";
+		};
+		class Item20
+		{
+			className="FVL_2k35_ace";
+			name="FVL_2k35_ace";
+		};
+	};
+};
+randomSeed=2856059;
+class ScenarioData
+{
+	author="TerminalHunter";
+	showGPS=0;
+	showMap=0;
+	saving=0;
+	disabledAI=1;
+	respawn=3;
+	class Header
+	{
+		gameType="Coop";
+		minPlayers=1;
+		maxPlayers=16;
+	};
+};
+class CustomAttributes
+{
+	class Category0
+	{
+		name="Multiplayer";
+		class Attribute0
+		{
+			property="SharedObjectives";
+			expression="if (isMultiplayer) then {[_value] spawn bis_fnc_sharedObjectives;};";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=2;
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+					class value
+					{
+						items=2;
+						class Item0
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="MenuPosition";
+							};
+						};
+						class Item1
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Counter";
+							};
+						};
+					};
+				};
+			};
+		};
+		nAttributes=2;
+	};
+	class Category1
+	{
+		name="Scenario";
+		class Attribute0
+		{
+			property="EnableDebugConsole";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		nAttributes=1;
+	};
+};
+class Mission
+{
+	class Intel
+	{
+		briefingName="Fallout Hyperborea: Episode 3.5";
+		overviewText="Fallout Hyperborea: Episode 3.5";
+		timeOfChanges=1800.0002;
+		startWeather=0.69999999;
+		startFog=0.30000001;
+		startWind=0.3000001;
+		startRain=1;
+		startWaves=0.1;
+		forecastWeather=0.69999999;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		wavesForced=1;
+		windForced=1;
+		year=1940;
+		month=3;
+		day=15;
+		hour=12;
+		startFogDecay=0.014;
+		forecastFogDecay=0.014;
+	};
+	class Entities
+	{
+		items=23;
+		class Item0
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=16;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2095.9636,2.5345333,201.4675};
+						angles[]={0.0049914722,3.0797968,6.278194};
+					};
+					side="West";
+					flags=6;
+					class Attributes
+					{
+						rank="SERGEANT";
+						description="Ranger@Wendigo Company";
+						isPlayer=1;
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=1;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.99000001;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male06ENG";
+								};
+							};
+						};
+						class Attribute5
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute6
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						nAttributes=7;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2100.3477,2.5279622,202.27492};
+						angles[]={0,3.1385562,6.2731905};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						rank="SERGEANT";
+						description="Ranger@Wendigo Company";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=2;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2102.0964,2.5219219,204.24304};
+						angles[]={6.278194,3.2452013,6.278194};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						rank="SERGEANT";
+						description="Ranger@Wendigo Company";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=3;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2100.176,2.5305586,204.32832};
+						angles[]={0,3.1962395,6.278194};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						rank="SERGEANT";
+						description="Ranger@Wendigo Company";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=4;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2102.344,2.5071499,201.87874};
+						angles[]={6.268187,3.2700424,6.278194};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						rank="SERGEANT";
+						description="Ranger@Wendigo Company";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=5;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+				class Item5
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2100.6692,2.5236208,199.9937};
+						angles[]={6.2631893,3.1797676,6.2731848};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						rank="SERGEANT";
+						description="Ranger@Wendigo Company";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=6;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+				class Item6
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2107.9116,2.352494,201.61928};
+						angles[]={6.2531939,3.2537684,6.2382145};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						rank="SERGEANT";
+						description="Ranger@Wendigo Company";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=7;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+				class Item7
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2106.0327,2.4394794,201.70042};
+						angles[]={6.2531939,3.1869197,6.2382145};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						rank="SERGEANT";
+						description="Ranger@Wendigo Company";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=8;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+				class Item8
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2103.8494,2.5015521,202.00734};
+						angles[]={6.268187,3.0809879,6.278194};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						rank="SERGEANT";
+						description="Ranger@Wendigo Company";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=9;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+				class Item9
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2102.5903,2.4924822,199.84572};
+						angles[]={6.248199,3.2015669,6.2631893};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						rank="SERGEANT";
+						description="Ranger@Wendigo Company";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=10;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+				class Item10
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2108.0894,2.2894852,199.51935};
+						angles[]={6.2631893,3.2167261,6.268187};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						rank="SERGEANT";
+						description="Ranger@Wendigo Company";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=11;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+				class Item11
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2106.2073,2.375792,199.78061};
+						angles[]={6.248199,3.136544,6.2531939};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						rank="SERGEANT";
+						description="Ranger@Wendigo Company";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=12;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+				class Item12
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2104.249,2.450249,199.72917};
+						angles[]={6.2482009,3.136544,6.2432079};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						rank="SERGEANT";
+						description="Ranger@Wendigo Company";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=13;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+				class Item13
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2107.8618,2.4102819,203.51689};
+						angles[]={6.2531939,3.2537684,6.248199};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						rank="SERGEANT";
+						description="Ranger@Wendigo Company";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=14;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+				class Item14
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2105.9827,2.4825733,203.59805};
+						angles[]={6.2631893,3.1869197,6.2731848};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						rank="SERGEANT";
+						description="Ranger@Wendigo Company";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=15;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+				class Item15
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2103.801,2.5117192,203.90707};
+						angles[]={6.278194,3.0809879,6.278194};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						rank="SERGEANT";
+						description="Ranger@Wendigo Company";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armor_ncr_trooper_01_winter_uniform";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="AM_AvBagInvis";
+								isBackpack=0;
+							};
+							compass="ItemCompass";
+							watch="TFAR_microdagr";
+							radio="TFAR_rf7800str";
+						};
+					};
+					id=16;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="69";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD',_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="70";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=0;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="groupID";
+					expression="[_this, _value] call CBA_fnc_setCallsign";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Wendigo Company";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item1
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2112.8701,3.2069745,209.271};
+				angles[]={6.2731848,1.7295864,6.2631841};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="lootMan";
+			};
+			id=17;
+			type="snow_obj_snowman";
+			atlOffset=2.3841858e-007;
+		};
+		class Item2
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2098.991,3.3554029,177.15535};
+				angles[]={6.2631893,2.7025399,6.268187};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="jackShack2";
+			};
+			id=18;
+			type="Land_Toilet";
+			atlOffset=0.027099609;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_cargo_size";
+					expression="[_this,_value] call ace_cargo_fnc_setSize;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item3
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2107.7813,4.8239498,178.78392};
+				angles[]={0,4.3102541,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				name="spawnBarracksTent";
+			};
+			id=19;
+			type="Props_AM_cl_caesarstent04White";
+			atlOffset=-2.3841858e-007;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isRepairFacility";
+					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairFacility', _value, true]}";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ace_isMedicalFacility";
+					expression="_this setVariable [""ace_medical_isMedicalFacility"",_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ace_cargo_size";
+					expression="[_this,_value] call ace_cargo_fnc_setSize;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=3;
+			};
+		};
+		class Item4
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2114.7957,3.3445458,184.13641};
+				angles[]={6.2731848,2.7001505,6.278194};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="jackShack1";
+			};
+			id=20;
+			type="Land_Toilet";
+			atlOffset=0.027099133;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_cargo_size";
+					expression="[_this,_value] call ace_cargo_fnc_setSize;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item5
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2114.2559,2.1425073,185.66867};
+				angles[]={6.2731848,3.5109086,6.278194};
+			};
+			name="jackShackRespawn1";
+			id=21;
+			type="ModuleRespawnPosition_F";
+			atlOffset=0.027100086;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleRespawnPosition_F_Marker";
+					expression="_this setVariable ['Marker',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleRespawnPosition_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Jack Shack #1";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleRespawnPosition_F_Side";
+					expression="_this setVariable ['Side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleRespawnPosition_F_ShowNotification";
+					expression="_this setVariable ['ShowNotification',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleRespawnPosition_F_Type";
+					expression="_this setVariable ['Type',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				nAttributes=5;
+			};
+		};
+		class Item6
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2098.3337,2.177845,178.63005};
+				angles[]={6.2581892,3.513298,6.2681832};
+			};
+			name="jackShackRespawn2";
+			id=22;
+			type="ModuleRespawnPosition_F";
+			atlOffset=0.027099609;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleRespawnPosition_F_Marker";
+					expression="_this setVariable ['Marker',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleRespawnPosition_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Jack Shack #2";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleRespawnPosition_F_Side";
+					expression="_this setVariable ['Side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleRespawnPosition_F_ShowNotification";
+					expression="_this setVariable ['ShowNotification',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleRespawnPosition_F_Type";
+					expression="_this setVariable ['Type',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				nAttributes=5;
+			};
+		};
+		class Item7
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2099.2957,2.3344257,186.13182};
+				angles[]={6.2581916,3.0524826,6.2531958};
+			};
+			id=23;
+			type="TF_Snow_Module";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="TF_Snow_Module_Bool_Snow_Burst_Server";
+					expression="_this setVariable ['Bool_Snow_Burst_Server',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="TF_Snow_Module_Bool_No_Snow_Indoor";
+					expression="_this setVariable ['Bool_No_Snow_Indoor',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="TF_Snow_Module_Bool_Ambient_Cough";
+					expression="_this setVariable ['Bool_Ambient_Cough',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="TF_Snow_Module_Bool_Snow_Burst_Client";
+					expression="_this setVariable ['Bool_Snow_Burst_Client',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="TF_Snow_Module_Int_Ambient_Sound_Delay";
+					expression="_this setVariable ['Int_Ambient_Sound_Delay',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="TF_Snow_Module_Bool_Hover_Unit";
+					expression="_this setVariable ['Bool_Hover_Unit',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="TF_Snow_Module_Bool_Change_Fog";
+					expression="_this setVariable ['Bool_Change_Fog',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="TF_Snow_Module_Int_Fog_Value";
+					expression="_this setVariable ['Int_Fog_Value',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=65;
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="TF_Snow_Module_Int_Snow_Intensity";
+					expression="_this setVariable ['Int_Snow_Intensity',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=40;
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="TF_Snow_Module_Bool_Ambient_Crack";
+					expression="_this setVariable ['Bool_Ambient_Crack',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="TF_Snow_Module_Units";
+					expression="_this setVariable ['Units',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute11
+				{
+					property="TF_Snow_Module_Bool_Local_Fog";
+					expression="_this setVariable ['Bool_Local_Fog',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute12
+				{
+					property="TF_Snow_Module_Bool_Enable_Menu";
+					expression="_this setVariable ['Bool_Enable_Menu',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute13
+				{
+					property="TF_Snow_Module_Int_Snow_Wind_Dir";
+					expression="_this setVariable ['Int_Snow_Wind_Dir',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=30;
+						};
+					};
+				};
+				class Attribute14
+				{
+					property="TF_Snow_Module_Bool_Effect_On_Objects";
+					expression="_this setVariable ['Bool_Effect_On_Objects',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute15
+				{
+					property="TF_Snow_Module_Bool_Breath";
+					expression="_this setVariable ['Bool_Breath',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute16
+				{
+					property="TF_Snow_Module_Int_Snow_Duration";
+					expression="_this setVariable ['Int_Snow_Duration',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=600;
+						};
+					};
+				};
+				class Attribute17
+				{
+					property="TF_Snow_Module_Int_Overcast_Value";
+					expression="_this setVariable ['Int_Overcast_Value',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=-1;
+						};
+					};
+				};
+				nAttributes=18;
+			};
+		};
+		class Item8
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2104.375,2.2286708,186.72183};
+				angles[]={6.2581892,3.0524826,6.2581892};
+			};
+			id=25;
+			type="ModuleRespawnPosition_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleRespawnPosition_F_Marker";
+					expression="_this setVariable ['Marker',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleRespawnPosition_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Breakdown Point";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleRespawnPosition_F_Side";
+					expression="_this setVariable ['Side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleRespawnPosition_F_ShowNotification";
+					expression="_this setVariable ['ShowNotification',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleRespawnPosition_F_Type";
+					expression="_this setVariable ['Type',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				nAttributes=5;
+			};
+		};
+		class Item9
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2108.4106,2.0097547,176.69003};
+				angles[]={6.268187,5.9393497,6.2731905};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=26;
+			type="Land_rugbigTen";
+			atlOffset=-9.5367432e-007;
+		};
+		class Item10
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2108.647,2.9707885,176.19662};
+				angles[]={0,3.0524826,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="drugVase";
+			};
+			id=27;
+			type="Land_Vase_loam_3_EP1";
+			atlOffset=0.44811296;
+		};
+		class Item11
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2108.6484,2.346344,176.20924};
+				angles[]={0,3.0524826,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="drugBase";
+			};
+			id=28;
+			type="Land_TankSprocketWheels_01_single_F";
+			atlOffset=0.023860216;
+		};
+		class Item12
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2111.2676,3.2581863,177.50591};
+				angles[]={6.2631893,3.8515952,6.278182};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=29;
+			type="Land_chartross";
+			atlOffset=-0.0001257658;
+		};
+		class Item13
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2108.7451,2.1588235,189.96001};
+				angles[]={0,3.0524762,6.2681928};
+			};
+			id=33;
+			type="ModuleCreateDiaryRecord_F";
+			atlOffset=2.3841858e-007;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleCreateDiaryRecord_F_PresetTitle";
+					expression="_this setVariable ['PresetTitle',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Situation";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleCreateDiaryRecord_F_Title";
+					expression="_this setVariable ['Title',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Operation And We Could All Use A Little Change";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleCreateDiaryRecord_F_Description";
+					expression="_this setVariable ['Description',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="We have yet to outfit our new vertibird to accept our arsenals and storage containers, so we can't just abandon the road vehicles. Find some fuel." \n "<br/><br/>" \n "You'll need to find 2 fuel cans to make it back safely, at a minimum." \n "<br/><br/>" \n "If you are able to fill both land vehicles to 100%  you will earn a bonus to the fuel ration.";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleCreateDiaryRecord_F_Owner";
+					expression="_this setVariable ['Owner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=3;
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleCreateDiaryRecord_F_Subject";
+					expression="_this setVariable ['Subject',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				nAttributes=5;
+			};
+		};
+		class Item14
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2106.522,2.015389,174.528};
+						angles[]={0,0.054332096,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="call{this disableAI ""PATH"";" \n "this setUnitPos ""UP"";}";
+						name="donny";
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="armornvncrtrooper_plain_winter_uniform";
+								isBackpack=0;
+							};
+							class backpack
+							{
+								typeName="BackpackNUKA";
+								isBackpack=1;
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="Aftermath_Jet";
+										count=5;
+									};
+								};
+							};
+							headgear="khan_helmet_01";
+						};
+					};
+					id=36;
+					type="C_man_p_beggar_F";
+					atlOffset=0.02700007;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="ACE_NoVoice";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.02;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="lambs_danger_disableAI";
+							expression="if (_value) then { _this setVariable ['lambs_danger_disableAI', _value, true]; }";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="unitName";
+							expression="_this setname _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="'No Toes' Donny";
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="face";
+							expression="_this setface _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="m_indian_06_co";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=35;
+			atlOffset=0.02700007;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="groupID";
+					expression="[_this, _value] call CBA_fnc_setCallsign";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Some Junky Asshole";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item15
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2104.5496,2.4927723,177.74577};
+				angles[]={6.268187,2.7343941,6.2731905};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=37;
+			type="Land_WoodenTable_small_F";
+			atlOffset=-0.00028514862;
+		};
+		class Item16
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2109.6248,3.2865229,209.77374};
+				angles[]={6.2631893,5.8969913,6.2581916};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=39;
+			type="snow_obj_snowman";
+			atlOffset=2.3841858e-007;
+		};
+		class Item17
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2108.0935,2.0259202,177.79031};
+				angles[]={0,3.0524826,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=40;
+			type="Land_ClutterCutter_medium_F";
+			atlOffset=4.7683716e-007;
+		};
+		class Item18
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2078.8164,5.3776793,170.76445};
+				angles[]={6.2781763,5.6677122,6.2481914};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				fuel=0.0099999998;
+				name="junkTruck1";
+			};
+			id=41;
+			type="buffel_02";
+			atlOffset=-0.0003387928;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item19
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2087.269,4.8796577,159.23544};
+				angles[]={6.2382083,5.6428237,6.2182765};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				fuel=0;
+				name="junkTruck2";
+			};
+			id=42;
+			type="buffel_02";
+			atlOffset=-0.0017802715;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item20
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2092.1394,3.9346347,189.78706};
+				angles[]={0.010000871,1.3182052,6.2382159};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="partyInventory";
+			};
+			id=44;
+			type="Props_AM_containerW";
+		};
+		class Item21
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2105.5513,2.9600298,91.492485};
+				angles[]={0.029984757,0,6.2532005};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				fuel=0.39410385;
+				reportRemoteTargets=1;
+				receiveRemoteTargets=1;
+				reportOwnPosition=1;
+			};
+			id=112;
+			type="Valor_Transport_Unarmed_F";
+			atlOffset=-0.046984196;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit"",""Medikit""],[8,1]],[[],[]],[[""ToolKit"",""ItemGPS""],[1,1]],[[],[]]],false]";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ace_fastroping_equipFRIES";
+					expression="[_this] call ace_fastroping_fnc_equipFRIES";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item22
+		{
+			dataType="Layer";
+			name="Layer 1";
+			class Entities
+			{
+				items=76;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2018.087,3.811914,483.12601};
+					};
+					side="Empty";
+					class Attributes
+					{
+						name="lootZone_1";
+					};
+					id=134;
+					type="Item_AM_tincan02";
+					atlOffset=0.94899988;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2086.01,6.2178879,573.21399};
+						angles[]={6.2731848,0,6.278194};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="potentialFuel_1";
+					};
+					id=136;
+					type="Item_AM_tincan01";
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2059.5107,8.8393812,559.60516};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_2";
+					};
+					id=137;
+					type="Item_AM_tincan02";
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2023.4364,3.550719,713.44513};
+						angles[]={0.037018213,0,6.1496677};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_3";
+					};
+					id=138;
+					type="Item_AM_tincan02";
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2001.3202,3.5119228,720.59479};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_4";
+					};
+					id=139;
+					type="Item_AM_tincan02";
+				};
+				class Item5
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1946.2246,6.6611629,1046.0621};
+						angles[]={6.2777152,0,6.2744989};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_5";
+					};
+					id=140;
+					type="Item_AM_tincan02";
+				};
+				class Item6
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2716.2646,5.3044748,1093.4342};
+						angles[]={-0,0,6.278194};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="potentialFuel_2";
+					};
+					id=141;
+					type="Item_AM_tincan01";
+				};
+				class Item7
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2722.1106,9.1227808,1072.7294};
+						angles[]={0.0077204234,0,6.2764282};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_6";
+					};
+					id=142;
+					type="Item_AM_tincan02";
+				};
+				class Item8
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3656.9937,6.47087,113.28021};
+						angles[]={0.10399631,0,6.0754948};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="potentialFuel_3";
+					};
+					id=143;
+					type="Item_AM_tincan01";
+				};
+				class Item9
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3644.3025,6.5482149,113.30203};
+						angles[]={6.248199,0,6.278182};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_7";
+					};
+					id=144;
+					type="Item_AM_tincan02";
+				};
+				class Item10
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3632.9673,7.51089,125.57415};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_8";
+					};
+					id=145;
+					type="Item_AM_tincan02";
+				};
+				class Item11
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3599.02,11.715632,123.16604};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_9";
+					};
+					id=146;
+					type="Item_AM_tincan02";
+				};
+				class Item12
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1590.946,2.9476712,306.89508};
+						angles[]={0.0050033992,0,6.2581916};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="potentialFuel_4";
+					};
+					id=147;
+					type="Item_AM_tincan01";
+				};
+				class Item13
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1576.2491,3.0241561,316.07922};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_10";
+					};
+					id=148;
+					type="Item_AM_tincan02";
+				};
+				class Item14
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={402.90305,24.696205,1728.9556};
+						angles[]={0.11449705,0,6.2631865};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_11";
+					};
+					id=149;
+					type="Item_AM_tincan02";
+				};
+				class Item15
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={553.65076,16.598726,2082.2961};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="potentialFuel_5";
+					};
+					id=150;
+					type="Item_AM_tincan01";
+				};
+				class Item16
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={815.28851,8.801568,2061.1426};
+						angles[]={-0,0,0.019999012};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="potentialFuel_6";
+					};
+					id=151;
+					type="Item_AM_tincan01";
+				};
+				class Item17
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={806.23871,9.1159582,2060.251};
+						angles[]={0.24026716,0,6.2132993};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_12";
+					};
+					id=152;
+					type="Item_AM_tincan02";
+				};
+				class Item18
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1183.6492,3.0096648,2062.8809};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="potentialFuel_7";
+					};
+					id=153;
+					type="Item_AM_tincan01";
+				};
+				class Item19
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1195.9695,3.0004795,2059.6736};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_13";
+					};
+					id=154;
+					type="Item_AM_tincan02";
+				};
+				class Item20
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1205.2909,4.1722245,2083.0891};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_14";
+					};
+					id=155;
+					type="Item_AM_tincan02";
+				};
+				class Item21
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1413.1143,5.7203245,2391.9951};
+						angles[]={0.019996032,0,6.278182};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="potentialFuel_8";
+					};
+					id=156;
+					type="Item_AM_tincan01";
+				};
+				class Item22
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1425.4609,6.0612655,2372.5469};
+						angles[]={0.024993783,0,6.2631893};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_15";
+					};
+					id=157;
+					type="Item_AM_tincan02";
+				};
+				class Item23
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1422.7817,5.298038,2409.5029};
+						angles[]={0.06988623,0,0.049958061};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_16";
+					};
+					id=158;
+					type="Item_AM_tincan02";
+				};
+				class Item24
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1438.6105,6.1504159,2402.6699};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_17";
+					};
+					id=159;
+					type="Item_AM_tincan02";
+				};
+				class Item25
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1395.999,5.3273363,2445.1213};
+						angles[]={0.01499443,0,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_18";
+					};
+					id=160;
+					type="Item_AM_tincan02";
+				};
+				class Item26
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1394.6122,5.4296765,2437.9734};
+						angles[]={-0,0,6.2731905};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="potentialFuel_9";
+					};
+					id=161;
+					type="Item_AM_tincan01";
+				};
+				class Item27
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1669.6864,1.9107831,3161.7786};
+						angles[]={0.064908728,0,0.029989703};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="potentialFuel_10";
+					};
+					id=162;
+					type="Item_AM_tincan01";
+				};
+				class Item28
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1661.4723,4.5410657,3220.7363};
+						angles[]={0.049958061,0,0.014998405};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="potentialFuel_11";
+					};
+					id=163;
+					type="Item_AM_tincan01";
+				};
+				class Item29
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1677.2745,5.3315778,3217.5042};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_19";
+					};
+					id=164;
+					type="Item_AM_tincan02";
+				};
+				class Item30
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1681.7952,4.8846326,3195.8904};
+						angles[]={6.278194,0,6.278194};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_20";
+					};
+					id=165;
+					type="Item_AM_tincan02";
+				};
+				class Item31
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1654.687,5.4748373,3180.1406};
+						angles[]={0.21177591,0,0.044969428};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_21";
+					};
+					id=166;
+					type="Item_AM_tincan02";
+				};
+				class Item32
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1710.4985,3.1087911,3280.6006};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_22";
+					};
+					id=167;
+					type="Item_AM_tincan02";
+				};
+				class Item33
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1803.4026,3.5928106,3222.9336};
+						angles[]={-0,0,0.0049914722};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="potentialFuel_12";
+					};
+					id=168;
+					type="Item_AM_tincan01";
+				};
+				class Item34
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1803.9458,3.563885,3225.9141};
+						angles[]={-0,0,0.0049914722};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_23";
+					};
+					id=169;
+					type="Item_AM_tincan02";
+				};
+				class Item35
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2008.1227,4.767025,3078.6196};
+						angles[]={-0,0,0.0099949092};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="potentialFuel_13";
+					};
+					id=170;
+					type="Item_AM_tincan01";
+				};
+				class Item36
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1998.5963,4.3972745,3073.489};
+						angles[]={0.11449653,0,0.17324564};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_24";
+					};
+					id=171;
+					type="Item_AM_tincan02";
+				};
+				class Item37
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2968.9792,3.7441561,2008.5209};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_25";
+					};
+					id=172;
+					type="Item_AM_tincan02";
+				};
+				class Item38
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3145.0547,3.440084,2659.9482};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_26";
+					};
+					id=173;
+					type="Item_AM_tincan02";
+				};
+				class Item39
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3143.4058,3.5791545,2687.3945};
+						angles[]={6.1196594,0,0.044969428};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="potentialFuel_14";
+					};
+					id=174;
+					type="Item_AM_tincan01";
+				};
+				class Item40
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2631.8938,7.4345431,2962.0676};
+						angles[]={6.278194,0,0.014998405};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="potentialFuel_15";
+					};
+					id=175;
+					type="Item_AM_tincan01";
+				};
+				class Item41
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2630.0811,7.7390699,2968.1135};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_27";
+					};
+					id=176;
+					type="Item_AM_tincan02";
+				};
+				class Item42
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2663.5901,12.885218,2975.1445};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_28";
+					};
+					id=177;
+					type="Item_AM_tincan02";
+				};
+				class Item43
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2677.8347,9.854147,3031.999};
+						angles[]={6.2731905,0,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_29";
+					};
+					id=178;
+					type="Item_AM_tincan02";
+				};
+				class Item44
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2677.5972,9.9345694,3036.9285};
+						angles[]={0.010000871,0,6.2631893};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="potentialFuel_16";
+					};
+					id=179;
+					type="Item_AM_tincan01";
+				};
+				class Item45
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2315.9111,15.836846,2964.6523};
+						angles[]={6.2382159,0,0.074860021};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_30";
+					};
+					id=180;
+					type="Item_AM_tincan02";
+				};
+				class Item46
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2317.9873,15.841114,2969.5713};
+						angles[]={0.039979152,0,0.015002378};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_31";
+					};
+					id=181;
+					type="Item_AM_tincan02";
+				};
+				class Item47
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2321.4031,15.60406,2971.2634};
+						angles[]={0.039979152,0,6.218277};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="potentialFuel_17";
+					};
+					id=182;
+					type="Item_AM_tincan01";
+				};
+				class Item48
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2359.3862,14.608201,2989.3528};
+						angles[]={0.074859224,0,0.0099949092};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="potentialFuel_18";
+					};
+					id=183;
+					type="Item_AM_tincan01";
+				};
+				class Item49
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2338.51,16.49452,2976.3137};
+						angles[]={0.10991752,0,0.17958841};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_32";
+					};
+					id=184;
+					type="Item_AM_tincan02";
+				};
+				class Item50
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2342.0137,16.373867,2979.7122};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="potentialFuel_19";
+					};
+					id=185;
+					type="Item_AM_tincan01";
+				};
+				class Item51
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2309.2393,20.330614,2952.137};
+						angles[]={0.0025837421,0,6.2824135};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_33";
+					};
+					id=186;
+					type="Item_AM_tincan02";
+				};
+				class Item52
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2306.1685,16.353077,2954.1543};
+						angles[]={6.2828403,0,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_34";
+					};
+					id=187;
+					type="Item_AM_tincan02";
+				};
+				class Item53
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2309.9771,15.632531,2936.8711};
+						angles[]={6.2631865,0,0.02999169};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="potentialFuel_20";
+					};
+					id=188;
+					type="Item_AM_tincan01";
+				};
+				class Item54
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2311.7168,15.571465,2931.9319};
+						angles[]={6.2631865,0,0.039980642};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_35";
+					};
+					id=189;
+					type="Item_AM_tincan02";
+				};
+				class Item55
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3076.2852,4.1715012,3087.3901};
+						angles[]={-0,0,0.019999012};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="potentialFuel_21";
+					};
+					id=190;
+					type="Item_AM_tincan01";
+				};
+				class Item56
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3077.8137,4.182795,3088.114};
+						angles[]={0.0099949092,0,0.0099949092};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="potentialFuel_22";
+					};
+					id=191;
+					type="Item_AM_tincan01";
+				};
+				class Item57
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3079.0305,4.1979194,3088.6672};
+						angles[]={0.0049914722,0,0.014998405};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="potentialFuel_23";
+					};
+					id=192;
+					type="Item_AM_tincan01";
+				};
+				class Item58
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3096.8625,5.1066289,3097.1099};
+						angles[]={6.2731905,0,6.2731905};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_36";
+					};
+					id=193;
+					type="Item_AM_tincan02";
+				};
+				class Item59
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3294.0391,2.9479291,3920.1421};
+						angles[]={6.2681909,0,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="potentialFuel_24";
+					};
+					id=194;
+					type="Item_AM_tincan01";
+				};
+				class Item60
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3339.3091,2.4957979,3893.3765};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="potentialFuel_25";
+					};
+					id=195;
+					type="Item_AM_tincan01";
+				};
+				class Item61
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3346.3486,2.4641562,3898.1929};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_37";
+					};
+					id=196;
+					type="Item_AM_tincan02";
+				};
+				class Item62
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3303.8718,3.0334432,3924.3096};
+						angles[]={6.2531958,0,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_38";
+					};
+					id=197;
+					type="Item_AM_tincan02";
+				};
+				class Item63
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3329.6326,2.4778304,3843.7554};
+						angles[]={-0,0,6.2731905};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_39";
+					};
+					id=198;
+					type="Item_AM_tincan02";
+				};
+				class Item64
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3335.6238,2.4957979,3848.343};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="potentialFuel_26";
+					};
+					id=199;
+					type="Item_AM_tincan01";
+				};
+				class Item65
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2254.6516,4.453752,3297.6338};
+						angles[]={6.2731848,0,0.0049914722};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_40";
+					};
+					id=200;
+					type="Item_AM_tincan02";
+				};
+				class Item66
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2248.0896,4.4271827,3286.3665};
+						angles[]={6.278194,0,6.278194};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="potentialFuel_27";
+					};
+					id=201;
+					type="Item_AM_tincan01";
+				};
+				class Item67
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2240.9497,4.2949824,3316.3621};
+						angles[]={0.015002378,0,6.2581892};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_41";
+					};
+					id=202;
+					type="Item_AM_tincan02";
+				};
+				class Item68
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2275.4373,3.4752278,3308.1199};
+						angles[]={0.024996169,0,6.2581892};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_42";
+					};
+					id=203;
+					type="Item_AM_tincan02";
+				};
+				class Item69
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1675.5612,3.8326552,3576.6611};
+						angles[]={6.2482009,0,6.2482009};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_43";
+					};
+					id=204;
+					type="Item_AM_tincan02";
+				};
+				class Item70
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1652.1207,5.4192824,3647.4053};
+						angles[]={0.0049914722,0,6.2182775};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_44";
+					};
+					id=205;
+					type="Item_AM_tincan02";
+				};
+				class Item71
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1644.75,5.4857864,3635.4619};
+						angles[]={0.010000871,0,6.278194};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_45";
+					};
+					id=206;
+					type="Item_AM_tincan02";
+				};
+				class Item72
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1600.3412,4.1157489,3703.9773};
+						angles[]={6.278194,0,0.0049914722};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_46";
+					};
+					id=207;
+					type="Item_AM_tincan02";
+				};
+				class Item73
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1597.2079,3.9761279,3720.8225};
+						angles[]={0.010000871,0,0.024993783};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="lootZone_47";
+					};
+					id=208;
+					type="Item_AM_tincan02";
+				};
+				class Item74
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1605.5055,3.7697828,3703.5706};
+						angles[]={6.2531958,0,6.1686883};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="potentialFuel_28";
+					};
+					id=209;
+					type="Item_AM_tincan01";
+				};
+				class Item75
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1648.8353,5.3707123,3651.4631};
+						angles[]={0.019996032,0,0.0050033992};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="potentialFuel_29";
+					};
+					id=210;
+					type="Item_AM_tincan01";
+				};
+			};
+			id=135;
+			atlOffset=-0.27873421;
+		};
+	};
+};
