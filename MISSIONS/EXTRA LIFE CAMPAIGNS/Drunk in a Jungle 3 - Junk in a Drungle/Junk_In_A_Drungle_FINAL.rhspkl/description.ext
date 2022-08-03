@@ -1,0 +1,47 @@
+respawnDelay=12;
+respawnOnStart=1;
+joinUnassigned=0;
+disabledAI=1;
+
+briefing = 1;
+debriefing = 1;
+
+class CfgMusic {
+  tracks[] = {};
+  class stem01 {
+    name = "IntroLoop01";
+    sound[] = {"\horrorMusic\Stem01 - IntroLoop.ogg", db+0, 1.0};
+  };
+  class stem02 {
+    name = "IntroLoop02";
+    sound[] = {"\horrorMusic\Stem02 - IntroLoop2.ogg", db+0, 1.0};
+  };
+  class stem03 {
+    name = "EnterMedium";
+    sound[] = {"\horrorMusic\Stem03 - IntoMedium.ogg", db+0, 1.0};
+  };
+  class stem04 {
+    name = "MediumLoop";
+    sound[] = {"\horrorMusic\Stem04 - MediumLoop.ogg", db+0, 1.0};
+  };
+  class stem05 {
+    name = "LegExit";
+    sound[] = {"\horrorMusic\Stem05 - BUTYOURLEG.ogg", db+0, 1.0};
+  };
+  class stem06 {
+    name = "HeavyLoop";
+    sound[] = {"\horrorMusic\Stem06 - HeavyLoop.ogg", db+0, 1.0};
+  };
+  class stem07 {
+    name = "EnterSurprise";
+    sound[] = {"\horrorMusic\Stem07 - ShiaSurpriseIntro.ogg", db+0, 1.0};
+  };
+  class stem08 {
+    name = "SurpriseLoop";
+    sound[] = {"\horrorMusic\Stem08 - ShiaSurpriseLoop.ogg", db+0, 1.0};
+  };
+  class stem09 {
+    name = "Exit";
+    sound[] = {"\horrorMusic\Stem09 - Decapitation.ogg", db+0, 1.0};
+  };
+};
