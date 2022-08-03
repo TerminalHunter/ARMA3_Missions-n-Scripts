@@ -1,0 +1,39 @@
+#include "Zen_FrameworkFunctions\Zen_DialogSystem\Zen_Dialog.hpp"
+
+class CfgNotifications {
+    #include "Zen_FrameworkFunctions\Zen_TaskSystem\Zen_TaskNotifications.hpp"
+};
+
+//EVERY PART OF THIS IS REQUIRED TO MAEK ARSENALS WORK. DON'T FUCK IT UP AGAIN.
+class CfgFunctions{
+	
+	#include "SBGF\cfgfunctions.hpp"
+	
+	class terminalFunctions{
+		class terminalArsenal{
+			class initArsenal{
+				preInit = 1;
+				file = "initArsenal.sqf";
+			};
+		};
+	};
+};
+
+class CfgMusic
+{
+	tracks[] = {};
+	class intro_music
+	{
+		name = "intro_music"; // Name for mission editor
+		sound[] = {"SLTS.ogg", db + 0, 1.0};
+	};
+
+};
+
+respawnDelay=20;
+respawnOnStart=-1;
+joinUnassigned=0;
+disabledAI=1;
+
+briefing = 1;
+debriefing = 1;
