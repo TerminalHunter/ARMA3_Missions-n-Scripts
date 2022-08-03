@@ -1,0 +1,54 @@
+#include "Zen_FrameworkFunctions\Zen_DialogSystem\Zen_Dialog.hpp"
+
+class CfgNotifications {
+    #include "Zen_FrameworkFunctions\Zen_TaskSystem\Zen_TaskNotifications.hpp"
+};
+
+//EVERY PART IF THIS IS REQUIRED TO MAEK ARSENALS WORK. DON'T FUCK IT UP AGAIN.
+class CfgFunctions{
+	class terminalFunctions{
+		class terminalArsenal{
+			class initArsenal{
+				preInit = 1;
+				file = "initArsenal.sqf";
+			};
+		};
+	};
+};
+
+respawnDelay=20;
+respawnOnStart=-1;
+joinUnassigned=0;
+disabledAI=1;
+
+briefing = 1;
+debriefing = 1;
+
+class CfgSounds
+{
+	// Definition for each sound
+	class expozie
+	{
+		name = "expozie"; // Name for mission editor
+		sound[] = {\sound\expozie.ogg, db+20, 1.0};
+		titles[] = {0, ""};	
+	};		
+	class ground_air
+	{
+		name = "ground_air"; // Name for mission editor
+		sound[] = {\sound\ground_air.ogg, db+50, 1.0};
+		titles[] = {0, ""};	
+	};
+	class alarma_aeriana_scurt
+	{
+		name = "alarma_aeriana_scurt"; // Name for mission editor
+		sound[] = {\sound\alarma_aeriana_scurt.ogg, db+10, 1.0};
+		titles[] = {0, ""};	
+	};	
+	class hiss_leak
+	{
+		name = "hiss_leak"; // Name for mission editor
+		sound[] = {\sound\hissyspittykitty.ogg, db+10, 1.0};
+		titles[] = {0, ""};	
+	};		
+};
