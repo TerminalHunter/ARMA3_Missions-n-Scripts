@@ -1,0 +1,96 @@
+respawnDelay=12;
+respawnOnStart=1;
+joinUnassigned=0;
+disabledAI=1;
+
+briefing = 1;
+debriefing = 1;
+
+class CfgSounds
+{
+	class firework1
+	{
+		name = "firework1";
+		sound[] = {"\sound\firework1.ogg",1, 1};
+		titles[] = {1, ""};
+	};
+	class firework2
+	{
+		name = "firework2";
+		sound[] = {"\sound\firework2.ogg",1, 1};
+		titles[] = {1, ""};
+	};
+	class firework3
+	{
+		name = "firework3";
+		sound[] = {"\sound\firework3.ogg",1, 1};
+		titles[] = {1, ""};
+	};		
+	class fluier1
+	{
+		name = "fluier1";
+		sound[] = {"\sound\fluier1.ogg", db+15, 1};
+		titles[] = {1, ""};
+	};
+	class fluier2
+	{
+		name = "fluier2";
+		sound[] = {"\sound\fluier2.ogg", db+15, 1};
+		titles[] = {1, ""};
+	};	
+	class fluier3
+	{
+		name = "fluier3";
+		sound[] = {"\sound\fluier3.ogg", db+15, 1};
+		titles[] = {1, ""};
+	};	
+	class fluier4
+	{
+		name = "fluier4";
+		sound[] = {"\sound\fluier4.ogg", db+15, 1};
+		titles[] = {1, ""};
+	};
+	class fluier5
+	{
+		name = "fluier5";
+		sound[] = {"\sound\fluier5.ogg", db+15, 1};
+		titles[] = {1, ""};
+	};	
+	class fluier6
+	{
+		name = "fluier6";
+		sound[] = {"\sound\fluier6.ogg", db+15, 1};
+		titles[] = {1, ""};
+	};	
+	class fluier7
+	{
+		name = "fluier7";
+		sound[] = {"\sound\fluier7.ogg", db+15, 1};
+		titles[] = {1, ""};
+	};	
+	class eko_fir_1
+	{
+		name = "eko_fir_1";
+		sound[] = {"\sound\eko_fir_1.ogg",0.2, 1};
+		titles[] = {1, ""};
+	};	
+	class eko_fir_2
+	{
+		name = "eko_fir_2";
+		sound[] = {"\sound\eko_fir_2.ogg",0.2, 1};
+		titles[] = {1, ""};
+	};	
+	class eko_fir_3
+	{
+		name = "eko_fir_3";
+		sound[] = {"\sound\eko_fir_3.ogg",0.2, 1};
+		titles[] = {1, ""};
+	};	
+	class eko_fir_4
+	{
+		name = "eko_fir_4";
+		sound[] = {"\sound\eko_fir_4.ogg",0.2, 1};
+		titles[] = {1, ""};
+	};	
+	
+};
