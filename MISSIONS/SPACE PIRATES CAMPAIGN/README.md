@@ -1,11 +1,11 @@
-##Tactical Tuesday's 3rd Major Campaign
+## Tactical Tuesday's 3rd Major Campaign
 
-##12 Missions
+### 12 Missions
 
 Played from:
 November 2021 - April 2022
 
-##Prominent Features:
+### Prominent Features:
 
 Space Team minigame recreated in ARMA 3
 
