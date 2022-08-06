@@ -1,10 +1,10 @@
-##Tactical Tuesday's 1st Major Campaign
+## Tactical Tuesday's 1st Major Campaign
 
-##10 Missions
+### 10 Missions
 
 Played from:
 September 2019 - January 2020
 
-##Prominent Features:
+### Prominent Features:
 
 It's the first one.
