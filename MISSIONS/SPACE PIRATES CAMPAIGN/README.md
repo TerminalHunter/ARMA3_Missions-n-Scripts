@@ -11,3 +11,4 @@ November 2021 - April 2022
 * An attempt at a mission based on Capital Ship combat from Star Wars Battlefront (the good one)
 * Arsenal system based on stealing things and replicating them.
   - Piracy of objects, but in the software sense. A campaign based on a good play on words.
+* Treasure hunting!
