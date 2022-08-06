@@ -1,9 +1,9 @@
-Tactical Tuesday's Annual Charity Campaign
+##Tactical Tuesday's Annual Charity Campaign
 
 Still in progress, run ad hoc whenever it is Extra Life's Game Day
 For more information about the Charity, visit: https://www.extra-life.org/
 
-Prominent Features:
+##Prominent Features:
 
 Has literally raised thousands of dollars for charity.
 	The amount I've raised, alone, is ~$700 over 2 years.

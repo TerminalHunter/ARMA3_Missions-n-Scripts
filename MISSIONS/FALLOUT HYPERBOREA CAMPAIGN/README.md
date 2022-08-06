@@ -1,11 +1,11 @@
-Tactical Tuesday's 2nd Major Campaign
+##Tactical Tuesday's 2nd Major Campaign
 
-5 Missions
+##5 Missions
 
 Played from:
 December 2020 - April 2021
 
-Prominent Features:
+##Prominent Features:
 
 Mission 01 had an open-world structure
 	Random events and dynamic enemy spawning
