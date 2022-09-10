@@ -15,6 +15,8 @@ We're going to go with Primary, Secondary, Sidearm for now.
 */
 
 if (isServer) then {
-    [testBoxen] call initTerminalPrimaryAmmoBox;
-    [testBoxen2] call initTerminalPrimaryAmmoBox;
+    [testBoxen, "PRIMARY", 100, true] call initTerminalAmmoBox;
+    [testBoxen2, "PRIMARY", 100, true] call initTerminalAmmoBox;
+    [testBoxen3, "SECONDARY", 10, true] call initTerminalAmmoBox;
+    [testBoxen4, "HANDGUN", 100, true] call initTerminalAmmoBox;
 };
