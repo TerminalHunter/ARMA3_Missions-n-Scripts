@@ -1,6 +1,6 @@
-//TODO on player join, reinit the ammo boxen, because JIP is a bitch
+//REQUIRES CBA!
 
-//server init
+//SERVER INIT
 if (isServer) then {
   primaryAmmoBoxen = createHashMap;
   secondaryAmmoBoxen = createHashMap;
@@ -77,6 +77,24 @@ EX: [boxOnMap, "PRIMARY", 100, true] call initTerminalAmmoBox;
   };
 };
 
+doTheTaking = {
+  params ["_player", "_ammoToGive", "_boxen", "_boxArray", "_hashMap"];
+  if (0 == _boxArray select 2) then {
+    ["Box is empty"] remoteExec ["hint", _player];
+  } else {
+    if ([_player, _ammoToGive] call CBA_fnc_canAddItem) then {
+      _hashMap set [str(_boxen), [_boxArray select 0, _boxArray select 1, (_boxArray select 2) - 1]];
+      [_player, _ammoToGive] remoteExec ["addItem", _player];
+      private "_hintString";
+      _hintString = str(_hashMap get str(_boxen) select 2) + " magazines remain"; //potentially optimize - for debug purposes, this can stay but, like, keep it local
+      [_hintString] remoteExec ["hint", _player];
+    } else {
+      private _hintString = "INVENTORY FULL";
+      [_hintString] remoteExec ["hint", _player];
+    };
+  };
+};
+
 magTakenFromBoxen = {
   params ["_ammo","_boxen","_player"];
   /* TODO: more error checking */
@@ -87,52 +105,13 @@ magTakenFromBoxen = {
 
   switch (true) do {
     case (!isNil {_primaryCheck}): {
-      if (0 == _primaryCheck select 2) then {
-        ["Box is empty"] remoteExec ["hint", _player];
-      } else {
-        if (_player canAdd _ammo) then {
-          primaryAmmoBoxen set [str(_boxen), [_primaryCheck select 0, _primaryCheck select 1, (_primaryCheck select 2) - 1]];
-          [_player, _ammo] remoteExec ["addItem", _player];
-          private "_hintString";
-          _hintString = str(primaryAmmoBoxen get str(_boxen) select 2) + " magazines remain"; //potentially optimize - for debug purposes, this can stay but, like, keep it local
-          [_hintString] remoteExec ["hint", _player];
-        } else {
-          private _hintString = "INVENTORY FULL";
-          [_hintString] remoteExec ["hint", _player];
-        };
-      };
+      [_player, _ammo, _boxen, _primaryCheck, primaryAmmoBoxen] call doTheTaking;
     };
     case (!isNil {_secondaryCheck}): {
-      if (0 == _secondaryCheck select 2) then {
-        ["Box is empty"] remoteExec ["hint", _player];
-      } else {
-        if (_player canAdd _ammo) then {
-          secondaryAmmoBoxen set [str(_boxen), [_secondaryCheck select 0, _secondaryCheck select 1, (_secondaryCheck select 2) - 1]];
-          [_player, _ammo] remoteExec ["addItem", _player];
-          private "_hintString";
-          _hintString = str(secondaryAmmoBoxen get str(_boxen) select 2) + " magazines remain"; //potentially optimize - for debug purposes, this can stay but, like, keep it local
-          [_hintString] remoteExec ["hint", _player];
-        } else {
-          private _hintString = "INVENTORY FULL";
-          [_hintString] remoteExec ["hint", _player];
-        };
-      };
+      [_player, _ammo, _boxen, _secondaryCheck, secondaryAmmoBoxen] call doTheTaking;
     };
     case (!isNil {_handgunCheck}): {
-      if (0 == _handgunCheck select 2) then {
-        ["Box is empty"] remoteExec ["hint", _player];
-      } else {
-        if (_player canAdd _ammo) then {
-          handgunAmmoBoxen set [str(_boxen), [_handgunCheck select 0, _handgunCheck select 1, (_handgunCheck select 2) - 1]];
-          [_player, _ammo] remoteExec ["addItem", _player];
-          private "_hintString";
-          _hintString = str(handgunAmmoBoxen get str(_boxen) select 2) + " magazines remain"; //potentially optimize - for debug purposes, this can stay but, like, keep it local
-          [_hintString] remoteExec ["hint", _player];
-        } else {
-          private _hintString = "INVENTORY FULL";
-          [_hintString] remoteExec ["hint", _player];
-        };
-      };
+      [_player, _ammo, _boxen, _handgunCheck, handgunAmmoBoxen] call doTheTaking;
     };
     default {
       /* TODO: this should REALLY give a proper error */
@@ -146,7 +125,6 @@ magTakenFromBoxen = {
 
 takeMagazine = {
   params ["_ammo", "_boxen"];
-  //tell server magazine is taken
   [_ammo, _boxen, player] remoteExec ["magTakenFromBoxen", 2];
 };
 
