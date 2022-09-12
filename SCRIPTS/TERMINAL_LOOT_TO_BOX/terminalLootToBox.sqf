@@ -1,3 +1,8 @@
+//A script I wrote to get around the fact that occasionally arma doesn't let you take things from a nearby dead body.
+
+//REQUIRES CBA AND ACE!
+
+//Works out of the box, just #include "terminalLootToBox.sqf"
 
 lootBody = {
 	params ["_target", "_player", "_params"];
