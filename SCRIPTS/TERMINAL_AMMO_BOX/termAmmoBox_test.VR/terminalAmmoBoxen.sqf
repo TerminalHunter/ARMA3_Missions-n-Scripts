@@ -1,33 +1,35 @@
 //REQUIRES CBA!
 
+/*
+  TODO:
+    Maybe a medic box?
+    If the box is empty, give an option to delete it.
+*/
+
 //SERVER INIT
 if (isServer) then {
   primaryAmmoBoxen = createHashMap;
   secondaryAmmoBoxen = createHashMap;
   handgunAmmoBoxen = createHashMap;
-  //why did I do this in the first place? couldn't this all be in the same hash?
-  //remember that you're dumb
+  //these three hashmaps should really just be one, right?
 
   // JIP HANDLER
   addMissionEventHandler ["PlayerConnected",
     {
       params ["_id", "_uid", "_name", "_jip", "_owner", "_idstr"];
       if (_jip) then {
-        //primary
         {
           [_y select 0] remoteExec ["removeAllActions", 0];
           [_y select 0, _y select 1, _y select 2, false] call initTerminalAmmoBox;
         } forEach primaryAmmoBoxen;
-        //secondary
         {
           [_y select 0] remoteExec ["removeAllActions", 0];
           [_y select 0, _y select 1, _y select 2, false] call initTerminalAmmoBox;
         } forEach secondaryAmmoBoxen;
-        //launcher
         {
           [_y select 0] remoteExec ["removeAllActions", 0];
           [_y select 0, _y select 1, _y select 2, false] call initTerminalAmmoBox;
-        } forEach launcherAmmoBoxen;
+        } forEach handgunAmmoBoxen;
       };
     }];
 };
@@ -64,8 +66,6 @@ EX: [boxOnMap, "PRIMARY", 100, true] call initTerminalAmmoBox;
       if (_firstInit) then {
         handgunAmmoBoxen set [str(_box), [_box, _type, _mags]];
       };
-      //arma behind the scenes uses handgun -- but my player base says secondary and side arm
-      //FUNNY HOW ARMA SAYS LAUNCHERS ARE SECONDARIES...
       [_box, ["Open Sidearm Ammo Box",{[_this select 0] call openHandgunBox},[],1.5,true,true,"","true",10,false,"",""]] remoteExec ["addAction", 0];
     };
     default {
@@ -119,6 +119,29 @@ magTakenFromBoxen = {
   };
 };
 
+queryBoxen = {
+  params ["_requester", "_boxen"];
+  private _primaryCheck = primaryAmmoBoxen get str(_boxen);
+  private _secondaryCheck = secondaryAmmoBoxen get str(_boxen);
+  private _handgunCheck = handgunAmmoBoxen get str(_boxen);
+  private "_hintString";
+  switch (true) do {
+    case (!isNil {_primaryCheck}): {
+      _hintString = str(primaryAmmoBoxen get str(_boxen) select 2) + " magazines remain";
+    };
+    case (!isNil {_secondaryCheck}): {
+      _hintString = str(secondaryAmmoBoxen get str(_boxen) select 2) + " magazines remain";
+    };
+    case (!isNil {_handgunCheck}): {
+      _hintString = str(handgunAmmoBoxen get str(_boxen) select 2) + " magazines remain";
+    };
+    default {
+      _hintString = "Odd error encountered. Let Terminal know something's weird."
+    };
+  };
+  [_hintString] remoteExec ["hint", _requester];
+};
+
 //
 //CLIENT FUNCTIONS
 //
@@ -142,6 +165,7 @@ openPrimaryBox = {
     _actionString = "Take " + getText(configfile >> "CfgMagazines" >> _x >> "displayName");
     _boxen addAction [_actionString,{[_this select 3 select 0, _this select 0] call takeMagazine;},[_x],1.5,true,true,"","true",10,false,"",""];
   } forEach _tempAmmoList;
+  [player, _boxen] remoteExec ["queryBoxen", 2];
 };
 
 closePrimaryBox = {
