@@ -51,7 +51,7 @@ railMap2 = [
   ["rail_tracke_40_f.p3d", "ATS_Tracks_A2_Elev_Straight_40"],
   ["rail_track_down_25_f.p3d", "ATS_Tracks_A2_Elev_Incline_Down_25"],
   ["rail_tracke_4_f.p3d", "ATS_Tracks_A3_Straight_3"], // FUCK! "ATS_Tracks_A3_Straight_3"
-  ["rail_tracke_turnoutl_f.p3d", "ATS_Tracks_A2_Elev_Split_Left"],
+  ["rail_tracke_turnoutl_f.p3d", "ATS_Tracks_A2_Elev_Split_Left"], //DOUBLE FUCK "ATS_Tracks_A2_Elev_Split_Left"
   ["rail_track_lb_re_f.p3d", "ATS_Tracks_A2_Elev_Straight_25"], //S-bend?
   ["rail_track_turnoutr_f.p3d", "ATS_Tracks_A2_Elev_Split_Right"],
   ["rail_track_l25_10_f.p3d", "ATS_Tracks_A2_Elev_Curve_Left_2"],
@@ -90,7 +90,7 @@ getMapRail = {
 _worldObjects = [];
   {
     _worldObjects pushBack [getPosASL _x, vectorUp _x, vectorDir _x, (getModelInfo _x) select 0];
-  } forEach nearestTerrainObjects [holyCombos,["RAILWAY"],7000,false];
+  } forEach nearestTerrainObjects [holyCombos,["RAILWAY"],6500,false];
   _worldObjects
 };
 
