@@ -8,22 +8,22 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=145;
+		nextID=187;
 	};
 	class MarkerIDProvider
 	{
-		nextID=2;
+		nextID=7;
 	};
 	class LayerIndexProvider
 	{
-		nextID=3;
+		nextID=15;
 	};
 	class Camera
 	{
-		pos[]={1273.283,149.15686,2474.6196};
-		dir[]={0.41065121,-0.51861787,-0.74993539};
-		up[]={0.24908635,0.85500574,-0.45488387};
-		aside[]={-0.87710917,2.1187589e-008,-0.48028979};
+		pos[]={3435.7778,234.36969,12513.07};
+		dir[]={0.89049423,-0.45303604,0.042185612};
+		up[]={0.4525288,0.89149189,0.021437773};
+		aside[]={0.047320221,4.0017767e-009,-0.99888033};
 	};
 };
 binarizationWanted=0;
@@ -32,17 +32,19 @@ addons[]=
 {
 	"A3_Characters_F",
 	"A3_Ui_F",
-	"ATS_Trains_A2Locomotive",
 	"ATS_Tracks_A2",
 	"ATS_Tracks_A3",
 	"easterEggBeerLabels2021",
-	"ATS_Trains_AE"
+	"A3_Modules_F",
+	"ATS_Trains_A2Locomotive",
+	"ATS_Trains_A2Wagons",
+	"A3_Soft_F_Gamma_Van_01"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=7;
+		items=9;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -59,28 +61,42 @@ class AddonsMetaData
 		};
 		class Item2
 		{
-			className="ATS_Trains_A2Locomotive";
-			name="ATS_Trains_A2Locomotive";
-		};
-		class Item3
-		{
 			className="ATS_Tracks_A2";
 			name="ATS_Tracks_A2";
 		};
-		class Item4
+		class Item3
 		{
 			className="ATS_Tracks_A3";
 			name="ATS_Tracks_A3";
 		};
-		class Item5
+		class Item4
 		{
 			className="easterEggBeerLabels2021";
 			name="easterEggBeerLabels2021";
 		};
+		class Item5
+		{
+			className="A3_Modules_F";
+			name="Arma 3 Alpha - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 		class Item6
 		{
-			className="ATS_Trains_AE";
-			name="ATS_Trains_AE";
+			className="ATS_Trains_A2Locomotive";
+			name="ATS_Trains_A2Locomotive";
+		};
+		class Item7
+		{
+			className="ATS_Trains_A2Wagons";
+			name="ATS_Trains_A2Wagons";
+		};
+		class Item8
+		{
+			className="A3_Soft_F_Gamma";
+			name="Arma 3 - Unarmored Land Vehicles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
 		};
 	};
 };
@@ -120,7 +136,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=8;
+		items=17;
 		class Item0
 		{
 			dataType="Group";
@@ -134,7 +150,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={3431.0447,219.96957,12499.991};
-						angles[]={0,0.60696357,-0};
+						angles[]={0,0.60696357,0};
 					};
 					side="West";
 					flags=7;
@@ -184,43 +200,30 @@ class Mission
 		class Item1
 		{
 			dataType="Marker";
-			position[]={3341.0623,220.17702,12492.413};
+			position[]={3341.062,220.177,12492.413};
 			name="marker_0";
-			text="SWITCHYARD";
+			text="LAST KNOWN LOCATION OF LOCOMOTIVES";
 			type="mil_objective";
+			colorName="ColorEAST";
 			id=9;
+			atlOffset=0.17750549;
 		};
 		class Item2
 		{
 			dataType="Marker";
-			position[]={1863.371,6.0679998,2173.1001};
+			position[]={1961.23,5.9299998,2169.408};
 			name="marker_1";
-			text="END";
+			text="MISSION END";
 			type="mil_end";
+			colorName="ColorWEST";
 			id=10;
-			atlOffset=0.00041627884;
+			atlOffset=-0.00040435791;
 		};
 		class Item3
 		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3449.0159,225.52167,12516.38};
-				angles[]={0,4.5030017,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-				name="prize2";
-			};
-			id=34;
-			type="ATS_Trains_A2Locomotive_Red";
-			atlOffset=3.2823792;
-		};
-		class Item4
-		{
 			dataType="Layer";
 			name="Hand-Placed Rails";
+			state=1;
 			class Entities
 			{
 				items=74;
@@ -236,7 +239,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						name="railHP01";
+						name="rail34";
 					};
 					id=36;
 					type="ATS_Tracks_A2_Elev_Straight_40";
@@ -254,7 +257,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						name="railHP02";
+						name="rail35";
 					};
 					id=40;
 					type="ATS_Tracks_A2_Elev_Straight_40";
@@ -272,7 +275,7 @@ class Mission
 					flags=4;
 					class Attributes
 					{
-						name="railHP03";
+						name="rail12";
 					};
 					id=44;
 					type="ATS_Tracks_A2_Elev_Incline_Down_40";
@@ -290,7 +293,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						name="railHP04";
+						name="rail66";
 					};
 					id=45;
 					type="ATS_Tracks_A3_Straight_10";
@@ -307,7 +310,7 @@ class Mission
 					side="Empty";
 					class Attributes
 					{
-						name="railHP05";
+						name="rail13";
 					};
 					id=47;
 					type="ATS_Tracks_A2_Elev_Incline_Down_40";
@@ -319,13 +322,13 @@ class Mission
 					class PositionInfo
 					{
 						position[]={691.36603,193.24362,8695.8408};
-						angles[]={0,2.7739916,-0};
+						angles[]={0,2.7739916,0};
 					};
 					side="Empty";
 					flags=1;
 					class Attributes
 					{
-						name="railHP06";
+						name="rail36";
 					};
 					id=50;
 					type="ATS_Tracks_A2_Elev_Straight_40";
@@ -343,7 +346,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						name="railHP07";
+						name="rail51";
 					};
 					id=51;
 					type="ATS_Tracks_A2_Straight_25";
@@ -354,18 +357,18 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={709.11505,193.91928,8649.6514};
-						angles[]={0,2.7715535,-0};
+						position[]={709.11499,193.91968,8649.6514};
+						angles[]={0,2.771548,0};
 					};
 					side="Empty";
 					flags=5;
 					class Attributes
 					{
-						name="railHP08";
+						name="rail67";
 					};
 					id=52;
 					type="ATS_Tracks_A3_Straight_10";
-					atlOffset=0.0010070801;
+					atlOffset=0.0014038086;
 				};
 				class Item8
 				{
@@ -379,7 +382,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						name="railHP09";
+						name="rail37";
 					};
 					id=53;
 					type="ATS_Tracks_A2_Elev_Straight_40";
@@ -397,7 +400,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						name="railHP11";
+						name="rail52";
 					};
 					id=57;
 					type="ATS_Tracks_A2_Straight_25";
@@ -409,13 +412,13 @@ class Mission
 					class PositionInfo
 					{
 						position[]={881.83002,180.21484,7762.9941};
-						angles[]={0,3.7594221,-0};
+						angles[]={0,3.7594221,0};
 					};
 					side="Empty";
 					flags=5;
 					class Attributes
 					{
-						name="railHP12";
+						name="rail53";
 					};
 					id=58;
 					type="ATS_Tracks_A2_Straight_25";
@@ -433,7 +436,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						name="railHP13";
+						name="rail54";
 					};
 					id=59;
 					type="ATS_Tracks_A2_Straight_25";
@@ -451,7 +454,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						name="railHP14";
+						name="rail55";
 					};
 					id=60;
 					type="ATS_Tracks_A2_Straight_25";
@@ -468,7 +471,7 @@ class Mission
 					side="Empty";
 					class Attributes
 					{
-						name="railHP18";
+						name="rail14";
 					};
 					id=65;
 					type="ATS_Tracks_A2_Elev_Incline_Down_40";
@@ -486,7 +489,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						name="railHP19";
+						name="rail32";
 					};
 					id=67;
 					type="ATS_Tracks_A2_Elev_Straight_25";
@@ -504,7 +507,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						name="railHP20";
+						name="rail38";
 					};
 					id=68;
 					type="ATS_Tracks_A2_Elev_Straight_40";
@@ -522,7 +525,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						name="railHP21";
+						name="rail69";
 					};
 					id=69;
 					type="ATS_Tracks_A3_Straight_3";
@@ -540,7 +543,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						name="railHP22";
+						name="rail70";
 					};
 					id=70;
 					type="ATS_Tracks_A3_Straight_3";
@@ -558,7 +561,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						name="railHP23";
+						name="rail71";
 					};
 					id=71;
 					type="ATS_Tracks_A3_Straight_3";
@@ -575,7 +578,7 @@ class Mission
 					side="Empty";
 					class Attributes
 					{
-						name="railHP24";
+						name="rail15";
 					};
 					id=73;
 					type="ATS_Tracks_A2_Elev_Incline_Down_40";
@@ -593,7 +596,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						name="railHP25";
+						name="rail68";
 					};
 					id=76;
 					type="ATS_Tracks_A3_Straight_10";
@@ -611,7 +614,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						name="railHP26";
+						name="rail45";
 					};
 					id=77;
 					type="ATS_Tracks_A2_Curve_Left_1";
@@ -629,7 +632,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						name="railHP27";
+						name="rail56";
 					};
 					id=79;
 					type="ATS_Tracks_A2_Straight_25";
@@ -647,7 +650,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						name="railHP28";
+						name="rail16";
 					};
 					id=80;
 					type="ATS_Tracks_A2_Elev_Incline_Down_40";
@@ -665,7 +668,7 @@ class Mission
 					flags=4;
 					class Attributes
 					{
-						name="railHP29";
+						name="rail57";
 					};
 					id=84;
 					type="ATS_Tracks_A2_Straight_25";
@@ -683,7 +686,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						name="railHP34";
+						name="rail58";
 					};
 					id=88;
 					type="ATS_Tracks_A2_Straight_25";
@@ -701,7 +704,7 @@ class Mission
 					flags=4;
 					class Attributes
 					{
-						name="railHP35";
+						name="rail59";
 					};
 					id=91;
 					type="ATS_Tracks_A2_Straight_25";
@@ -719,7 +722,7 @@ class Mission
 					flags=4;
 					class Attributes
 					{
-						name="railHP37";
+						name="rail60";
 					};
 					id=93;
 					type="ATS_Tracks_A2_Straight_25";
@@ -737,7 +740,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						name="railHP30";
+						name="rail47";
 					};
 					id=82;
 					type="ATS_Tracks_A2_Curve_Right_1";
@@ -755,7 +758,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						name="railHP36";
+						name="rail46";
 					};
 					id=89;
 					type="ATS_Tracks_A2_Curve_Left_1";
@@ -773,7 +776,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						name="railHP33";
+						name="rail40";
 					};
 					id=87;
 					type="ATS_Tracks_A2_Elev_Straight_40";
@@ -791,7 +794,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						name="railHP32";
+						name="rail39";
 					};
 					id=86;
 					type="ATS_Tracks_A2_Elev_Straight_40";
@@ -809,7 +812,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						name="railHP31";
+						name="rail17";
 					};
 					id=85;
 					type="ATS_Tracks_A2_Elev_Incline_Down_40";
@@ -827,7 +830,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						name="railHP41";
+						name="rail41";
 					};
 					id=94;
 					type="ATS_Tracks_A2_Elev_Straight_40";
@@ -845,7 +848,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						name="railHP40";
+						name="rail74";
 					};
 					id=95;
 					type="ATS_Tracks_A3_Straight_3";
@@ -863,7 +866,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						name="railHP39";
+						name="rail73";
 					};
 					id=96;
 					type="ATS_Tracks_A3_Straight_3";
@@ -874,18 +877,18 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1410.9652,167.12932,4992.5532};
-						angles[]={0,1.4437395,-0};
+						position[]={1410.965,167.12955,4992.5532};
+						angles[]={0,1.4437363,0};
 					};
 					side="Empty";
 					flags=5;
 					class Attributes
 					{
-						name="railHP23_1";
+						name="rail72";
 					};
 					id=97;
 					type="ATS_Tracks_A3_Straight_3";
-					atlOffset=0.044082642;
+					atlOffset=0.044326782;
 				};
 				class Item37
 				{
@@ -899,7 +902,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						name="railHP42";
+						name="rail18";
 					};
 					id=99;
 					type="ATS_Tracks_A2_Elev_Incline_Down_40";
@@ -917,7 +920,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						name="railHP43";
+						name="rail19";
 					};
 					id=100;
 					type="ATS_Tracks_A2_Elev_Incline_Down_40";
@@ -935,7 +938,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						name="railHP44";
+						name="rail20";
 					};
 					id=101;
 					type="ATS_Tracks_A2_Elev_Incline_Down_40";
@@ -953,7 +956,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						name="railHP45";
+						name="rail21";
 					};
 					id=102;
 					type="ATS_Tracks_A2_Elev_Incline_Down_40";
@@ -971,7 +974,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						name="railHP46";
+						name="rail22";
 					};
 					id=103;
 					type="ATS_Tracks_A2_Elev_Incline_Down_40";
@@ -989,7 +992,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						name="railHP47";
+						name="rail23";
 					};
 					id=104;
 					type="ATS_Tracks_A2_Elev_Incline_Down_40";
@@ -1007,7 +1010,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						name="railHP48";
+						name="rail24";
 					};
 					id=105;
 					type="ATS_Tracks_A2_Elev_Incline_Down_40";
@@ -1025,7 +1028,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						name="railHP49";
+						name="rail25";
 					};
 					id=106;
 					type="ATS_Tracks_A2_Elev_Incline_Down_40";
@@ -1043,7 +1046,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						name="railHP50";
+						name="rail26";
 					};
 					id=107;
 					type="ATS_Tracks_A2_Elev_Incline_Down_40";
@@ -1061,7 +1064,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						name="railHP51";
+						name="rail27";
 					};
 					id=108;
 					type="ATS_Tracks_A2_Elev_Incline_Down_40";
@@ -1079,7 +1082,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						name="railHP52";
+						name="rail28";
 					};
 					id=109;
 					type="ATS_Tracks_A2_Elev_Incline_Down_40";
@@ -1097,7 +1100,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						name="railHP53";
+						name="rail29";
 					};
 					id=98;
 					type="ATS_Tracks_A2_Elev_Incline_Down_40";
@@ -1115,7 +1118,7 @@ class Mission
 					flags=1;
 					class Attributes
 					{
-						name="railHP54";
+						name="rail61";
 					};
 					id=110;
 					type="ATS_Tracks_A2_Straight_25";
@@ -1126,412 +1129,435 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={609.19006,63.61755,3889.0698};
-						angles[]={6.2448301,3.1483784,0.00025927369};
+						position[]={609.19,63.617161,3889.0701};
+						angles[]={6.244823,3.1483822,0.00026179937};
 					};
 					side="Empty";
 					flags=5;
 					class Attributes
 					{
+						name="rail1";
 					};
 					id=111;
 					type="ATS_Tracks_A2_Elev_Incline_Down_40";
-					atlOffset=0.19341278;
+					atlOffset=0.19299698;
 				};
 				class Item51
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={614.05402,59.330986,3785.6028};
-						angles[]={6.257062,2.8439481,6.2751727};
+						position[]={614.05402,59.331074,3785.603};
+						angles[]={6.2570577,2.8439441,6.2751741};
 					};
 					side="Empty";
 					flags=1;
 					class Attributes
 					{
+						name="rail2";
 					};
 					id=128;
 					type="ATS_Tracks_A2_Elev_Incline_Down_40";
-					atlOffset=0.42891693;
+					atlOffset=0.42900085;
 				};
 				class Item52
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={628.90845,57.661678,3748.8853};
-						angles[]={6.2587204,2.6799974,6.2710161};
+						position[]={628.90802,57.66164,3748.885};
+						angles[]={6.2587156,2.6800053,6.2710204};
 					};
 					side="Empty";
 					flags=5;
 					class Attributes
 					{
+						name="rail3";
 					};
 					id=129;
 					type="ATS_Tracks_A2_Elev_Incline_Down_40";
-					atlOffset=0.059036255;
+					atlOffset=0.058994293;
 				};
 				class Item53
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={614.05402,59.330986,3785.6028};
-						angles[]={6.257062,2.8439481,6.2751727};
+						position[]={614.05402,59.331074,3785.603};
+						angles[]={6.2570577,2.8439441,6.2751741};
 					};
 					side="Empty";
 					flags=1;
 					class Attributes
 					{
+						name="rail4";
 					};
 					id=130;
 					type="ATS_Tracks_A2_Elev_Incline_Down_40";
-					atlOffset=0.42891693;
+					atlOffset=0.42900085;
 				};
 				class Item54
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={646.50964,55.697891,3713.5149};
-						angles[]={6.2468266,2.6801772,6.2651029};
+						position[]={646.51001,55.697754,3713.5149};
+						angles[]={6.24683,2.6801801,6.2651033};
 					};
 					side="Empty";
 					flags=1;
 					class Attributes
 					{
+						name="rail5";
 					};
 					id=131;
 					type="ATS_Tracks_A2_Elev_Incline_Down_40";
-					atlOffset=0.33413696;
+					atlOffset=0.33399963;
 				};
 				class Item55
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={663.00836,53.086063,3676.8933};
-						angles[]={6.2341466,2.7623947,6.2636328};
+						position[]={663.008,53.08572,3676.8931};
+						angles[]={6.2341413,2.7624025,6.2636375};
 					};
 					side="Empty";
 					flags=1;
 					class Attributes
 					{
+						name="rail6";
 					};
 					id=132;
 					type="ATS_Tracks_A2_Elev_Incline_Down_40";
-					atlOffset=0.36632919;
+					atlOffset=0.36599731;
 				};
 				class Item56
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={678.01111,50.407795,3639.8574};
-						angles[]={6.2345142,2.7440209,6.2627344};
+						position[]={678.01099,50.407448,3639.8569};
+						angles[]={6.234508,2.744024,6.2627301};
 					};
 					side="Empty";
 					flags=1;
 					class Attributes
 					{
+						name="rail7";
 					};
 					id=133;
 					type="ATS_Tracks_A2_Elev_Incline_Down_40";
-					atlOffset=0.61829376;
+					atlOffset=0.61799622;
 				};
 				class Item57
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={737.0426,40.933495,3498.5085};
-						angles[]={6.2385292,2.7374272,6.264081};
+						position[]={737.04303,40.933025,3498.509};
+						angles[]={6.2385225,2.7374268,6.2640738};
 					};
 					side="Empty";
 					flags=5;
 					class Attributes
 					{
+						name="rail8";
 					};
 					id=134;
 					type="ATS_Tracks_A2_Elev_Incline_Down_40";
-					atlOffset=0.21146011;
+					atlOffset=0.21100235;
 				};
 				class Item58
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={693.33838,47.813232,3603.4092};
-						angles[]={6.234427,2.748311,6.2629437};
+						position[]={693.33801,47.813587,3603.4089};
+						angles[]={6.2344208,2.7483175,6.2629395};
 					};
 					side="Empty";
 					flags=1;
 					class Attributes
 					{
+						name="rail9";
 					};
 					id=135;
 					type="ATS_Tracks_A2_Elev_Incline_Down_40";
-					atlOffset=0.47564697;
+					atlOffset=0.47600174;
 				};
 				class Item59
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={708.27869,45.329845,3567.1826};
-						angles[]={6.234427,2.748311,6.2629437};
+						position[]={708.27899,45.329903,3567.1831};
+						angles[]={6.2344208,2.7483175,6.2629395};
 					};
 					side="Empty";
 					flags=5;
 					class Attributes
 					{
+						name="rail10";
 					};
 					id=136;
 					type="ATS_Tracks_A2_Elev_Incline_Down_40";
-					atlOffset=0.22899246;
+					atlOffset=0.22900009;
 				};
 				class Item60
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={721.49323,43.336571,3535.3181};
-						angles[]={6.2383251,2.7482347,6.2645645};
+						position[]={721.49298,43.336433,3535.3181};
+						angles[]={6.2383304,2.7482305,6.2645626};
 					};
 					side="Empty";
 					flags=1;
 					class Attributes
 					{
+						name="rail11";
 					};
 					id=137;
 					type="ATS_Tracks_A2_Elev_Incline_Down_40";
-					atlOffset=0.31813812;
+					atlOffset=0.31799698;
 				};
 				class Item61
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1333.7709,6.0005865,2365.3921};
-						angles[]={0,2.7162795,-0};
+						position[]={1333.771,6.0008035,2365.3921};
+						angles[]={0,2.7162733,0};
 					};
 					side="Empty";
 					class Attributes
 					{
+						name="rail42";
 					};
 					id=115;
 					type="ATS_Tracks_A2_Curve_Left_1";
-					atlOffset=0.37978554;
+					atlOffset=0.38000059;
 				};
 				class Item62
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={761.66833,37.851105,3446.8843};
-						angles[]={6.2418342,2.6138809,6.2590685};
+						position[]={761.66803,37.851299,3446.884};
+						angles[]={6.2418385,2.6138749,6.2590652};
 					};
 					side="Empty";
 					flags=1;
 					class Attributes
 					{
+						name="rail43";
 					};
 					id=139;
 					type="ATS_Tracks_A2_Curve_Left_1";
-					atlOffset=0.57081985;
+					atlOffset=0.57099915;
 				};
 				class Item63
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={775.54419,36.569824,3427.0479};
-						angles[]={6.2458844,2.4644701,6.253181};
+						position[]={775.54401,36.570259,3427.0481};
+						angles[]={6.2458878,2.4644747,6.2531834};
 					};
 					side="Empty";
 					flags=1;
 					class Attributes
 					{
+						name="rail44";
 					};
 					id=140;
 					type="ATS_Tracks_A2_Curve_Left_1";
-					atlOffset=0.75358582;
+					atlOffset=0.75400162;
 				};
 				class Item64
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={608.50226,62.393471,3856.5144};
-						angles[]={6.244029,3.1785762,0.0014507603};
+						position[]={608.50201,62.393761,3856.5139};
+						angles[]={6.2440372,3.1785762,0.0014486233};
 					};
 					side="Empty";
 					flags=5;
 					class Attributes
 					{
+						name="rail48";
 					};
 					id=112;
 					type="ATS_Tracks_A2_Straight_25";
-					atlOffset=1.5258789e-005;
+					atlOffset=0.00032043457;
 				};
 				class Item65
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1324.5448,5.9951148,2388.3909};
-						angles[]={0,2.805069,-0};
+						position[]={1324.545,5.9950299,2388.3911};
+						angles[]={0,2.8050756,0};
 					};
 					side="Empty";
 					flags=5;
 					class Attributes
 					{
+						name="rail49";
 					};
 					id=116;
 					type="ATS_Tracks_A2_Straight_25";
-					atlOffset=0.1335144;
+					atlOffset=0.13343143;
 				};
 				class Item66
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={918.78076,181.25327,7816.2407};
-						angles[]={6.2755084,3.7191131,0.0050072605};
+						position[]={918.78101,181.25339,7816.2412};
+						angles[]={6.2755055,3.7191048,0.0050090947};
 					};
 					side="Empty";
 					flags=1;
 					class Attributes
 					{
+						name="rail50";
 					};
 					id=122;
 					type="ATS_Tracks_A2_Straight_25";
-					atlOffset=0.26965332;
+					atlOffset=0.26971436;
 				};
 				class Item67
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1341.1936,6.3809066,2351.0093};
-						angles[]={0,5.6166444,-0};
+						position[]={1341.194,6.3806419,2351.009};
+						angles[]={0,5.6166444,0};
 					};
 					side="Empty";
 					flags=1;
 					class Attributes
 					{
+						name="rail62";
 					};
 					id=117;
 					type="ATS_Tracks_A3_Curve_7";
-					atlOffset=0.26025581;
+					atlOffset=0.25999928;
 				};
 				class Item68
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={909.79224,181.03392,7802.1128};
-						angles[]={0,3.7484543,-0};
+						position[]={909.79199,181.03391,7802.1128};
+						angles[]={0,3.748461,0};
 					};
 					side="Empty";
 					flags=5;
 					class Attributes
 					{
+						name="rail63";
 					};
 					id=125;
 					type="ATS_Tracks_A3_Straight_10";
-					atlOffset=0.10754395;
+					atlOffset=0.10752869;
 				};
 				class Item69
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={905.22729,180.8976,7795.7246};
-						angles[]={0,3.7858682,-0};
+						position[]={905.22699,180.89758,7795.7251};
+						angles[]={0,3.7858634,0};
 					};
 					side="Empty";
 					flags=5;
 					class Attributes
 					{
+						name="rail64";
 					};
 					id=126;
 					type="ATS_Tracks_A3_Straight_10";
-					atlOffset=1.5258789e-005;
 				};
 				class Item70
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={786.76636,36.528336,3413.7759};
-						angles[]={0,2.4239674,-0};
+						position[]={786.76599,36.527893,3413.7759};
+						angles[]={0,2.4239655,0};
 					};
 					side="Empty";
 					flags=1;
 					class Attributes
 					{
+						name="rail65";
 					};
 					id=141;
 					type="ATS_Tracks_A3_Straight_10";
-					atlOffset=0.42603302;
+					atlOffset=0.42557907;
 				};
 				class Item71
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={608.03632,60.766712,3824.2085};
-						angles[]={6.250515,0,-0};
+						position[]={608.03601,60.766735,3824.208};
+						angles[]={6.2505126,0,0};
 					};
 					side="Empty";
 					flags=5;
 					class Attributes
 					{
+						name="rail30";
 					};
 					id=127;
 					type="ATS_Tracks_A2_Elev_Incline_Up_40";
-					atlOffset=0.18891907;
+					atlOffset=0.18899918;
 				};
 				class Item72
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={750.17084,38.979076,3468.9998};
-						angles[]={6.2282948,2.7084253,6.2577744};
+						position[]={750.17102,38.979427,3469};
+						angles[]={6.2282948,2.7084193,6.2577734};
 					};
 					side="Empty";
 					flags=5;
 					class Attributes
 					{
+						name="rail31";
 					};
 					id=138;
 					type="ATS_Tracks_A2_Elev_Straight_25";
-					atlOffset=-0.058353424;
+					atlOffset=-0.057998657;
 				};
 				class Item73
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1210.5217,7.6652136,2608.4058};
+						position[]={1210.522,7.6652136,2608.406};
 						angles[]={0,5.7590804,0};
 					};
 					side="Empty";
 					flags=4;
 					class Attributes
 					{
+						name="rail33";
 					};
 					id=119;
 					type="ATS_Tracks_A2_Elev_Straight_40";
 				};
 			};
 			id=48;
-			atlOffset=-13.213745;
+			atlOffset=-13.213734;
 		};
-		class Item5
+		class Item4
 		{
 			dataType="Layer";
 			name="Debug Objects";
@@ -1561,133 +1587,270 @@ class Mission
 			id=49;
 			atlOffset=-6.1035156e-005;
 		};
+		class Item5
+		{
+			dataType="Marker";
+			position[]={3336.2261,272.056,11947.956};
+			name="marker_2";
+			text="MISSION START";
+			type="mil_start";
+			colorName="ColorWEST";
+			id=145;
+			atlOffset=3.0517578e-005;
+		};
 		class Item6
 		{
-			dataType="Layer";
-			name="Test Track";
-			state=1;
-			class Entities
-			{
-				items=6;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={3419.6179,236.67159,12713.573};
-						angles[]={0,4.4922819,0};
-					};
-					side="Empty";
-					flags=1;
-					class Attributes
-					{
-					};
-					id=28;
-					type="ATS_Tracks_A2_Elev_Straight_40";
-					atlOffset=34.09317;
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={3341.7268,236.66275,12696.147};
-						angles[]={0,4.4922819,0};
-					};
-					side="Empty";
-					flags=1;
-					class Attributes
-					{
-					};
-					id=29;
-					type="ATS_Tracks_A2_Elev_Straight_40";
-					atlOffset=35.380188;
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={3380.6658,236.66896,12704.861};
-						angles[]={0,4.4922819,0};
-					};
-					side="Empty";
-					flags=1;
-					class Attributes
-					{
-					};
-					id=30;
-					type="ATS_Tracks_A2_Elev_Straight_40";
-					atlOffset=32.031647;
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={3420.6914,240.06956,12713.754};
-						angles[]={0,4.4873152,0};
-					};
-					side="Empty";
-					class Attributes
-					{
-					};
-					id=31;
-					type="ATS_Trains_A2Locomotive_Red";
-					atlOffset=0.50502014;
-				};
-				class Item4
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={3437.1379,238.11763,12717.518};
-						angles[]={0,4.503438,0};
-					};
-					side="Empty";
-					flags=5;
-					class Attributes
-					{
-					};
-					id=32;
-					type="ATS_Tracks_A2_Iron_End";
-				};
-				class Item5
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={3324.2468,238.1088,12692.239};
-						angles[]={0,1.3666717,0};
-					};
-					side="Empty";
-					flags=5;
-					class Attributes
-					{
-					};
-					id=33;
-					type="ATS_Tracks_A2_Iron_End";
-				};
-			};
-			id=54;
-			atlOffset=34.570572;
+			dataType="Marker";
+			position[]={20000.033,0,9936.0059};
+			name="marker_4";
+			markerType="RECTANGLE";
+			type="";
+			fillName="SolidFull";
+			a=15000;
+			b=20000;
+			id=147;
+			atlOffset=178.19087;
 		};
 		class Item7
+		{
+			dataType="Marker";
+			position[]={2996.4014,0,1208.1536};
+			name="marker_5";
+			text="U.S. MARINE LANDING IN PROGRESS";
+			type="mil_arrow2";
+			colorName="ColorWEST";
+			id=148;
+			atlOffset=15.751339;
+		};
+		class Item8
+		{
+			dataType="Marker";
+			position[]={3001.3811,0,1909.4771};
+			name="marker_6";
+			markerType="ELLIPSE";
+			type="";
+			colorName="ColorWEST";
+			fillName="FDiagonal";
+			a=2000;
+			b=600;
+			id=150;
+			atlOffset=3.2523265;
+		};
+		class Item9
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={3529.7224,220.00175,12556.703};
+			};
+			areaSize[]={5,-1,5};
+			flags=1;
+			id=168;
+			type="ModuleHideTerrainObjects_F";
+			atlOffset=0.10188293;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item10
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={3568.9419,219.9646,12565.387};
+				angles[]={0.0053265258,0,0};
+			};
+			areaSize[]={3,0,3};
+			flags=1;
+			id=169;
+			type="ModuleHideTerrainObjects_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item11
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3429.8564,223.298,12512.621};
-				angles[]={0,4.5117636,6.2824869};
+				position[]={3429.6365,223.13994,12512.438};
+				angles[]={0,4.4958987,0};
 			};
 			side="Empty";
 			class Attributes
 			{
-				name="prize";
+				name="prize1";
 			};
-			id=142;
-			type="ATS_Trains_AE_Engine";
-			atlOffset=1.0514526;
+			id=173;
+			type="ATS_Trains_A2Locomotive_Red";
+			atlOffset=0.92518616;
+		};
+		class Item12
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3445.2708,224.18802,12516.04};
+				angles[]={0,4.5136309,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="prize2";
+			};
+			id=178;
+			type="ATS_Trains_A2Wagon_Flat";
+			atlOffset=1.0879059;
+		};
+		class Item13
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3463.7427,224.60786,12519.793};
+				angles[]={0,4.5060034,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="prize3";
+			};
+			id=180;
+			type="ATS_Trains_A2Wagon_Flat";
+			atlOffset=1.4581451;
+		};
+		class Item14
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3479.9294,223.33102,12523.143};
+				angles[]={0,1.3488952,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="prize4";
+			};
+			id=181;
+			type="ATS_Trains_A2Locomotive_Blue";
+			atlOffset=1.0269928;
+		};
+		class Item15
+		{
+			dataType="Marker";
+			position[]={-8998.6328,283.591,9961.5479};
+			name="marker_7";
+			markerType="RECTANGLE";
+			type="";
+			fillName="SolidFull";
+			a=9000;
+			b=20000;
+			id=183;
+			atlOffset=-0.0002746582;
+		};
+		class Item16
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3467.6306,221.85928,12512.549};
+				angles[]={6.2805333,1.3785135,0.0080009829};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				fuel=0;
+				name="testTruck";
+			};
+			id=185;
+			type="C_Van_01_transport_F";
+			atlOffset=-0.0001373291;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[[[""FirstAidKit""],[2]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
 		};
 	};
 };
