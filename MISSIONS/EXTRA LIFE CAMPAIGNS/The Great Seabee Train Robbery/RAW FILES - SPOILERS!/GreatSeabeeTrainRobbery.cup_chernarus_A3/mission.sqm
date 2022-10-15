@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=187;
+		nextID=206;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=15;
+		nextID=17;
 	};
 	class Camera
 	{
-		pos[]={3435.7778,234.36969,12513.07};
-		dir[]={0.89049423,-0.45303604,0.042185612};
-		up[]={0.4525288,0.89149189,0.021437773};
-		aside[]={0.047320221,4.0017767e-009,-0.99888033};
+		pos[]={3370.6853,235.59076,12495.926};
+		dir[]={0.9246015,-0.37277859,0.078410648};
+		up[]={0.37144527,0.92792028,0.031500343};
+		aside[]={0.084501483,0,-0.9964233};
 	};
 };
 binarizationWanted=0;
@@ -37,8 +37,8 @@ addons[]=
 	"easterEggBeerLabels2021",
 	"A3_Modules_F",
 	"ATS_Trains_A2Locomotive",
-	"ATS_Trains_A2Wagons",
-	"A3_Soft_F_Gamma_Van_01"
+	"po_factions_eu",
+	"ATS_Trains_A2Wagons"
 };
 class AddonsMetaData
 {
@@ -88,21 +88,21 @@ class AddonsMetaData
 		};
 		class Item7
 		{
-			className="ATS_Trains_A2Wagons";
-			name="ATS_Trains_A2Wagons";
+			className="po_factions_eu";
+			name="po_factions_eu";
+			author="Leight, Keeway";
 		};
 		class Item8
 		{
-			className="A3_Soft_F_Gamma";
-			name="Arma 3 - Unarmored Land Vehicles";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
+			className="ATS_Trains_A2Wagons";
+			name="ATS_Trains_A2Wagons";
 		};
 	};
 };
 dlcs[]=
 {
-	"Expansion"
+	"Expansion",
+	"LOP_LeightsOPFOR"
 };
 randomSeed=5355579;
 class ScenarioData
@@ -136,7 +136,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=17;
+		items=18;
 		class Item0
 		{
 			dataType="Group";
@@ -1741,57 +1741,6 @@ class Mission
 		};
 		class Item12
 		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3445.2708,224.18802,12516.04};
-				angles[]={0,4.5136309,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-				name="prize2";
-			};
-			id=178;
-			type="ATS_Trains_A2Wagon_Flat";
-			atlOffset=1.0879059;
-		};
-		class Item13
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3463.7427,224.60786,12519.793};
-				angles[]={0,4.5060034,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-				name="prize3";
-			};
-			id=180;
-			type="ATS_Trains_A2Wagon_Flat";
-			atlOffset=1.4581451;
-		};
-		class Item14
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3479.9294,223.33102,12523.143};
-				angles[]={0,1.3488952,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-				name="prize4";
-			};
-			id=181;
-			type="ATS_Trains_A2Locomotive_Blue";
-			atlOffset=1.0269928;
-		};
-		class Item15
-		{
 			dataType="Marker";
 			position[]={-8998.6328,283.591,9961.5479};
 			name="marker_7";
@@ -1803,53 +1752,373 @@ class Mission
 			id=183;
 			atlOffset=-0.0002746582;
 		};
-		class Item16
+		class Item13
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3467.6306,221.85928,12512.549};
-				angles[]={6.2805333,1.3785135,0.0080009829};
+				position[]={3443.4709,221.18031,12503.081};
+				angles[]={-0,4.5158129,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 				fuel=0;
-				name="testTruck";
+				name="testTruck1";
 			};
-			id=185;
-			type="C_Van_01_transport_F";
-			atlOffset=-0.0001373291;
+			id=188;
+			type="LOP_NK_UAZ_Open";
+			atlOffset=0.0004119873;
 			class CustomAttributes
 			{
 				class Attribute0
 				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					property="rhs_decalArmy_type";
+					expression="_this setVariable ['rhs_decalArmy_type', _value];";
 					class Value
 					{
 						class data
 						{
 							singleType="STRING";
-							value="[[[[""FirstAidKit""],[2]],[[],[]],[[],[]],[[],[]]],false]";
+							value="Army";
 						};
 					};
 				};
 				class Attribute1
 				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
+					property="rhs_decalNumber_type";
+					expression="_this setVariable ['rhs_decalNumber_type', _value];[_this,[['Number', cDecals4CarsNumberPlaces, _value]]] call rhs_fnc_decalsInit";
 					class Value
 					{
 						class data
 						{
-							singleType="BOOL";
-							value=0;
+							singleType="STRING";
+							value="Default";
 						};
 					};
 				};
-				nAttributes=2;
+				class Attribute2
+				{
+					property="rhs_decalArmy";
+					expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cDecalsCarsRightArmyPlaces,  _this getVariable ['rhs_decalArmy_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="-1";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="rhs_decalPlatoon_type";
+					expression="_this setVariable ['rhs_decalPlatoon_type', _value];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="Army";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="rhs_decalPlatoon";
+					expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cDecalsCarsRightPlatoonPlaces,  _this getVariable ['rhs_decalPlatoon_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="-1";
+						};
+					};
+				};
+				nAttributes=5;
+			};
+		};
+		class Item14
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3395.9709,221.22417,12495.98};
+				angles[]={-0,4.4505024,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				fuel=0;
+				name="testTurret1";
+			};
+			id=198;
+			type="LOP_NK_UAZ_DshKM";
+			atlOffset=0.044998169;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="rhs_decalArmy_type";
+					expression="_this setVariable ['rhs_decalArmy_type', _value];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="Army";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="rhs_decalNumber_type";
+					expression="_this setVariable ['rhs_decalNumber_type', _value];[_this,[['Number', cDecals4CarsNumberPlaces, _value]]] call rhs_fnc_decalsInit";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="Default";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="rhs_decalArmy";
+					expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cDecalsCarsRightArmyPlaces,  _this getVariable ['rhs_decalArmy_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="-1";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="rhs_decalPlatoon_type";
+					expression="_this setVariable ['rhs_decalPlatoon_type', _value];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="Army";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="rhs_decalPlatoon";
+					expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cDecalsCarsRightPlatoonPlaces,  _this getVariable ['rhs_decalPlatoon_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="-1";
+						};
+					};
+				};
+				nAttributes=5;
+			};
+		};
+		class Item15
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3444.1401,222.30792,12515.769};
+				angles[]={0,4.5136309,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="prize2";
+			};
+			id=202;
+			type="ATS_Trains_A2Wagon_Box";
+			atlOffset=0.3412323;
+		};
+		class Item16
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3416.637,221.11816,12498.47};
+				angles[]={-0,4.4505024,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				fuel=0;
+				name="testTurret2";
+			};
+			id=204;
+			type="LOP_NK_UAZ_DshKM";
+			atlOffset=0.039001465;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="rhs_decalArmy_type";
+					expression="_this setVariable ['rhs_decalArmy_type', _value];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="Army";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="rhs_decalNumber_type";
+					expression="_this setVariable ['rhs_decalNumber_type', _value];[_this,[['Number', cDecals4CarsNumberPlaces, _value]]] call rhs_fnc_decalsInit";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="Default";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="rhs_decalArmy";
+					expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cDecalsCarsRightArmyPlaces,  _this getVariable ['rhs_decalArmy_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="-1";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="rhs_decalPlatoon_type";
+					expression="_this setVariable ['rhs_decalPlatoon_type', _value];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="Army";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="rhs_decalPlatoon";
+					expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cDecalsCarsRightPlatoonPlaces,  _this getVariable ['rhs_decalPlatoon_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="-1";
+						};
+					};
+				};
+				nAttributes=5;
+			};
+		};
+		class Item17
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3390.72,221.29057,12491.392};
+				angles[]={-0,4.5158129,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				fuel=0;
+				name="testTruck2";
+			};
+			id=205;
+			type="LOP_NK_UAZ_Open";
+			atlOffset=0.044998169;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="rhs_decalArmy_type";
+					expression="_this setVariable ['rhs_decalArmy_type', _value];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="Army";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="rhs_decalNumber_type";
+					expression="_this setVariable ['rhs_decalNumber_type', _value];[_this,[['Number', cDecals4CarsNumberPlaces, _value]]] call rhs_fnc_decalsInit";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="Default";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="rhs_decalArmy";
+					expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cDecalsCarsRightArmyPlaces,  _this getVariable ['rhs_decalArmy_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="-1";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="rhs_decalPlatoon_type";
+					expression="_this setVariable ['rhs_decalPlatoon_type', _value];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="Army";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="rhs_decalPlatoon";
+					expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cDecalsCarsRightPlatoonPlaces,  _this getVariable ['rhs_decalPlatoon_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="-1";
+						};
+					};
+				};
+				nAttributes=5;
 			};
 		};
 	};

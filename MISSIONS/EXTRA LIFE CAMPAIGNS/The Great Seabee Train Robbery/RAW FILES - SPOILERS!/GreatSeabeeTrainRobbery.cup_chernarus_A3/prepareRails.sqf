@@ -32,14 +32,7 @@ railMap2 = [
   ["rail_tracke_8nolc_f.p3d", "ATS_Tracks_A3_Straight_10"] // FUCK! "ATS_Tracks_A3_Straight_10"
 ];
 
-//DEBUG FUNCTION
-getMapRailNamesUnique = {
-  _worldObjects = [];
-    {
-      _worldObjects pushBackUnique [str _x];
-    } forEach nearestTerrainObjects [holyCombos,["RAILWAY"],worldSize*2,false];
-    _worldObjects
-};
+
 
 /*
 Holds data as: [position, vector up, vector dir, string]
@@ -60,23 +53,12 @@ hideRails = {
   };
 };
 
-prepCar = {
-  private "_trainCar";
-  _nearby = nearestObjects [testTruck, [], 10];
-  {
-    if (((getModelInfo _x) select 0) == "wagon_flat.p3d" && vehicleVarName _x == "") then {
-      _trainCar = _x;
-    };
-  } forEach _nearby;
-  testTruck attachTo [_trainCar, [0,0,0.5]];
-};
-
 if (isServer) then {
 
   prize1 enableSimulation false;
   prize2 enableSimulation false;
-  prize3 enableSimulation false;
-  prize4 enableSimulation false;
+  //prize3 enableSimulation false;
+  //prize4 enableSimulation false;
 
   railHashMap = createHashMapFromArray railMap2;
 
@@ -96,7 +78,17 @@ if (isServer) then {
 
   prize1 enableSimulation true;
   prize2 enableSimulation true;
-  prize3 enableSimulation true;
-  prize4 enableSimulation true;
+  //prize3 enableSimulation true;
+  //prize4 enableSimulation true;
 
+};
+
+
+//DEBUG FUNCTION
+getMapRailNamesUnique = {
+  _worldObjects = [];
+    {
+      _worldObjects pushBackUnique [str _x];
+    } forEach nearestTerrainObjects [holyCombos,["RAILWAY"],worldSize*2,false];
+    _worldObjects
 };
