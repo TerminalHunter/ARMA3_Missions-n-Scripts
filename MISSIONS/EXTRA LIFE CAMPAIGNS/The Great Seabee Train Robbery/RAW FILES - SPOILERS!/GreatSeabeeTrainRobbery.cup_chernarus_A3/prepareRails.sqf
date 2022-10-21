@@ -36,12 +36,13 @@ railMap2 = [
 
 /*
 Holds data as: [position, vector up, vector dir, string]
+holyCombos is a debug object placed off-map
 */
 getMapRail = {
 _worldObjects = [];
   {
     _worldObjects pushBack [getPosASL _x, vectorUp _x, vectorDir _x, (getModelInfo _x) select 0];
-  } forEach nearestTerrainObjects [holyCombos,["RAILWAY"],6500,false];
+  } forEach nearestTerrainObjects [holyCombos,["RAILWAY"],7000,false];
   _worldObjects
 };
 
@@ -57,8 +58,8 @@ if (isServer) then {
 
   prize1 enableSimulation false;
   prize2 enableSimulation false;
-  //prize3 enableSimulation false;
-  //prize4 enableSimulation false;
+  prize3 enableSimulation false;
+  prize4 enableSimulation false;
 
   railHashMap = createHashMapFromArray railMap2;
 
@@ -78,8 +79,8 @@ if (isServer) then {
 
   prize1 enableSimulation true;
   prize2 enableSimulation true;
-  //prize3 enableSimulation true;
-  //prize4 enableSimulation true;
+  prize3 enableSimulation true;
+  prize4 enableSimulation true;
 
 };
 

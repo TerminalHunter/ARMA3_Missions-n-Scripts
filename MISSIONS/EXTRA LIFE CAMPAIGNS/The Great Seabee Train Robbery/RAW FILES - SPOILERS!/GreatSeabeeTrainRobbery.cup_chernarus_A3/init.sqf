@@ -1,37 +1,13 @@
 #include "prepareRails.sqf"
 
+[{str(_this select 0) == "conductor"},"You don't know how to drive a train"] call ATRAIN_fnc_setTrainDriveCondition;
+
+[{false},"There's no room inside to ride"] call ATRAIN_fnc_setTrainRideCondition;
+
 /*
-YOU MUST -- GLOBAL EXEC : [] call hideRails; -- AFTER ALL THE RAILS LOAD!
+YOU MUST -- GLOBAL EXEC : [] call hideRails; -- AFTER ALL THE RAILS LOAD AND AFTER GETTING IN THE TRAIN ONCE TO INIT!
+
+KNOWN BUGS:
+  Train floats above rails. Train occasionally slides a bit off the rails. Safe zone is off the gravel.
+  Players climbing on train might get stuck.
 */
-
-TEST_TRAINCAR = objNull;
-TEST_VIC = testTruck1;
-
-prepCar = {
-  private "_locomotive";
-  private "_trainCar";
-  private "_newTruck";
-  private "_nearby";
-  _nearby = nearestObjects [testTruck1, [], 100];
-  {
-    if (((getModelInfo _x) select 0) == "wagon_box.p3d" && vehicleVarName _x == "") then {
-      _trainCar = _x;
-    };
-    if (((getModelInfo _x) select 0) == "a2_locomotive.p3d" && vehicleVarName _x == "") then {
-      _locomotive = _x;
-    };
-  } forEach _nearby;
-
-
-  testTruck1 attachTo [_trainCar, [2.05,3,0]];
-  testTruck2 attachTo [_trainCar, [-2.05,3,0]];
-  testTurret1 attachTo [_trainCar, [2.05,-3,0]];
-  testTurret2 attachTo [_trainCar, [-2.05,-3,0]];
-
-  TEST_TRAINCAR = _trainCar;
-
-  //testTruck disableCollisionWith _trainCar;
-  //testTruck disableCollisionWith _locomotive;
-
-  _trainCar
-};
