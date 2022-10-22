@@ -104,9 +104,22 @@ beerBoxAction = ["Crack Open A Cold One", takeAShot,
 	""
 ];
 
+beerBoxActionPlayer = ["Crack Open A Cold One (From Your Pocket)", takeAShot,
+	nil,
+	10,
+	true,
+	true,
+	"",
+	"true",
+	5,
+	false,
+	"",
+	""
+];
+
 drinkingAndDriving = ["Take 'A Few' For The Road", {
 		params ["_target", "_caller", "_actionId", "_arguments"];
-		_caller addAction beerBoxAction;
+		_caller addAction beerBoxActionPlayer;
 	},
 	nil,
 	0.5,

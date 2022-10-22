@@ -1,62 +1,72 @@
 #include "prepareRails.sqf"
 #include "canCode.sqf"
+#include "autodoc.sqf"
+#include "ammoBoxen.sqf"
 
 [{str(_this select 0) == "conductor"},"You don't know how to drive a train"] call ATRAIN_fnc_setTrainDriveCondition;
 
 [{false},"There's no room inside to ride"] call ATRAIN_fnc_setTrainRideCondition;
 
 /*
-YOU MUST -- GLOBAL EXEC : [] call hideRails; -- AFTER ALL THE RAILS LOAD AND AFTER GETTING IN THE TRAIN ONCE TO INIT!
-
-AFTER THIS - [] remoteExec ["prepcar",0,true]; -- ON THE SERVER!!!
-
 KNOWN BUGS:
   Train floats above rails. Train occasionally slides a bit off the rails. Safe zone is off the gravel.
   Players climbing on train might get stuck.
 */
 
-
-
-
 /*
-THE TRAIN CAR HAS 3 THINGS:
-Beer!
-Ammo!
-Autodoc!
+FUNCTIONS
 */
 
-GLOBAL_VAR_TRAINCAR = objNull;
+grabNewAmmoBoxP = {
+  _newBox = "land_fow_German_Ammo_Crate_2" createVehicle (getPos player);
+  [_newBox, "PRIMARY", 15, true] call initTerminalAmmoBox;
+  _newBox setPosATL (getPosATL player);
+  [_newBox, true] call ace_dragging_fnc_setCarryable;
+};
+
+grabNewAmmoBoxS = {
+  _newBox = "land_fow_German_Ammo_Crate_1" createVehicle (getPos player);
+  [_newBox, "HANDGUN", 20, true] call initTerminalAmmoBox;
+  _newBox setPosATL (getPosATL player);
+  [_newBox, true] call ace_dragging_fnc_setCarryable;
+};
+
+grabNewAmmoBoxL = {
+  _newBox = "land_fow_German_Ammo_Crate_3" createVehicle (getPos player);
+  [_newBox, "SECONDARY", 5, true] call initTerminalAmmoBox;
+  _newBox setPosATL (getPosATL player);
+  [_newBox, true] call ace_dragging_fnc_setCarryable;
+};
+
+ACTIONABLE_TRAINCAR = objNull;
 
 prepCar = {
-
+  //get the post-init traincar
   private _trainCar = prize2 getVariable ["ATRAIN_Local_Copy",prize2];
-  GLOBAL_VAR_TRAINCAR = _trainCar;
+  ACTIONABLE_TRAINCAR = _trainCar;
 
-  //Beer!
-  GLOBAL_VAR_TRAINCAR addAction ["Grab Box of Beer", grabNewBoozeBox,nil,1.5,true,true,"","true",5,false,"",""];
+  //Give it Beer!
+  ACTIONABLE_TRAINCAR addAction ["Grab Box of Beer", grabNewBoozeBox,nil,1.5,true,true,"","true",7,false,"",""];
 
-  //Arsenal! or Ammo! FOW_AB_US_Crate_Generic
-  /*TODO*/
-  //Autodoc!
+  //Give it Ammo!
+  ACTIONABLE_TRAINCAR addAction ["Grab Box of Primary Ammo", grabNewAmmoBoxP,nil,1.5,true,true,"","true",7,false,"",""];
+  ACTIONABLE_TRAINCAR addAction ["Grab Box of Sidearm Ammo", grabNewAmmoBoxS,nil,1.5,true,true,"","true",7,false,"",""];
+  ACTIONABLE_TRAINCAR addAction ["Grab Box of Launcher Ammo", grabNewAmmoBoxL,nil,1.5,true,true,"","true",7,false,"",""];
+
+  //Give it Autodoc!
+  ACTIONABLE_TRAINCAR addAction["Administer Medical Aid",{[(_this select 1)] spawn activateAutodoc},[],1.5,true,true,"","true",7,false,"",""];
 };
 
-/*
-OLD METHOD! HERE'S HOPING THE LOCAL COPY WORKS?
-getCar = {
+/* INSTRUCTIONS! */
 
-  //This bit grabs the traincar - since it's not a real object? or some kind of local thing.
-  //
-  private "_trainCar";
-  private "_nearby";
-  _nearby = nearestObjects [testTruck1, [], 100];
-  {
-    if (((getModelInfo _x) select 0) == "wagon_box.p3d" && vehicleVarName _x == "") then {
-      _trainCar = _x;
-    };
-  } forEach _nearby;
+// FIRST STEP! GET IN THE TRAIN! HOOK UP ALL THE TRAINCARS!
 
-  GLOBAL_VAR_TRAINCAR = _trainCar;
-  publicVariable "GLOBAL_VAR_TRAINCAR";
-
+// SECOND STEP! HIDE THE RAILS! -- [] call step2; -- ON THE SERVER!!!
+step2 = {
+  [] remoteExec ["hideRails", 0, true];
 };
-*/
+
+// THIRD STEP! PREP THE TRAIN! -- [] call step3; -- ON THE SERVER!!!
+step3 = {
+  [] remoteExec ["prepCar", 0, true];
+};

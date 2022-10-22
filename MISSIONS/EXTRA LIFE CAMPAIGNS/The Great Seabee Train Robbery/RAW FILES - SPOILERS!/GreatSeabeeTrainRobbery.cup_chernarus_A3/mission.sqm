@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=357;
+		nextID=406;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=42;
+		nextID=47;
 	};
 	class Camera
 	{
-		pos[]={3412.1882,233.48894,12496.771};
-		dir[]={0.82404345,-0.44332373,0.35274121};
-		up[]={0.4075582,0.89636087,0.17445979};
-		aside[]={0.39352554,-7.7765435e-008,-0.91932201};
+		pos[]={3406.7822,241.96838,12514.363};
+		dir[]={0.86520898,-0.49403948,-0.085665375};
+		up[]={0.49163556,0.86943942,-0.048677426};
+		aside[]={-0.098529428,0,-0.99513417};
 	};
 };
 binarizationWanted=0;
@@ -38,6 +38,10 @@ addons[]=
 	"po_factions_eu",
 	"A3_Modules_F_Multiplayer",
 	"A3_Characters_F",
+	"A3_Weapons_F",
+	"WW2_Assets_c_Weapons_InfantryWeapons_c",
+	"rhsusf_c_commskit",
+	"fow_characters_items_c",
 	"A3_Modules_F",
 	"ATS_Trains_A2Wagons",
 	"ATS_Trains_Steam",
@@ -52,7 +56,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=16;
+		items=20;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -102,44 +106,68 @@ class AddonsMetaData
 		};
 		class Item8
 		{
+			className="A3_Weapons_F";
+			name="Arma 3 Alpha - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item9
+		{
+			className="WW2_Assets_c_Weapons_InfantryWeapons_c";
+			name="WW2_Assets_c_Weapons_InfantryWeapons_c";
+		};
+		class Item10
+		{
+			className="rhsusf_c_commskit";
+			name="Combat Net Radio System";
+			author="Red Hammer Studios";
+			url="http://www.rhsmods.org/";
+		};
+		class Item11
+		{
+			className="fow_characters_items_c";
+			name="fow_characters_items_c";
+		};
+		class Item12
+		{
 			className="ATS_Trains_A2Wagons";
 			name="ATS_Trains_A2Wagons";
 		};
-		class Item9
+		class Item13
 		{
 			className="ATS_Trains_Steam";
 			name="ATS_Trains_Steam";
 		};
-		class Item10
+		class Item14
 		{
 			className="fow_structures_p_c";
 			name="fow_structures_p_c";
 		};
-		class Item11
+		class Item15
 		{
 			className="PacPacMogMog";
 			name="PacPacMogMog";
 		};
-		class Item12
+		class Item16
 		{
 			className="fow_structures_c";
 			name="fow_structures_c";
 		};
-		class Item13
+		class Item17
 		{
 			className="A3_Props_F_Exp";
 			name="Arma 3 Apex - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item14
+		class Item18
 		{
 			className="ace_cargo";
 			name="ACE3 - Cargo";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item15
+		class Item19
 		{
 			className="ace_dragging";
 			name="ACE3 - Dragging";
@@ -151,7 +179,8 @@ class AddonsMetaData
 dlcs[]=
 {
 	"Expansion",
-	"LOP_LeightsOPFOR"
+	"LOP_LeightsOPFOR",
+	"RHS_USAF"
 };
 randomSeed=5355579;
 class ScenarioData
@@ -2146,6 +2175,19 @@ class Mission
 						description="Drunk@Amphibious Construction Battalion One";
 						isPlayer=1;
 						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_B_CombatUniform_mcam";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="rhsusf_radio_anprc152";
+							goggles="fow_g_gloves5";
+						};
 					};
 					id=221;
 					type="B_Survivor_F";
@@ -2164,6 +2206,19 @@ class Mission
 					{
 						description="Drunk@Amphibious Construction Battalion One";
 						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_B_CombatUniform_mcam";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="rhsusf_radio_anprc152";
+							goggles="fow_g_gloves5";
+						};
 					};
 					id=222;
 					type="B_Survivor_F";
@@ -2182,6 +2237,19 @@ class Mission
 					{
 						description="Drunk@Amphibious Construction Battalion One";
 						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_B_CombatUniform_mcam";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="rhsusf_radio_anprc152";
+							goggles="fow_g_gloves5";
+						};
 					};
 					id=223;
 					type="B_Survivor_F";
@@ -2200,6 +2268,19 @@ class Mission
 					{
 						description="Drunk@Amphibious Construction Battalion One";
 						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_B_CombatUniform_mcam";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="rhsusf_radio_anprc152";
+							goggles="fow_g_gloves5";
+						};
 					};
 					id=224;
 					type="B_Survivor_F";
@@ -2218,6 +2299,19 @@ class Mission
 					{
 						description="Drunk@Amphibious Construction Battalion One";
 						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_B_CombatUniform_mcam";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="rhsusf_radio_anprc152";
+							goggles="fow_g_gloves5";
+						};
 					};
 					id=225;
 					type="B_Survivor_F";
@@ -2236,6 +2330,19 @@ class Mission
 					{
 						description="Drunk@Amphibious Construction Battalion One";
 						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_B_CombatUniform_mcam";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="rhsusf_radio_anprc152";
+							goggles="fow_g_gloves5";
+						};
 					};
 					id=226;
 					type="B_Survivor_F";
@@ -2254,6 +2361,19 @@ class Mission
 					{
 						description="Drunk@Amphibious Construction Battalion One";
 						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_B_CombatUniform_mcam";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="rhsusf_radio_anprc152";
+							goggles="fow_g_gloves5";
+						};
 					};
 					id=227;
 					type="B_Survivor_F";
@@ -2272,6 +2392,19 @@ class Mission
 					{
 						description="Drunk@Amphibious Construction Battalion One";
 						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_B_CombatUniform_mcam";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="rhsusf_radio_anprc152";
+							goggles="fow_g_gloves5";
+						};
 					};
 					id=228;
 					type="B_Survivor_F";
@@ -2289,6 +2422,19 @@ class Mission
 					{
 						description="Drunk@Amphibious Construction Battalion One";
 						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_B_CombatUniform_mcam";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="rhsusf_radio_anprc152";
+							goggles="fow_g_gloves5";
+						};
 					};
 					id=229;
 					type="B_Survivor_F";
@@ -2306,6 +2452,19 @@ class Mission
 					{
 						description="Drunk@Amphibious Construction Battalion One";
 						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_B_CombatUniform_mcam";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="rhsusf_radio_anprc152";
+							goggles="fow_g_gloves5";
+						};
 					};
 					id=230;
 					type="B_Survivor_F";
@@ -2323,6 +2482,19 @@ class Mission
 					{
 						description="Drunk@Amphibious Construction Battalion One";
 						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_B_CombatUniform_mcam";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="rhsusf_radio_anprc152";
+							goggles="fow_g_gloves5";
+						};
 					};
 					id=231;
 					type="B_Survivor_F";
@@ -2341,6 +2513,19 @@ class Mission
 					{
 						description="Drunk@Amphibious Construction Battalion One";
 						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_B_CombatUniform_mcam";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="rhsusf_radio_anprc152";
+							goggles="fow_g_gloves5";
+						};
 					};
 					id=232;
 					type="B_Survivor_F";
@@ -2359,6 +2544,19 @@ class Mission
 					{
 						description="Drunk@Amphibious Construction Battalion One";
 						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_B_CombatUniform_mcam";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="rhsusf_radio_anprc152";
+							goggles="fow_g_gloves5";
+						};
 					};
 					id=233;
 					type="B_Survivor_F";
@@ -2376,6 +2574,19 @@ class Mission
 					{
 						description="Drunk@Amphibious Construction Battalion One";
 						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_B_CombatUniform_mcam";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="rhsusf_radio_anprc152";
+							goggles="fow_g_gloves5";
+						};
 					};
 					id=234;
 					type="B_Survivor_F";
@@ -2393,6 +2604,19 @@ class Mission
 					{
 						description="Drunk@Amphibious Construction Battalion One";
 						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_B_CombatUniform_mcam";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="rhsusf_radio_anprc152";
+							goggles="fow_g_gloves5";
+						};
 					};
 					id=235;
 					type="B_Survivor_F";
@@ -2410,6 +2634,19 @@ class Mission
 					{
 						description="Drunk@Amphibious Construction Battalion One";
 						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_B_CombatUniform_mcam";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="rhsusf_radio_anprc152";
+							goggles="fow_g_gloves5";
+						};
 					};
 					id=236;
 					type="B_Survivor_F";
@@ -2428,6 +2665,19 @@ class Mission
 					{
 						description="Drunk@Amphibious Construction Battalion One";
 						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_B_CombatUniform_mcam";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="rhsusf_radio_anprc152";
+							goggles="fow_g_gloves5";
+						};
 					};
 					id=237;
 					type="B_Survivor_F";
@@ -2445,6 +2695,19 @@ class Mission
 					{
 						description="Drunk@Amphibious Construction Battalion One";
 						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_B_CombatUniform_mcam";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="rhsusf_radio_anprc152";
+							goggles="fow_g_gloves5";
+						};
 					};
 					id=238;
 					type="B_Survivor_F";
@@ -2462,6 +2725,19 @@ class Mission
 					{
 						description="Drunk@Amphibious Construction Battalion One";
 						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_B_CombatUniform_mcam";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="rhsusf_radio_anprc152";
+							goggles="fow_g_gloves5";
+						};
 					};
 					id=239;
 					type="B_Survivor_F";
@@ -2479,6 +2755,19 @@ class Mission
 					{
 						description="Drunk@Amphibious Construction Battalion One";
 						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_B_CombatUniform_mcam";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="rhsusf_radio_anprc152";
+							goggles="fow_g_gloves5";
+						};
 					};
 					id=240;
 					type="B_Survivor_F";
@@ -2496,6 +2785,19 @@ class Mission
 					{
 						description="Drunk@Amphibious Construction Battalion One";
 						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_B_CombatUniform_mcam";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="rhsusf_radio_anprc152";
+							goggles="fow_g_gloves5";
+						};
 					};
 					id=241;
 					type="B_Survivor_F";
@@ -2514,6 +2816,19 @@ class Mission
 					{
 						description="Drunk@Amphibious Construction Battalion One";
 						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_B_CombatUniform_mcam";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="rhsusf_radio_anprc152";
+							goggles="fow_g_gloves5";
+						};
 					};
 					id=242;
 					type="B_Survivor_F";
@@ -2531,6 +2846,19 @@ class Mission
 					{
 						description="Drunk@Amphibious Construction Battalion One";
 						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_B_CombatUniform_mcam";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="rhsusf_radio_anprc152";
+							goggles="fow_g_gloves5";
+						};
 					};
 					id=243;
 					type="B_Survivor_F";
@@ -2548,6 +2876,19 @@ class Mission
 					{
 						description="Drunk@Amphibious Construction Battalion One";
 						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_B_CombatUniform_mcam";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="rhsusf_radio_anprc152";
+							goggles="fow_g_gloves5";
+						};
 					};
 					id=244;
 					type="B_Survivor_F";
@@ -2557,15 +2898,28 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3449.3196,291.1694,11876.902};
+						position[]={3449.3201,291.16946,11876.902};
 					};
 					side="West";
 					flags=5;
 					class Attributes
 					{
 						name="conductor";
-						description="CPO E.A. Sidney@Amphibious Construction Battalion One";
+						description="[Zeus] CPO E.A. Sidney@Amphibious Construction Battalion One";
 						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="U_B_CombatUniform_mcam";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="rhsusf_radio_anprc152";
+							goggles="fow_g_gloves5";
+						};
 					};
 					id=245;
 					type="B_Survivor_F";
@@ -5361,7 +5715,7 @@ class Mission
 			name="Brewery Props";
 			class Entities
 			{
-				items=19;
+				items=28;
 				class Item0
 				{
 					dataType="Object";
@@ -5649,8 +6003,145 @@ class Mission
 					id=344;
 					type="Land_WoodenCrate_01_F";
 				};
+				class Item19
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3423.8833,220.4624,12481.797};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+					};
+					id=367;
+					type="land_fow_anvil";
+				};
+				class Item20
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3423.0342,220.69949,12482.738};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+					};
+					id=368;
+					type="land_fow_bag1";
+				};
+				class Item21
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3422.2251,220.42201,12483.826};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+					};
+					id=369;
+					type="land_fow_bag2";
+				};
+				class Item22
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3422.4634,220.55579,12482.435};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+					};
+					id=370;
+					type="land_fow_bag3";
+				};
+				class Item23
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3424.0874,220.47461,12484.222};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+					};
+					id=371;
+					type="land_fow_bale1";
+					atlOffset=0.23091125;
+				};
+				class Item24
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3422.4646,220.35397,12484.912};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+					};
+					id=372;
+					type="land_fow_bale2";
+				};
+				class Item25
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3427.1848,220.30162,12484.229};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+					};
+					id=373;
+					type="land_fow_bale3";
+				};
+				class Item26
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3424.2942,220.41603,12483.253};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+					};
+					id=374;
+					type="land_fow_basket1";
+				};
+				class Item27
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3423.3716,220.48943,12483.513};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+					};
+					id=375;
+					type="land_fow_basket2";
+				};
 			};
 			id=336;
+			atlOffset=0.22732544;
 		};
 	};
 };
