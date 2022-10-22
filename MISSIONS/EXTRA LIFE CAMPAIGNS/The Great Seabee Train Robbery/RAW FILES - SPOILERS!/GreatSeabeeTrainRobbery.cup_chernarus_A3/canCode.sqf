@@ -120,13 +120,21 @@ drinkingAndDriving = ["Take 'A Few' For The Road", {
 	""
 ];
 
-//IMPORTANT FUNCTION:
+//Place a new booze box at player's feet
+grabNewBoozeBox = {
+	_newBox = "fow_p_woodencrate01" createVehicle (getPos player);
+	[_newBox] call makeBoozeBox;
+  _newBox setPosATL (getPosATL player);
+};
+
+//DEBUG FUNCTION:
 // put the following into the developer console:
 // call hasFuckedUpNow;
 // and it should pick a random player and spawn a new beer box near them.
+//typically "Land_PaperBox_01_small_closed_brown_F" but it's the Korean War
 
 hasFuckedUpNow = {
 	_fucker = selectRandom allPlayers;
-	_newBox = "Land_PaperBox_01_small_closed_brown_F" createVehicle (getPos _fucker);
+	_newBox = "fow_p_woodencrate01" createVehicle (getPos _fucker);
 	[_newBox] call makeBoozeBox;
 };
