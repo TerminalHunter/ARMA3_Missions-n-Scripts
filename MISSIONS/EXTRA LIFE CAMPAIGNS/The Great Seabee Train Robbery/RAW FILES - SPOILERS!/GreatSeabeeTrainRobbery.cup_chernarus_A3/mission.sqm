@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=337;
+		nextID=352;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=32;
+		nextID=37;
 	};
 	class Camera
 	{
-		pos[]={3417.5449,223.63246,12481.753};
-		dir[]={0.91634607,-0.3999669,0.020105805};
-		up[]={0.39989591,0.91651869,0.0087740561};
-		aside[]={0.021935549,-3.2260868e-007,-0.99978298};
+		pos[]={3473.6987,245.91275,12509.197};
+		dir[]={-0.82543528,-0.53849232,-0.16947661};
+		up[]={-0.52749681,0.84263146,-0.10830399};
+		aside[]={-0.20112741,-3.5698758e-007,0.97958672};
 	};
 };
 binarizationWanted=0;
@@ -31,6 +31,7 @@ sourceName="GreatSeabeeTrainRobbery";
 addons[]=
 {
 	"A3_Ui_F",
+	"WW2_Core_c_IF_Gui_c",
 	"ATS_Tracks_A2",
 	"ATS_Tracks_A3",
 	"easterEggBeerLabels2021",
@@ -42,13 +43,16 @@ addons[]=
 	"ATS_Trains_Steam",
 	"fow_structures_p_c",
 	"PacPacMogMog",
-	"fow_structures_c"
+	"fow_structures_c",
+	"A3_Props_F_Exp_Commercial_Market",
+	"ace_cargo",
+	"ace_dragging"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=12;
+		items=16;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -58,63 +62,89 @@ class AddonsMetaData
 		};
 		class Item1
 		{
+			className="WW2_Core_c_IF_Gui_c";
+			name="WW2_Core_c_IF_Gui_c";
+		};
+		class Item2
+		{
 			className="ATS_Tracks_A2";
 			name="ATS_Tracks_A2";
 		};
-		class Item2
+		class Item3
 		{
 			className="ATS_Tracks_A3";
 			name="ATS_Tracks_A3";
 		};
-		class Item3
+		class Item4
 		{
 			className="easterEggBeerLabels2021";
 			name="easterEggBeerLabels2021";
 		};
-		class Item4
+		class Item5
 		{
 			className="po_factions_eu";
 			name="po_factions_eu";
 			author="Leight, Keeway";
 		};
-		class Item5
+		class Item6
 		{
 			className="A3_Modules_F";
 			name="Arma 3 Alpha - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item6
+		class Item7
 		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item7
+		class Item8
 		{
 			className="ATS_Trains_A2Wagons";
 			name="ATS_Trains_A2Wagons";
 		};
-		class Item8
+		class Item9
 		{
 			className="ATS_Trains_Steam";
 			name="ATS_Trains_Steam";
 		};
-		class Item9
+		class Item10
 		{
 			className="fow_structures_p_c";
 			name="fow_structures_p_c";
 		};
-		class Item10
+		class Item11
 		{
 			className="PacPacMogMog";
 			name="PacPacMogMog";
 		};
-		class Item11
+		class Item12
 		{
 			className="fow_structures_c";
 			name="fow_structures_c";
+		};
+		class Item13
+		{
+			className="A3_Props_F_Exp";
+			name="Arma 3 Apex - Decorative and Mission Objects";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item14
+		{
+			className="ace_cargo";
+			name="ACE3 - Cargo";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item15
+		{
+			className="ace_dragging";
+			name="ACE3 - Dragging";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
 		};
 	};
 };
@@ -2697,7 +2727,7 @@ class Mission
 			fillName="DiagGrid";
 			a=300;
 			b=750;
-			angle=143.26495;
+			angle=143.26494;
 			id=305;
 			atlOffset=-1.0476074;
 		};
@@ -3198,7 +3228,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={2003.1477,249.18506,11312.967};
-						angles[]={0.00048828125,0,-0};
+						angles[]={0.00048828125,0,0};
 					};
 					areaSize[]={5,0,5};
 					flags=1;
@@ -4221,7 +4251,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={911.95001,181,7632.3652};
-						angles[]={-0,0.6704936,0};
+						angles[]={0,0.6704936,0};
 					};
 					areaSize[]={3,0,2};
 					flags=1;
@@ -5310,7 +5340,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={3470.0129,222.31401,12521.084};
-						angles[]={0,4.4910879,-0};
+						angles[]={0,4.4910879,0};
 					};
 					side="Empty";
 					class Attributes
@@ -5331,14 +5361,14 @@ class Mission
 			name="Brewery Props";
 			class Entities
 			{
-				items=14;
+				items=19;
 				class Item0
 				{
 					dataType="Object";
 					class PositionInfo
 					{
 						position[]={3425.9438,220.1566,12481.101};
-						angles[]={0,4.8999586,-0};
+						angles[]={0,4.8999586,0};
 					};
 					side="Empty";
 					flags=4;
@@ -5542,6 +5572,82 @@ class Mission
 					};
 					id=333;
 					type="land_fow_wheelbarrow";
+				};
+				class Item14
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3418.9377,220.86447,12479.573};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+					};
+					id=345;
+					type="Land_WoodenCrate_01_stack_x3_F";
+				};
+				class Item15
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3416.7947,221.11858,12478.717};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+					};
+					id=346;
+					type="Land_WoodenCrate_01_stack_x5_F";
+				};
+				class Item16
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3422.9226,220.1566,12479.911};
+						angles[]={0,6.0473399,-0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+					};
+					id=342;
+					type="fow_p_woodencrate";
+				};
+				class Item17
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3421.7437,220.1566,12479.905};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+					};
+					id=343;
+					type="fow_p_woodencrate01";
+				};
+				class Item18
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3420.8606,220.50479,12481.771};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+					};
+					id=344;
+					type="Land_WoodenCrate_01_F";
 				};
 			};
 			id=336;
