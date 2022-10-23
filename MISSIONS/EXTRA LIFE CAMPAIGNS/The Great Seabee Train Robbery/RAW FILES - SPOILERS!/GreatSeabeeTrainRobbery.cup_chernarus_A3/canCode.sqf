@@ -106,7 +106,7 @@ beerBoxAction = ["Crack Open A Cold One", takeAShot,
 
 beerBoxActionPlayer = ["Crack Open A Cold One (From Your Pocket)", takeAShot,
 	nil,
-	10,
+	11,
 	true,
 	true,
 	"",

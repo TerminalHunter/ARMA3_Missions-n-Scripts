@@ -1,7 +1,9 @@
+#include "arsenal.sqf"
 #include "prepareRails.sqf"
 #include "canCode.sqf"
 #include "autodoc.sqf"
 #include "ammoBoxen.sqf"
+#include "prepareTrainCar.sqf"
 
 [{str(_this select 0) == "conductor"},"You don't know how to drive a train"] call ATRAIN_fnc_setTrainDriveCondition;
 
@@ -11,51 +13,8 @@
 KNOWN BUGS:
   Train floats above rails. Train occasionally slides a bit off the rails. Safe zone is off the gravel.
   Players climbing on train might get stuck.
+  Train doesn't animate. May give error about skeleton?
 */
-
-/*
-FUNCTIONS
-*/
-
-grabNewAmmoBoxP = {
-  _newBox = "land_fow_German_Ammo_Crate_2" createVehicle (getPos player);
-  [_newBox, "PRIMARY", 15, true] call initTerminalAmmoBox;
-  _newBox setPosATL (getPosATL player);
-  [_newBox, true] call ace_dragging_fnc_setCarryable;
-};
-
-grabNewAmmoBoxS = {
-  _newBox = "land_fow_German_Ammo_Crate_1" createVehicle (getPos player);
-  [_newBox, "HANDGUN", 20, true] call initTerminalAmmoBox;
-  _newBox setPosATL (getPosATL player);
-  [_newBox, true] call ace_dragging_fnc_setCarryable;
-};
-
-grabNewAmmoBoxL = {
-  _newBox = "land_fow_German_Ammo_Crate_3" createVehicle (getPos player);
-  [_newBox, "SECONDARY", 5, true] call initTerminalAmmoBox;
-  _newBox setPosATL (getPosATL player);
-  [_newBox, true] call ace_dragging_fnc_setCarryable;
-};
-
-ACTIONABLE_TRAINCAR = objNull;
-
-prepCar = {
-  //get the post-init traincar
-  private _trainCar = prize2 getVariable ["ATRAIN_Local_Copy",prize2];
-  ACTIONABLE_TRAINCAR = _trainCar;
-
-  //Give it Beer!
-  ACTIONABLE_TRAINCAR addAction ["Grab Box of Beer", grabNewBoozeBox,nil,1.5,true,true,"","true",7,false,"",""];
-
-  //Give it Ammo!
-  ACTIONABLE_TRAINCAR addAction ["Grab Box of Primary Ammo", grabNewAmmoBoxP,nil,1.5,true,true,"","true",7,false,"",""];
-  ACTIONABLE_TRAINCAR addAction ["Grab Box of Sidearm Ammo", grabNewAmmoBoxS,nil,1.5,true,true,"","true",7,false,"",""];
-  ACTIONABLE_TRAINCAR addAction ["Grab Box of Launcher Ammo", grabNewAmmoBoxL,nil,1.5,true,true,"","true",7,false,"",""];
-
-  //Give it Autodoc!
-  ACTIONABLE_TRAINCAR addAction["Administer Medical Aid",{[(_this select 1)] spawn activateAutodoc},[],1.5,true,true,"","true",7,false,"",""];
-};
 
 /* INSTRUCTIONS! */
 
