@@ -159,9 +159,10 @@ makeArsenal = {
   [_jackShack, playerArsenal] call ace_arsenal_fnc_initBox;
 
   _jackShack addAction ["Jack Shack Arsenal", {[(_this select 0), player] call ace_arsenal_fnc_openBox;},[],6,true,true,"","true",9,false,"",""];
-  _jackShack addAction["Save Current Loadout as Respawn Loadout",saveLoadout,[],5,true,true,"","true",9,false,"",""];
-  _jackShack addAction["Toggle Loadout Autosave",toggleLoadoutAutosave,[],4,true,true,"","true",9,false,"",""];
+  _jackShack addAction ["Save Current Loadout as Respawn Loadout",saveLoadout,[],5,true,true,"","true",9,false,"",""];
+  _jackShack addAction ["Toggle Loadout Autosave",toggleLoadoutAutosave,[],4,true,true,"","true",9,false,"",""];
 
 };
 
 [arseStart] call makeArsenal;
+[arseSwitch] call makeArsenal;

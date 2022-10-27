@@ -8,7 +8,7 @@ class EditorData
 	toggles=522;
 	class ItemIDProvider
 	{
-		nextID=443;
+		nextID=450;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=59;
+		nextID=98;
 	};
 	class Camera
 	{
-		pos[]={1648.9269,230.12462,9416.8477};
-		dir[]={-0.76750362,-0.21709017,-0.60320765};
-		up[]={-0.17070131,0.97614598,-0.13416006};
-		aside[]={-0.61794466,-2.2607855e-007,0.78625315};
+		pos[]={3355.2544,226.94136,12462.368};
+		dir[]={-0.63757682,-0.62306863,0.45314389};
+		up[]={-0.50787568,0.78215581,0.36096108};
+		aside[]={0.57933193,-4.5483466e-007,0.81512427};
 	};
 };
 binarizationWanted=0;
@@ -59,13 +59,14 @@ addons[]=
 	"WW2_Assets_c_Vehicles_Pictures_c",
 	"CUP_Buildings_Config",
 	"WW2_Objects_c_Misc_WW2_SimpleObjects_c_CUP",
-	"A3_Props_F_Enoch_Military_Garbage"
+	"A3_Props_F_Enoch_Military_Garbage",
+	"A3_Modules_F_Curator_Curator"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=29;
+		items=30;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -229,6 +230,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item29
+		{
+			className="A3_Modules_F_Curator";
+			name="Arma 3 Zeus Update - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 dlcs[]=
@@ -329,7 +337,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=28;
+		items=31;
 		class Item0
 		{
 			dataType="Marker";
@@ -1867,7 +1875,7 @@ class Mission
 			side="West";
 			class Entities
 			{
-				items=25;
+				items=26;
 				class Item0
 				{
 					dataType="Object";
@@ -1879,7 +1887,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						description="Drunk@Amphibious Construction Battalion One";
+						description="Drunk Vounteer Train Robber@Amphibious Construction Battalion One";
 						isPlayer=1;
 						isPlayable=1;
 						class Inventory
@@ -1972,7 +1980,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						description="Drunk@Amphibious Construction Battalion One";
+						description="Drunk Vounteer Train Robber@Amphibious Construction Battalion One";
 						isPlayable=1;
 						class Inventory
 						{
@@ -2064,7 +2072,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						description="Drunk@Amphibious Construction Battalion One";
+						description="Drunk Vounteer Train Robber@Amphibious Construction Battalion One";
 						isPlayable=1;
 						class Inventory
 						{
@@ -2156,7 +2164,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						description="Drunk@Amphibious Construction Battalion One";
+						description="Drunk Vounteer Train Robber@Amphibious Construction Battalion One";
 						isPlayable=1;
 						class Inventory
 						{
@@ -2248,7 +2256,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						description="Drunk@Amphibious Construction Battalion One";
+						description="Drunk Vounteer Train Robber@Amphibious Construction Battalion One";
 						isPlayable=1;
 						class Inventory
 						{
@@ -2340,7 +2348,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						description="Drunk@Amphibious Construction Battalion One";
+						description="Drunk Vounteer Train Robber@Amphibious Construction Battalion One";
 						isPlayable=1;
 						class Inventory
 						{
@@ -2432,7 +2440,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						description="Drunk@Amphibious Construction Battalion One";
+						description="Drunk Vounteer Train Robber@Amphibious Construction Battalion One";
 						isPlayable=1;
 						class Inventory
 						{
@@ -2524,7 +2532,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						description="Drunk@Amphibious Construction Battalion One";
+						description="Drunk Vounteer Train Robber@Amphibious Construction Battalion One";
 						isPlayable=1;
 						class Inventory
 						{
@@ -2615,7 +2623,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						description="Drunk@Amphibious Construction Battalion One";
+						description="Drunk Vounteer Train Robber@Amphibious Construction Battalion One";
 						isPlayable=1;
 						class Inventory
 						{
@@ -2706,7 +2714,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						description="Drunk@Amphibious Construction Battalion One";
+						description="Drunk Vounteer Train Robber@Amphibious Construction Battalion One";
 						isPlayable=1;
 						class Inventory
 						{
@@ -2797,7 +2805,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						description="Drunk@Amphibious Construction Battalion One";
+						description="Drunk Vounteer Train Robber@Amphibious Construction Battalion One";
 						isPlayable=1;
 						class Inventory
 						{
@@ -2889,7 +2897,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						description="Drunk@Amphibious Construction Battalion One";
+						description="Drunk Vounteer Train Robber@Amphibious Construction Battalion One";
 						isPlayable=1;
 						class Inventory
 						{
@@ -2981,7 +2989,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						description="Drunk@Amphibious Construction Battalion One";
+						description="Drunk Vounteer Train Robber@Amphibious Construction Battalion One";
 						isPlayable=1;
 						class Inventory
 						{
@@ -3072,7 +3080,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						description="Drunk@Amphibious Construction Battalion One";
+						description="Drunk Vounteer Train Robber@Amphibious Construction Battalion One";
 						isPlayable=1;
 						class Inventory
 						{
@@ -3163,7 +3171,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						description="Drunk@Amphibious Construction Battalion One";
+						description="Drunk Vounteer Train Robber@Amphibious Construction Battalion One";
 						isPlayable=1;
 						class Inventory
 						{
@@ -3254,7 +3262,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						description="Drunk@Amphibious Construction Battalion One";
+						description="Drunk Vounteer Train Robber@Amphibious Construction Battalion One";
 						isPlayable=1;
 						class Inventory
 						{
@@ -3346,7 +3354,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						description="Drunk@Amphibious Construction Battalion One";
+						description="Drunk Vounteer Train Robber@Amphibious Construction Battalion One";
 						isPlayable=1;
 						class Inventory
 						{
@@ -3437,7 +3445,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						description="Drunk@Amphibious Construction Battalion One";
+						description="Drunk Vounteer Train Robber@Amphibious Construction Battalion One";
 						isPlayable=1;
 						class Inventory
 						{
@@ -3528,7 +3536,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						description="Drunk@Amphibious Construction Battalion One";
+						description="Drunk Vounteer Train Robber@Amphibious Construction Battalion One";
 						isPlayable=1;
 						class Inventory
 						{
@@ -3619,7 +3627,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						description="Drunk@Amphibious Construction Battalion One";
+						description="Drunk Vounteer Train Robber@Amphibious Construction Battalion One";
 						isPlayable=1;
 						class Inventory
 						{
@@ -3710,7 +3718,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						description="Drunk@Amphibious Construction Battalion One";
+						description="Drunk Vounteer Train Robber@Amphibious Construction Battalion One";
 						isPlayable=1;
 						class Inventory
 						{
@@ -3802,7 +3810,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						description="Drunk@Amphibious Construction Battalion One";
+						description="Drunk Vounteer Train Robber@Amphibious Construction Battalion One";
 						isPlayable=1;
 						class Inventory
 						{
@@ -3893,7 +3901,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						description="Drunk@Amphibious Construction Battalion One";
+						description="Drunk Vounteer Train Robber@Amphibious Construction Battalion One";
 						isPlayable=1;
 						class Inventory
 						{
@@ -3984,7 +3992,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						description="Drunk@Amphibious Construction Battalion One";
+						description="Drunk Vounteer Train Robber@Amphibious Construction Battalion One";
 						isPlayable=1;
 						class Inventory
 						{
@@ -4099,6 +4107,125 @@ class Mission
 					};
 					id=245;
 					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if !(_value == ([0, 1] select (_this getUnitTrait 'engineer')) || {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.95999998;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="TFAR_freq_sr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="69";
+								};
+							};
+						};
+						class Attribute5
+						{
+							property="TFAR_freq_lr";
+							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="70";
+								};
+							};
+						};
+						nAttributes=6;
+					};
+				};
+				class Item25
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3448.9519,290.72781,11878.777};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						name="conductor2";
+						description="[Zeus] 2nd Zeus@Amphibious Construction Battalion One";
+						isPlayable=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="fow_u_us_m41_02_private";
+								isBackpack=0;
+							};
+							class vest
+							{
+								typeName="fow_v_us_garand_bandoleer";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="TFAR_anprc152";
+							headgear="fow_h_us_m1";
+						};
+					};
+					id=447;
+					type="B_Survivor_F";
+					atlOffset=-3.0517578e-005;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -6901,7 +7028,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={1169.0518,188.7,4980.7646};
-						angles[]={-0,5.0956073,0};
+						angles[]={0,5.0956073,0};
 					};
 					side="Empty";
 					flags=4;
@@ -7505,6 +7632,7 @@ class Mission
 					};
 					id=198;
 					type="LOP_NK_UAZ_DshKM";
+					atlOffset=-0.0050964355;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -7581,7 +7709,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={3472.2112,221.71295,12507.117};
-						angles[]={-0,4.4505024,0};
+						angles[]={0,4.4505024,0};
 					};
 					side="Empty";
 					flags=4;
@@ -7677,6 +7805,7 @@ class Mission
 					};
 					id=188;
 					type="LOP_NK_UAZ_Open";
+					atlOffset=-7.6293945e-005;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -7763,6 +7892,7 @@ class Mission
 					};
 					id=205;
 					type="LOP_NK_UAZ_Open";
+					atlOffset=-0.00010681152;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -7839,7 +7969,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={3445.0054,221.78671,12480.926};
-						angles[]={-0,3.030652,0};
+						angles[]={0,3.030652,0};
 					};
 					side="Empty";
 					flags=4;
@@ -7864,16 +7994,16 @@ class Mission
 					};
 					id=433;
 					type="LIB_Zis5v";
+					atlOffset=-0.0002746582;
 				};
 			};
 			id=435;
-			atlOffset=-0.03213501;
+			atlOffset=-0.031707764;
 		};
 		class Item26
 		{
 			dataType="Layer";
 			name="Mission Start Area";
-			state=1;
 			class Entities
 			{
 				items=2;
@@ -7917,20 +8047,231 @@ class Mission
 		};
 		class Item27
 		{
+			dataType="Layer";
+			name="Track Sabotage Areas";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1630.514,221.06352,9398.7861};
+						angles[]={0,0.88634801,0};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+						name="sabo1";
+					};
+					id=437;
+					type="Land_BurntGarbage_01_F";
+					atlOffset=-0.41601563;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3298.249,221.03648,12462.964};
+						angles[]={0,5.7259016,0};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+						name="sabo2";
+					};
+					id=443;
+					type="Land_BurntGarbage_01_F";
+					atlOffset=0.0090026855;
+				};
+			};
+			id=444;
+			atlOffset=-69.558731;
+		};
+		class Item28
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={3446.4021,290.91943,11875.984};
+			};
+			id=445;
+			type="ModuleCurator_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleCurator_F_Owner";
+					expression="_this setVariable ['Owner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="conductor";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleCurator_F_Forced";
+					expression="_this setVariable ['Forced',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleCurator_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleCurator_F_Addons";
+					expression="_this setVariable ['Addons',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=2;
+						};
+					};
+				};
+				nAttributes=4;
+			};
+		};
+		class Item29
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={3446.447,290.45978,11878.269};
+			};
+			id=448;
+			type="ModuleCurator_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleCurator_F_Owner";
+					expression="_this setVariable ['Owner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="conductor2";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleCurator_F_Forced";
+					expression="_this setVariable ['Forced',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleCurator_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleCurator_F_Addons";
+					expression="_this setVariable ['Addons',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=2;
+						};
+					};
+				};
+				nAttributes=4;
+			};
+		};
+		class Item30
+		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={1630.5139,221.06372,9398.7861};
-				angles[]={0,0.88634264,-0};
+				position[]={3347.9619,221.2691,12467.35};
+				angles[]={6.2796774,5.1108651,6.281754};
 			};
 			side="Empty";
-			flags=5;
+			flags=4;
 			class Attributes
 			{
+				name="arseSwitch";
 			};
-			id=437;
-			type="Land_BurntGarbage_01_F";
-			atlOffset=-0.415802;
+			id=449;
+			type="Land_KBud";
+			atlOffset=-0.0030059814;
+		};
+	};
+	class Connections
+	{
+		class LinkIDProvider
+		{
+			nextID=2;
+		};
+		class Links
+		{
+			items=2;
+			class Item0
+			{
+				linkID=0;
+				item0=445;
+				item1=245;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item1
+			{
+				linkID=1;
+				item0=448;
+				item1=447;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
 		};
 	};
 };

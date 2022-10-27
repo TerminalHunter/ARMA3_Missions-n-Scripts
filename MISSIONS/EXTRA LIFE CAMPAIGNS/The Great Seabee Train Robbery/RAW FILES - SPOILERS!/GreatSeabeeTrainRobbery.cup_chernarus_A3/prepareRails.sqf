@@ -46,6 +46,11 @@ _worldObjects = [];
   _worldObjects
 };
 
+//JIP - ALLRAILSOBJECTS will be declared before this moment on JIP players
+if (isNil "ALLRAILSOBJECTS") then {
+  ALLRAILSOBJECTS = [];
+};
+
 hideRails = {
   {hideObject _x} forEach ALLRAILSOBJECTS;
   for "_i" from 1 to 74 step 1 do {
@@ -63,8 +68,6 @@ if (isServer) then {
 
   railHashMap = createHashMapFromArray railMap2;
 
-  ALLRAILSOBJECTS = [];
-
   GLOBAL_VAR_ALLRAILS = [] call getMapRail;
 
   {
@@ -74,6 +77,8 @@ if (isServer) then {
     _tempNewRail setVectorDirAndUp [_x select 2, _x select 1];
     ALLRAILSOBJECTS pushBack _tempNewRail;
   } forEach GLOBAL_VAR_ALLRAILS;
+
+  publicVariable "ALLRAILSOBJECTS";
 
   waitUntil {time > 10};
 

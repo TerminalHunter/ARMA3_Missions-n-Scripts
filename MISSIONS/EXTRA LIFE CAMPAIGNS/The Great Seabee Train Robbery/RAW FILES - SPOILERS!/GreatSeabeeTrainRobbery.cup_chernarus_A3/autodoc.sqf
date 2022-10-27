@@ -36,6 +36,12 @@ serverRunAutodoc = {
       } forEach _potentialHealingTargets;
       deleteVehicle _helperCircle;
       ["Medical Aid (and lollipops) Administered"] remoteExec ["hintSilent",0,false];
+			if (floor(random 10) == 1) then {
+				{
+					_x addItem "murshun_cigs_cigpack";
+				} forEach _potentialHealingTargets;
+				["Doc says your respiration could be better.\nHave a pack of Chesterfields!"] remoteExec ["hintSilent",0,false];
+			};
     };
   } else {
     //warn players of nearby enemy

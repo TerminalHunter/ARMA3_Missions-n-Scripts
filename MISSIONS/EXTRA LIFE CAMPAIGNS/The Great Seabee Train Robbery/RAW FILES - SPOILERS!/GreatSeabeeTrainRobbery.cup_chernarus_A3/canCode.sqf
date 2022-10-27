@@ -16,7 +16,7 @@ and that will spawn a cardboard box, ready to give beer, at the feet of an activ
 
 */
 
-boozen = ["baseBeer", "secondBeer","quillShipBeer","babstBeer","blastedBatBeer","cbt2020Beer","fuchBeer","loveBeer","moonBeer","quillCBTBeer","quillPolyBeer","malortBeer","fuckYouBeer","cloroxBeer"];
+boozen = ["baseBeer", "secondBeer","quillShipBeer","babstBeer","blastedBatBeer","cbt2020Beer","fuchBeer","loveBeer","moonBeer","quillCBTBeer","quillPolyBeer","malortBeer","fuckYouBeer","cloroxBeer","cagedBeer","noBrand3","unreadableBeer","comradeBeer"];
 boozenNumber = 0;
 boozenOffset = [0, -0.1, 0.1, -0.2, 0.2, -0.3, 0.3];
 
@@ -59,11 +59,12 @@ takeAShot = {
 		};
 		sleep 1;
 		//open it
-		playSound3D [(getMissionPath "crack.wav"), _coldOne];
+		playSound3D [(getMissionPath "audio\crack.wav"), _coldOne];
 		/*TODO : ADD MORE CODE TO SIMULATE DRINKING/CHUGGING THE BEER*/
 		sleep 10;
 		//safety, disables can and player collision just in case the can wants to do damage
 		_coldOne disableCollisionWith _caller;
+		if(_isInVic)then{_coldOne disableCollisionWith (vehicle _caller)};
 		//spawns some code that will handle when the can is thrown. prevents excessive bouncing
 		[_coldOne] spawn {
 			params ["_item"];
@@ -106,7 +107,7 @@ beerBoxAction = ["Crack Open A Cold One", takeAShot,
 
 beerBoxActionPlayer = ["Crack Open A Cold One (From Your Pocket)", takeAShot,
 	nil,
-	11,
+	21,
 	true,
 	true,
 	"",

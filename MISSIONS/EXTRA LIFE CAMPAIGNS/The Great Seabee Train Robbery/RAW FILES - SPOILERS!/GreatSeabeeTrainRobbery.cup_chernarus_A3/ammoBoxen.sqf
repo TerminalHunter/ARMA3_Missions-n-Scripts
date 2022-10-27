@@ -125,21 +125,29 @@ queryBoxen = {
   private _secondaryCheck = secondaryAmmoBoxen get str(_boxen);
   private _handgunCheck = handgunAmmoBoxen get str(_boxen);
   private "_hintString";
+  private "_num";
   switch (true) do {
     case (!isNil {_primaryCheck}): {
-      _hintString = str(primaryAmmoBoxen get str(_boxen) select 2) + " magazines remain";
+      _num = primaryAmmoBoxen get str(_boxen) select 2;
+      _hintString = str(_num) + " magazines remain";
     };
     case (!isNil {_secondaryCheck}): {
-      _hintString = str(secondaryAmmoBoxen get str(_boxen) select 2) + " magazines remain";
+      _num = secondaryAmmoBoxen get str(_boxen) select 2;
+      _hintString = str(_num) + " magazines remain";
     };
     case (!isNil {_handgunCheck}): {
-      _hintString = str(handgunAmmoBoxen get str(_boxen) select 2) + " magazines remain";
+      _num = handgunAmmoBoxen get str(_boxen) select 2;
+      _hintString = str(_num) + " magazines remain";
     };
     default {
-      _hintString = "Odd error encountered. Let Terminal know something's weird."
+      _hintString = "Odd error encountered. Let Terminal know something's weird.";
+      _num = 1;
     };
   };
   [_hintString] remoteExec ["hint", _requester];
+  if (_num < 1) then {
+    deleteVehicle _boxen;
+  };
 };
 
 //

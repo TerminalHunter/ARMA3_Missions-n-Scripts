@@ -4,6 +4,7 @@
 #include "autodoc.sqf"
 #include "ammoBoxen.sqf"
 #include "prepareTrainCar.sqf"
+#include "railRepair.sqf"
 
 [{str(_this select 0) == "conductor"},"You don't know how to drive a train"] call ATRAIN_fnc_setTrainDriveCondition;
 
@@ -22,10 +23,27 @@ KNOWN BUGS:
 
 // SECOND STEP! HIDE THE RAILS! -- [] call step2; -- ON THE SERVER!!!
 step2 = {
-  [] remoteExec ["hideRails", 0, true];
+  [] remoteExec ["hideRails"];
+  ["Step 1 of 2 Completed"] remoteExec ["hint"];
 };
 
 // THIRD STEP! PREP THE TRAIN! -- [] call step3; -- ON THE SERVER!!!
 step3 = {
-  [] remoteExec ["prepCar", 0, true];
+  [] remoteExec ["prepCar"];
+  ["Step 2 of 2 Completed"] remoteExec ["hint"];
 };
+
+/* END INSTRUCTIONS */
+
+addMissionEventHandler ["PlayerConnected",
+{
+  params ["_id", "_uid", "_name", "_jip", "_owner", "_idstr"];
+  //[str(_jip)] remoteExec ["hint"];
+  if (_jip) then {
+    [] spawn {
+      sleep 15;
+      [] remoteExec ["hideRails"];
+      [] remoteExec ["prepCar"];
+    };
+  };
+}];
