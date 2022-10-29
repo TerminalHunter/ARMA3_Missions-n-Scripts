@@ -39,7 +39,7 @@ prepCar = {
   ACTIONABLE_TRAINCAR addAction ["Grab Box of Launcher Ammo", grabNewAmmoBoxL,nil,17,true,true,"","true",9,false,"",""];
 
   //Give it an arsenal!
-  [ACTIONABLE_TRAINCAR] call makeArsenal;
+  [ACTIONABLE_TRAINCAR] call makeTrainArsenal;
 
   //Give it Autodoc!
   ACTIONABLE_TRAINCAR addAction["Administer Medical Aid",{[(_this select 1)] spawn activateAutodoc},[],13,true,true,"","true",9,false,"",""];

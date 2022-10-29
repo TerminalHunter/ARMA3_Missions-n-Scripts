@@ -5,6 +5,7 @@
 #include "ammoBoxen.sqf"
 #include "prepareTrainCar.sqf"
 #include "railRepair.sqf"
+#include "enemies.sqf"
 
 [{str(_this select 0) == "conductor"},"You don't know how to drive a train"] call ATRAIN_fnc_setTrainDriveCondition;
 

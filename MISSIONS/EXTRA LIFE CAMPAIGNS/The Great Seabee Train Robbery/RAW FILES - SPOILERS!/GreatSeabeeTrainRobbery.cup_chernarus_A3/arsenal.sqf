@@ -1,8 +1,8 @@
 playerArsenal = [
   //headgear
   "fow_h_us_daisy_mae_01",
-  "fow_h_us_daisy_mae_01",
-  "fow_h_us_daisy_mae_01",
+  "fow_h_us_daisy_mae_02",
+  "fow_h_us_daisy_mae_03",
   "fow_h_us_m1",
   "fow_h_us_m1_closed",
   "fow_h_us_m1_folded",
@@ -40,6 +40,7 @@ playerArsenal = [
   "fow_b_usa_m1919_weapon",
   "RHS_M2_Gun_Bag",
   "RHS_M2_Tripod_Bag",
+  "B_LIB_US_Backpack_RocketBag_Empty",
   //weapons and ammo
       //garand
   "rhs_weap_m1garand_sa43",
@@ -109,14 +110,39 @@ playerArsenal = [
   "ACE_epinephrine",
   "ACE_Fortify",
   "ACE_Flashlight_MX991",
+  "ACE_MapTools",
   "ACE_morphine",
   "ACE_rope15",
   "ACE_splint",
   "ACE_SpottingScope",
   "ACE_surgicalKit",
   "ACE_tourniquet",
-  "fow_i_whistle"
+  "fow_i_whistle",
+  "Toolkit"
 ];
+
+koreanArsenal =
+[
+  "LIB_PPSh41_m",
+  "LIB_71Rnd_762x25_t",
+  "fow_w_type99",
+  "fow_5Rnd_77x58",
+  "rhs_weap_m38",
+  "rhsgref_5Rnd_762x54_m38",
+  "LIB_DP28",
+  "LIB_47Rnd_762x54",
+  "LIB_M9130PU",
+  "LIB_5Rnd_762x54_t46",
+  "rhs_grenade_sthgr43_mag",
+  "B_LIB_SOV_RA_Rucksack2_Shinel",
+  "H_LIB_SOV_RA_Helmet",
+  "H_LIB_SOV_Ushanka",
+  "PO_H_Fieldcap_NK"
+];
+
+comboArsenal = [];
+comboArsenal append playerArsenal;
+comboArsenal append koreanArsenal;
 
 //INITS
 
@@ -153,7 +179,7 @@ toggleLoadoutAutosave = {
 	};
 };
 
-makeArsenal = {
+makeStartingArsenal = {
   params ["_jackShack"];
 
   [_jackShack, playerArsenal] call ace_arsenal_fnc_initBox;
@@ -164,5 +190,27 @@ makeArsenal = {
 
 };
 
-[arseStart] call makeArsenal;
+makeArsenal = {
+  params ["_jackShack"];
+
+  [_jackShack, comboArsenal] call ace_arsenal_fnc_initBox;
+
+  _jackShack addAction ["Jack Shack Arsenal", {[(_this select 0), player] call ace_arsenal_fnc_openBox;},[],6,true,true,"","true",9,false,"",""];
+  _jackShack addAction ["Save Current Loadout as Respawn Loadout",saveLoadout,[],5,true,true,"","true",9,false,"",""];
+  _jackShack addAction ["Toggle Loadout Autosave",toggleLoadoutAutosave,[],4,true,true,"","true",9,false,"",""];
+
+};
+
+makeTrainArsenal = {
+  params ["_jackShack"];
+
+  [_jackShack, comboArsenal] call ace_arsenal_fnc_initBox;
+
+  _jackShack addAction ["Mobile Jack Shack Arsenal", {[(_this select 0), player] call ace_arsenal_fnc_openBox;},[],6,true,true,"","true",9,false,"",""];
+  _jackShack addAction ["Save Current Loadout as Respawn Loadout",saveLoadout,[],5,true,true,"","true",9,false,"",""];
+  _jackShack addAction ["Toggle Loadout Autosave",toggleLoadoutAutosave,[],4,true,true,"","true",9,false,"",""];
+
+};
+
+[arseStart] call makeStartingArsenal;
 [arseSwitch] call makeArsenal;
