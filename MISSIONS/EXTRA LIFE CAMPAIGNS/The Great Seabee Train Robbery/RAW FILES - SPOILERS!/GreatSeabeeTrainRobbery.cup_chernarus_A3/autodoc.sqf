@@ -15,7 +15,9 @@ serverRunAutodoc = {
   _detectedEntities = _autodoc nearEntities 250;
   {
     if (side _x == east) then {
-      _detectedEnemies append [_x];
+			if (!(_x getVariable ["ACE_isUnconscious" , false])) then {
+      	_detectedEnemies append [_x];
+			};
     };
   } forEach _detectedEntities;
   if (count _detectedEnemies == 0) then {

@@ -118,7 +118,9 @@ playerArsenal = [
   "ACE_surgicalKit",
   "ACE_tourniquet",
   "fow_i_whistle",
-  "Toolkit"
+  "Toolkit",
+  "ACE_bodyBag",
+  "ACE_CableTie"
 ];
 
 koreanArsenal =
@@ -137,7 +139,12 @@ koreanArsenal =
   "B_LIB_SOV_RA_Rucksack2_Shinel",
   "H_LIB_SOV_RA_Helmet",
   "H_LIB_SOV_Ushanka",
-  "PO_H_Fieldcap_NK"
+  "PO_H_Fieldcap_NK",
+  "EAW_Hanyang88_Base",
+  "EAW_Type24_Rifle_Base",
+  "EAW_Hanyang88_Magazine",
+  "EAW_Type38_Magazine",
+  "EAW_Type30_Rifle"
 ];
 
 comboArsenal = [];
@@ -214,3 +221,4 @@ makeTrainArsenal = {
 
 [arseStart] call makeStartingArsenal;
 [arseSwitch] call makeArsenal;
+[arseEnd] call makeStartingArsenal;

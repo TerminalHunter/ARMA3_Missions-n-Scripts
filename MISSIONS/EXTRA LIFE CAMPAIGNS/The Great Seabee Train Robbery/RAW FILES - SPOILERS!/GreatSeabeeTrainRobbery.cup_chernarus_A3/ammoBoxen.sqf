@@ -4,6 +4,7 @@
   TODO:
     Maybe a medic box?
     If the box is empty, give an option to delete it.
+    Delete box from hashmap when deleted?
 */
 
 //SERVER INIT
@@ -11,6 +12,7 @@ if (isServer) then {
   primaryAmmoBoxen = createHashMap;
   secondaryAmmoBoxen = createHashMap;
   handgunAmmoBoxen = createHashMap;
+  medicTriageBoxen = createHashMap;
   //these three hashmaps should really just be one, right?
 
   // JIP HANDLER
@@ -30,6 +32,10 @@ if (isServer) then {
           [_y select 0] remoteExec ["removeAllActions", 0];
           [_y select 0, _y select 1, _y select 2, false] call initTerminalAmmoBox;
         } forEach handgunAmmoBoxen;
+        {
+          [_y select 0] remoteExec ["removeAllActions", 0];
+          [_y select 0, _y select 1, _y select 2, false] call initTerminalAmmoBox;
+        } forEach medicTriageBoxen;
       };
     }];
 };
@@ -68,6 +74,12 @@ EX: [boxOnMap, "PRIMARY", 100, true] call initTerminalAmmoBox;
       };
       [_box, ["Open Sidearm Ammo Box",{[_this select 0] call openHandgunBox},[],1.5,true,true,"","true",10,false,"",""]] remoteExec ["addAction", 0];
     };
+    case "MEDICAL":{
+      if (_firstInit) then {
+        medicTriageBoxen set [str(_box), [_box, _type, _mags]];
+      };
+      [_box, ["Open Medical Box",{[_this select 0] call openMedicalBox},[],1.5,true,true,"","true",10,false,"",""]] remoteExec ["addAction", 0];
+    };
     default {
       if (_firstInit) then {
         primaryAmmoBoxen set [str(_box), [_box, _type, _mags]];
@@ -86,7 +98,7 @@ doTheTaking = {
       _hashMap set [str(_boxen), [_boxArray select 0, _boxArray select 1, (_boxArray select 2) - 1]];
       [_player, _ammoToGive] remoteExec ["addItem", _player];
       private "_hintString";
-      _hintString = str(_hashMap get str(_boxen) select 2) + " magazines remain"; //potentially optimize - for debug purposes, this can stay but, like, keep it local
+      _hintString = str(_hashMap get str(_boxen) select 2) + " items remain"; //potentially optimize - for debug purposes, this can stay but, like, keep it local
       [_hintString] remoteExec ["hint", _player];
     } else {
       private _hintString = "INVENTORY FULL";
@@ -102,6 +114,7 @@ magTakenFromBoxen = {
   private _primaryCheck = primaryAmmoBoxen get str(_boxen);
   private _secondaryCheck = secondaryAmmoBoxen get str(_boxen);
   private _handgunCheck = handgunAmmoBoxen get str(_boxen);
+  private _medicalCheck = medicTriageBoxen get str(_boxen);
 
   switch (true) do {
     case (!isNil {_primaryCheck}): {
@@ -112,6 +125,9 @@ magTakenFromBoxen = {
     };
     case (!isNil {_handgunCheck}): {
       [_player, _ammo, _boxen, _handgunCheck, handgunAmmoBoxen] call doTheTaking;
+    };
+    case (!isNil {_medicalCheck}): {
+      [_player, _ammo, _boxen, _medicalCheck, medicTriageBoxen] call doTheTaking;
     };
     default {
       /* TODO: this should REALLY give a proper error */
@@ -124,6 +140,7 @@ queryBoxen = {
   private _primaryCheck = primaryAmmoBoxen get str(_boxen);
   private _secondaryCheck = secondaryAmmoBoxen get str(_boxen);
   private _handgunCheck = handgunAmmoBoxen get str(_boxen);
+  private _medicalCheck = medicTriageBoxen get str(_boxen);
   private "_hintString";
   private "_num";
   switch (true) do {
@@ -138,6 +155,10 @@ queryBoxen = {
     case (!isNil {_handgunCheck}): {
       _num = handgunAmmoBoxen get str(_boxen) select 2;
       _hintString = str(_num) + " magazines remain";
+    };
+    case (!isNil {_medicalCheck}): {
+      _num = medicTriageBoxen get str(_boxen) select 2;
+      _hintString = str(_num) + " items remain";
     };
     default {
       _hintString = "Odd error encountered. Let Terminal know something's weird.";
@@ -224,4 +245,36 @@ closeHandgunBox = {
   params ["_boxen"];
   removeAllActions _boxen;
   _boxen addAction ["Open Handgun Ammo Box",{[_this select 0] call openHandgunBox},[],1.5,true,true,"","true",10,false,"",""];
+};
+
+medicineListKorean = [
+  "ACE_fieldDressing",
+  "ACE_packingBandage",
+  "ACE_elasticBandage",
+  "ACE_bloodIV_500",
+  "ACE_epinephrine",
+  "ACE_morphine",
+  "ACE_splint",
+  "ACE_surgicalKit",
+  "ACE_tourniquet",
+  "ACE_bodyBag"
+];
+
+openMedicalBox = {
+  params ["_boxen"];
+  removeAllActions _boxen;
+  //add thing to close box
+  _boxen addAction ["Close Medical Box",{[_this select 0] call closeMedicalBox},[],1.5,true,true,"","true",10,false,"",""];
+  //populate with current primary weapon's list of magazines
+  {
+    private "_actionString";
+    _actionString = "Take " + getText(configfile >> "CfgWeapons" >> _x >> "displayName");
+    _boxen addAction [_actionString,{[_this select 3 select 0, _this select 0] call takeMagazine;},[_x],1.5,true,true,"","true",10,false,"",""];
+  } forEach medicineListKorean;
+};
+
+closeMedicalBox = {
+  params ["_boxen"];
+  removeAllActions _boxen;
+  _boxen addAction ["Open Medical Box",{[_this select 0] call openMedicalBox},[],1.5,true,true,"","true",10,false,"",""];
 };

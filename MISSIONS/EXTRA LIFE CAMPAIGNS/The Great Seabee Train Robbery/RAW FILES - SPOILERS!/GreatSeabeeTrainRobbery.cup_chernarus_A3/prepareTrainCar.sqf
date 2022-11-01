@@ -23,6 +23,13 @@ grabNewAmmoBoxL = {
   [_newBox, true] call ace_dragging_fnc_setCarryable;
 };
 
+grabNewAmmoBoxM = { //or "CUP_lekarnicka" oor "Box_I_UAV_06_medical_F""Box_I_UAV_06_medical_F"
+  _newBox = "Land_FirstAidKit_01_closed_F" createVehicle (getPos player);
+  [_newBox, "MEDICAL", 20, true] remoteExec ["initTerminalAmmoBox", 2];
+  _newBox setPosATL (getPosATL player);
+  [_newBox, true] call ace_dragging_fnc_setCarryable;
+};
+
 ACTIONABLE_TRAINCAR = objNull;
 
 prepCar = {
@@ -37,6 +44,7 @@ prepCar = {
   //Give it Ammo!
   ACTIONABLE_TRAINCAR addAction ["Grab Box of Primary Ammo", grabNewAmmoBoxP,nil,19,true,true,"","true",9,false,"",""];
   ACTIONABLE_TRAINCAR addAction ["Grab Box of Launcher Ammo", grabNewAmmoBoxL,nil,17,true,true,"","true",9,false,"",""];
+  ACTIONABLE_TRAINCAR addAction ["Grab Medical Triage Box", grabNewAmmoBoxM,nil,16.5,true,true,"","true",9,false,"",""];
 
   //Give it an arsenal!
   [ACTIONABLE_TRAINCAR] call makeTrainArsenal;
