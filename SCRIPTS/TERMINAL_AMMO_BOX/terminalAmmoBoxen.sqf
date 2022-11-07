@@ -17,7 +17,6 @@ defaultMedicalMagazines = 100;
 
 /*
   TODO:
-    QUERY BOX DOESNT WORK
     Delete box from hashmap when deleted?
     Mod version with updated configs so vanilla objects don't have their own inventory.
     Just pick a nomenclature and stick with it. No more sidearm/secondary or launcher/secondary or whatever. Primary, Secondary, Handgun.
