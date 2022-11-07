@@ -39,7 +39,7 @@ koreanLoadouts = [
 
 spawnNKGroup = {
   params ["_pos", "_chasePlayers", "_destination"];
-  _newGroup = [_pos, EAST, ["LOP_NK_Infantry_Rifleman","LOP_NK_Infantry_Rifleman","LOP_NK_Infantry_Rifleman","LOP_NK_Infantry_Rifleman","LOP_NK_Infantry_Rifleman","LOP_NK_Infantry_Rifleman","LOP_NK_Infantry_Rifleman","LOP_NK_Infantry_Rifleman"]] call BIS_fnc_spawnGroup;
+  _newGroup = [_pos, EAST, ["LOP_NK_Infantry_Rifleman","LOP_NK_Infantry_Rifleman","LOP_NK_Infantry_Rifleman","LOP_NK_Infantry_Rifleman","LOP_NK_Infantry_Rifleman","LOP_NK_Infantry_Rifleman"]] call BIS_fnc_spawnGroup;
   _newGroup deleteGroupWhenEmpty true;
   {
     _x setUnitLoadout (selectRandom koreanLoadouts);
@@ -131,8 +131,8 @@ fortSpawn3
 
 //MISSION AI SPAWNING - ENEMY DIRECTOR
 
-generalMissionDifficulty = 100;
-generalMissionEnemyGroups = 8;
+generalMissionDifficulty = 135;
+generalMissionEnemyGroups = 9;
 serverTriggerAmbush1 = false;
 serverTriggerAmbush2 = false;
 serverTriggerAmbush3 = false;
@@ -192,9 +192,11 @@ marineLocs = [
 startDirectorAI = {
   params ["_ambushLocationArray", "_defaultAmbushDestination"];
   //clean up all previous enemies
+  /* just let zeus do it... deletes nice pre-placed enemies
   {
     deleteVehicle _x;
   } forEach (units east);
+  */
   // I guess that's 20ish minutes
   private _stopTime = time + 1337;
   //loop until ambush over
@@ -232,11 +234,17 @@ if (isServer) then {
 
   [] spawn {
     waitUntil {sleep 5; serverTriggerAmbush2};
+    [bunkerBig, 100, true] call fillBuilding;
+    [bunker2, 100, true] call fillBuilding;
+    sleep 180;
     [ambush2Locs, ambush2Dests] spawn startDirectorAI;
+
   };
 
   [] spawn {
     waitUntil {sleep 5; serverTriggerAmbush3};
+    [] call spiceUpAmbush3;
+    sleep 180;
     [ambush3Locs, ambush3Dests] spawn startDirectorAI;
   };
 
@@ -280,3 +288,34 @@ general plan - trigger spawns enemies at all spawners, for the next 20-ish minut
 
 idea: if a player is too close to spawner - offset spawn area away from player- recurse away from all players
 */
+
+fillBuilding = {
+  params ["_building", "_fractionNumber","_noAI"];
+  _positionArray = _building buildingPos -1;
+  if (count _positionArray > 1) then {
+    _buildingGroup = [[0,15500,0], EAST, ["LOP_NK_Infantry_Rifleman"]] call BIS_fnc_spawnGroup;
+    _buildingGroup deleteGroupWhenEmpty true;
+    for "_i" from 1 to ((count _positionArray) - 1) do {
+        _buildingGroup createUnit ["LOP_NK_Infantry_Rifleman", [0,15500,0], [], 0, "NONE"];
+    };
+    {
+        _currSoldier = (units _buildingGroup) select _forEachIndex;
+        _currSoldier setPosASL (AGLtoASL _x);
+        _currSoldier setUnitLoadout (selectRandom koreanLoadouts);
+        _currSoldier addHeadgear (selectRandom koreanHelmets);
+        if (_noAI) then {
+          _currSoldier disableAI "PATH";
+        };
+    } forEach _positionArray;
+    /* just fill them all up
+    {
+      if (!(floor random _fractionNumber == 1)) then {
+        deleteVehicle _x;
+      };
+    } forEach units _buildingGroup;
+    */
+    if (!_noAI) then {
+      [_buildingGroup, getPos _building, 50, 1, false, 0.1] call CBA_fnc_taskDefend;
+    };
+  };
+};

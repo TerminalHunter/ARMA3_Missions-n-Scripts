@@ -41,6 +41,9 @@ playerArsenal = [
   "RHS_M2_Gun_Bag",
   "RHS_M2_Tripod_Bag",
   "B_LIB_US_Backpack_RocketBag_Empty",
+  //NVG slot
+  "fow_i_nvg_US_scr",
+  "LIB_GER_Gloves2",
   //weapons and ammo
       //garand
   "rhs_weap_m1garand_sa43",
@@ -53,12 +56,19 @@ playerArsenal = [
       //m1911 pistol
   "rhsusf_weap_m1911a1",
   "rhsusf_mag_7x45acp_MHP",
+  /*
       //BAR
   "LIB_M1918A2_BAR",
   "lib_m1918a2_bar_handle",
   "lib_m1918a2_bar_bipod",
   "LIB_20Rnd_762x63",
   "LIB_20Rnd_762x63_M1",
+  */
+      //Better BAR
+  "fow_w_m1918a2",
+  "fow_20Rnd_762x63",
+  "fow_w_acc_m1918a2_handle",
+  "fow_w_acc_m1918a2_bipod",
       //Bazooka
   "LIB_M1A1_Bazooka",
   "LIB_1Rnd_60mm_M6",
@@ -67,6 +77,9 @@ playerArsenal = [
   "LIB_5Rnd_762x63",
   "LIB_5Rnd_762x63_M1",
   "LIB_5Rnd_762x63_t",
+      //better/less heavy m3
+  "fow_w_m3",
+  /*
       //m3
   "rhs_weap_m3a1",
   "rhsgref_30rnd_1143x23_M1T_SMG",
@@ -77,6 +90,11 @@ playerArsenal = [
   "LIB_M1A1_Thompson",
   "LIB_30Rnd_45ACP",
   "LIB_30Rnd_45ACP_t",
+  */
+      //better thomspon
+  "fow_w_m1a1_thompson",
+  "fow_30Rnd_45acp",
+  "fow_30Rnd_45acp_T",
   //grenades
   "rhs_grenade_mkii_mag",
   "rhs_grenade_m15_mag",
@@ -94,6 +112,7 @@ playerArsenal = [
   "TFAR_rf7800str",
   "ItemCompass",
   "ItemWatch",
+  "TFAR_microdagr",
   //item items
   "murshun_cigs_cigpack",
   "murshun_cigs_lighter",
@@ -154,8 +173,8 @@ comboArsenal append koreanArsenal;
 //INITS
 
 saveLoadout = {
-  profileNamespace setVariable["EXTRALIFE2022_savedLoadout",getUnitLoadout player];
-  player setVariable["EXTRALIFE2022_savedLoadout2",getUnitLoadout player];
+  profileNamespace setVariable["EXTRALIFE2022_savedLoadout_FINAL",getUnitLoadout player];
+  player setVariable["EXTRALIFE2022_savedLoadout2_FINAL",getUnitLoadout player];
   hintSilent "Respawn Loadout Saved!";
   sleep 3;
   hintSilent "";
@@ -213,7 +232,7 @@ makeTrainArsenal = {
 
   [_jackShack, comboArsenal] call ace_arsenal_fnc_initBox;
 
-  _jackShack addAction ["Mobile Jack Shack Arsenal", {[(_this select 0), player] call ace_arsenal_fnc_openBox;},[],6,true,true,"","true",9,false,"",""];
+  _jackShack addAction ["Jack Shack Arsenal (To-Go!)", {[(_this select 0), player] call ace_arsenal_fnc_openBox;},[],6,true,true,"","true",9,false,"",""];
   _jackShack addAction ["Save Current Loadout as Respawn Loadout",saveLoadout,[],5,true,true,"","true",9,false,"",""];
   _jackShack addAction ["Toggle Loadout Autosave",toggleLoadoutAutosave,[],4,true,true,"","true",9,false,"",""];
 

@@ -44,13 +44,13 @@ prepCar = {
   //Give it Ammo!
   ACTIONABLE_TRAINCAR addAction ["Grab Box of Primary Ammo", grabNewAmmoBoxP,nil,19,true,true,"","true",9,false,"",""];
   ACTIONABLE_TRAINCAR addAction ["Grab Box of Launcher Ammo", grabNewAmmoBoxL,nil,17,true,true,"","true",9,false,"",""];
-  ACTIONABLE_TRAINCAR addAction ["Grab Medical Triage Box", grabNewAmmoBoxM,nil,16.5,true,true,"","true",9,false,"",""];
+  ACTIONABLE_TRAINCAR addAction ["Grab Box of Medical Gear", grabNewAmmoBoxM,nil,16.5,true,true,"","true",9,false,"",""];
 
   //Give it an arsenal!
   [ACTIONABLE_TRAINCAR] call makeTrainArsenal;
 
   //Give it Autodoc!
-  ACTIONABLE_TRAINCAR addAction["Administer Medical Aid",{[(_this select 1)] spawn activateAutodoc},[],13,true,true,"","true",9,false,"",""];
+  ACTIONABLE_TRAINCAR addAction["Begin Auto-Matic Healing",{[(_this select 1)] spawn activateAutodoc},[],13,true,true,"","true",9,false,"",""];
 };
 
 /*
