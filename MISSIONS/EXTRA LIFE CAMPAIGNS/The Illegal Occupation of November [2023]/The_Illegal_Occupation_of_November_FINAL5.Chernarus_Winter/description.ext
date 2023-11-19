@@ -1,0 +1,52 @@
+respawnDelay=12;
+respawnOnStart=1;
+joinUnassigned=0;
+disabledAI=1;
+
+briefing = 1;
+debriefing = 1;
+
+class CfgMusic
+{
+	tracks[] = {};
+	class backgroundMusic
+	{
+		// display name
+		name	= "Ominous Background Music";
+		// filename, volume, pitch
+		sound[]	= { "\sfx\slowBackground.ogg", db + 0, 1.0 };
+	};
+	class brojobMusic
+	{
+		name	= "Brojob";
+		sound[]	= { "\sfx\BrojobQuiet.ogg", db - 25, 1.0 };
+	};
+	class augustMusic
+	{
+		name	= "August Burns Red";
+		sound[]	= { "\sfx\AugustBurnsRedQuiet.ogg", db - 25, 1.0 };
+	};
+	class 45min
+	{
+		name	= "45 minutes by Alexander Nakarada";
+		sound[]	= { "\sfx\45min.ogg", db - 25, 1.0 };
+	};
+	class killing
+	{
+		name	= "Killing Floor Xmas Soundtrack";
+		sound[]	= { "\sfx\killing.ogg", db - 25, 1.0 };
+	};
+};
+
+class CfgDebriefing
+{  
+	class End1
+	{
+		title = "Happy Holidays!";
+		subtitle = "Whichever ones are left...";
+		description = "";
+		pictureBackground = "";
+		picture = "b_inf";
+		pictureColor[] = { 0.0, 0.3, 0.6, 1 };
+	};
+};
