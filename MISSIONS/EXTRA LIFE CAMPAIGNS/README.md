@@ -17,3 +17,5 @@ For more information about the Charity, visit: https://www.extra-life.org/
   - Spooky!	
 * Vaguely historical!
   - Vaguely!
+* Twitch.tv integration?
+  - Twitch integration! Maybe a world first? I dunno, but I got Twitch chat involved in the game!
