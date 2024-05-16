@@ -8,12 +8,16 @@ profileNameSpace
     TESTING_MAXIMUMTHEMADNESS_OBJECTDATA -- object array, I guess, maybe only do pick-up-able objects.
     TESTING_MAXIMUMTHEMADNESS_ARSENALDATA -- all the uniforms, vests, backpacks, facewear, etc. I guess basic radios too?
 
+
+TODO:   vehicles should probably keep their appearance between saves
+        make it more obvious that inventories are stored in the arsenal
+
 */
 
 /*
-
+------------
 VEHICLE SAVE
-
+------------
 */
 
 birdArray = ["Abyssinian Yellow-rumped Seedeater","Albatross","Avocet","Bantam","Basilisk","Bee-eater","Blackbird","Bluebird","Booby","Budgerigar","Bustard","Buzzard","Canary","Caracal","Cardinal","Cassowary","Catbird","Charon","Chicken","Cockatiel","Cockatoo","Condor","Conure","Coot","Corax","Cormorant","Crane","Crow","Cuckoo","Dodo","Dove","Drake","Duck","Dunnock","Eagle","Emu","Falcon","Ferox","Finch","Flycatcher","Gadwall","Gannet","Goldfinch","Goose","Grebe","Griffin","Harpy","Hawk","Heron","Hoatzin","Hornbill","Hummingbird","Ibis","Jackdaw","Jay","Kea","Kestrel","Kingfisher","Kite","Kitsune","Kiwi","Kookaburra","Leviathan","Lovebird","Macaw","Magpie","Mallard","Manticore","Megapode","Merlin","Minokawa","Moa","Myna","Nighthawk","Nightingale","Nightjar","Oilbird","Onyx","Oriole","Osprey","Ostrich","Owl","Parakeet","Parrot","Partridge","Passerine","Peacock","Pelican","Penguin","Pheasant","Phoenix","Pigeon","Pintail","Pipit","Potoo","Quail","Racket","Rail","Rallidae","Raptor","Raven","Rhea","Roadrunner","Robin","Rokh","Rook","Sandpiper","Seagull","Shoveler","Shrike","Siskin","Skylark","Sparrow","Spoonbill","Starling","Stork","Swallow","Swan","Swift","Tailorbird","Teal","Tengu","Tern","Thrush","Tit","Toucan","Turkey","Vulture","Wagtail","Warbler","Weaverbird","Woodpecker","Wren","Wyvern"];
@@ -75,6 +79,9 @@ saveVehicle = {
     _vehicleSaveArray pushBack (magazinesAllTurrets [_vehicle,true]);
     _vehicleSaveArray pushBack (getAllHitPointsDamage _vehicle);
     _vehicleSaveArray pushBack ([_vehicle] call saveBoxenInventory); //bluh. [itemCargo, MagazineCargo, weaponsItemsCargo, backpackCargo]
+    _vehicleSaveArray pushBack (getObjectTextures _vehicle);
+    //getObjectTextures
+    //["cox_factionmod_framework\textures\vans\van_trashed.paa","a3\soft_f_orange\van_02\data\van_wheel_co.paa","a3\soft_f_orange\van_02\data\van_glass_utility_ca.paa","cox_factionmod_framework\textures\vans\van_trashed.paa"]
     _vehicleSaveArray
 };
 
@@ -96,29 +103,120 @@ loadVehicle = {
     } forEach (_vehicleArray select 3);
     
     {
-        _newVehicle setHitPointDamage [_x, (((_vehicleArray select 4) select 2) select _forEachIndex)];
+        _newVehicle setHitPointDamage [_x, (((_vehicleArray select 4) select 2) select _forEachIndex), false];
     } forEach ((_vehicleArray select 4) select 0);
     
     [_newVehicle, _vehicleArray select 5] call loadBoxenInventory;
+
+    {
+        _newVehicle setObjectTextureGlobal [_forEachIndex, _x];
+    } forEach (_vehicleArray select 6);
 };
 
 /*
-
+------------
 PLAYER INVENTORY SAVE
-
+------------
 */
 
-loadedPlayerInventories = createHashMapFromArray (profileNamespace getVariable ["TESTING_MAXIMUMTHEMADNESS_PLAYERDATA", []]);
+savePlayerInventory = {
+    params["_player"];
+    private _playerUID = getPlayerUID _player;
+    private _playerInventory = getUnitLoadout _player;
+    playerSaveHashmap set [_playerUID, _playerInventory];
+    _player setUnitLoadout [[],[],[],["",[]],[],[],"","",[],["ItemMap","","rhsusf_radio_anprc152","ItemCompass","ItemWatch",""]];
+};
 
-getCurrentPlayersInventories = {
-    private _newSaveStateToWrite = [];
+saveAllPlayerInventories = {
     {
-        _newSaveStateToWrite pushBack [getPlayerUID _x, getUnitLoadout _x];
+        [_x] call savePlayerInventory;
     } forEach allPlayers;
 };
 
-loadPlayerInventories = {
-    private loggedInPlayers
+loadPlayerInventory = {
+    params ["_playa"];
+    _playa setUnitLoadout (playerSaveHashmap get (getPlayerUID _playa));
+    playerSaveHashmap deleteAt (getPlayerUID _playa);
 };
 
-//TODO : JIP!
+loadAllPlayersInventories = {
+    {
+        [_x] call loadPlayerInventory;
+    } forEach allPlayers;
+};
+
+hardSavePlayerInventories = {
+    profileNamespace setVariable ["TESTING_MAXIMUMTHEMADNESS_PLAYERDATA", playerSaveHashmap];
+};
+
+hardLoadPlayerInventories = {
+    playerSaveHashmap = profileNamespace getVariable "TESTING_MAXIMUMTHEMADNESS_PLAYERDATA";
+};
+
+if (isServer) then{
+    playerSaveHashmap = createHashMap;
+    [] call hardLoadPlayerInventories;
+};
+
+
+/*
+------------
+ARSENAL SAVE
+------------
+*/
+
+// raiderArsenal.sqf takes care of this
+
+/*
+------------
+OBJECT SAVE
+------------
+*/
+
+//TODO: TBD
+
+/*
+------------
+THE BIG BUTTON
+------------
+*/
+
+fullSave = {
+    private _grabbedVehicles = nearestObjects [infilExfilArea, ["LandVehicle"], 70, true];
+    private _vehiclesToSave = [];
+    {
+        private _newVehicleArray = [_x] call saveVehicle;
+        _vehiclesToSave pushBackUnique _newVehicleArray;
+    } forEach _grabbedVehicles;
+    profileNamespace setVariable ["TESTING_MAXIMUMTHEMADNESS_VEHICLEDATA", _vehiclesToSave];
+    private _hintString = str(count _grabbedVehicles) + " vehicles saved.";
+    [_hintString] remoteExec ["hint"];
+
+    //[] call saveAllPlayerInventories;
+    //[] call hardSavePlayerInventories;
+};
+
+infilExfilFlagpole addAction ["Save Vehicles", {
+    [] remoteExec ["fullSave", 2];
+},[],1.5,true,true,"","true",10,false,"",""];
+
+/*
+------------
+LOAD ON START
+------------
+*/
+
+getExfilOffset = {
+    params ["_slotNumber"];
+    private _kindaX = (_slotNumber mod 4) * 15;
+    private _kindaY = (floor (_slotNumber / 4)) * 15;
+    _returnValue = (infilExfilArea vectorAdd [10,-50,0]) vectorAdd [_kindaX, _kindaY, 0];
+    _returnValue
+};
+
+if (isServer) then {
+    _initVehicles = profileNamespace getVariable ["TESTING_MAXIMUMTHEMADNESS_VEHICLEDATA",[]];
+    {
+        [[_forEachIndex] call getExfilOffset, _x] call loadVehicle;
+    } forEach _initVehicles;
+};
