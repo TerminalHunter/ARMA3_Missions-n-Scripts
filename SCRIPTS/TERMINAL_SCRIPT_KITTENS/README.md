@@ -6,4 +6,5 @@ The words just kinda mashed together. Anyway, these are a bunch of little script
 
 * Pick up a FirstAidKit and have it turn into a random assortment of ACE Medical items
 * The corpse -> box looting script I finally got around to finishing
+* Confetti!
 * Probably more later

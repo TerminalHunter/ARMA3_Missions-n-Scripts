@@ -1,0 +1,41 @@
+respawnDelay=12;
+respawnOnStart=1;
+joinUnassigned=0;
+disabledAI=1;
+
+briefing = 1;
+debriefing = 1;
+
+class CfgMusic
+{
+	class blackPowderAndAlcohol
+	{
+		name	= "Black Powder and Alcohol";
+		sound[]	= { "\music\blackPowderAlcohol.ogg", db + 0, 1.0 };
+	};
+    class hoistKaraoke
+	{
+		name	= "Hoist the Colors Instrumental";
+		sound[]	= { "\music\hoistKaraoke.ogg", db + 0, 1.0 };
+	};
+    class hoistMetal
+	{
+		name	= "Hoist the Colors Metal Version";
+		sound[]	= { "\music\hoistMetal.ogg", db + 0, 1.0 };
+	};
+    class sillyMetal
+	{
+		name	= "The Pirates Who Don't Do Anything Metal";
+		sound[]	= { "\music\sillyMetal.ogg", db + 0, 1.0 };
+	};
+    class woodpileMedium
+	{
+		name	= "Roll the Woodpile Down - Dreadnaughts";
+		sound[]	= { "\music\woodpileMedium.ogg", db + 0, 1.0 };
+	};
+    class woodpileSlow
+	{
+		name	= "Roll the Woodpile Down - Dude";
+		sound[]	= { "\music\woodpileSlow.ogg", db + 0, 1.0 };
+	};
+};
