@@ -38,4 +38,14 @@ class CfgMusic
 		name	= "Roll the Woodpile Down - Dude";
 		sound[]	= { "\music\woodpileSlow.ogg", db + 0, 1.0 };
 	};
+	class million
+	{
+		name	= "$Million Question from Who Wants To Be A Millionaire";
+		sound[]	= { "\music\million.ogg", db + 0, 1.0 };
+	};
+	class grim
+	{
+		name	= "Grim League";
+		sound[]	= { "\music\grim.ogg", db + 0, 1.0 };
+	};
 };
