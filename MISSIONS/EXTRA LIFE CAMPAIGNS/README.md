@@ -6,7 +6,7 @@ For more information about the Charity, visit: https://www.extra-life.org/
 ### Prominent Features:
 
 * Has literally raised thousands of dollars for charity.
-  - >$3000, as of 2024, towards Extra Life over the years.
+  - \>$3000, as of 2024, towards Extra Life over the years.
 * The ability to litter within ARMA
   - And custom beer can labels, to boot.	
 * The ability to clean up said litter
