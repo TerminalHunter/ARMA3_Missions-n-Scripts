@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=370;
+		nextID=375;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={-0.54190469,52.828362,-1.4576277};
-		dir[]={0.78211224,-0.41579133,0.46413171};
-		up[]={0.35756984,0.90946001,0.21219397};
-		aside[]={0.51033765,-1.4901161e-008,-0.85997421};
+		pos[]={11.983998,51.356625,-0.68015844};
+		dir[]={0.12962563,-0.33665586,0.93266475};
+		up[]={0.046344485,0.9416272,0.33345187};
+		aside[]={0.99048126,-7.6863216e-08,-0.13766117};
 	};
 };
 binarizationWanted=0;
@@ -29,13 +29,14 @@ addons[]=
 	"A3_Characters_F",
 	"A3_Weapons_F",
 	"tfar_handhelds",
-	"crowsEW_spectrum"
+	"crowsEW_spectrum",
+	"A3_Modules_F_Curator_Curator"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=4;
+		items=5;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -61,6 +62,13 @@ class AddonsMetaData
 			className="crowsEW_spectrum";
 			name="spectrum";
 			author="Crowdedlight";
+		};
+		class Item4
+		{
+			className="A3_Modules_F_Curator";
+			name="Arma 3 Zeus Update - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
 		};
 	};
 };
@@ -18766,7 +18774,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=1;
+		items=2;
 		class Item0
 		{
 			dataType="Group";
@@ -18779,13 +18787,14 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1.8939342,49.069202,7.9055691};
+						position[]={1.8940001,49.069199,7.9060001};
 						angles[]={0,3.0937006,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
+						name="zoos";
 						description="The Mad@Raiding Party";
 						isPlayer=1;
 						isPlayable=1;
@@ -18818,7 +18827,7 @@ class Mission
 					};
 					id=46;
 					type="B_Survivor_F";
-					atlOffset=-7.6293945e-006;
+					atlOffset=-3.8146973e-06;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -18849,6 +18858,32 @@ class Mission
 						};
 						class Attribute2
 						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male10ENG";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1.01;
+								};
+							};
+						};
+						class Attribute4
+						{
 							property="TFAR_freq_sr";
 							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; } else { _value = [str _value,8,512,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_sr',_value,true]; }";
 							class Value
@@ -18860,7 +18895,7 @@ class Mission
 								};
 							};
 						};
-						class Attribute3
+						class Attribute5
 						{
 							property="TFAR_freq_lr";
 							expression="if (_value isEqualTo '' || _value isEqualTo []) exitWith {}; if (_value isEqualType '') then { _value = [_value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; } else { _value = [str _value,9,87,30,10] call tfar_fnc_parseFrequenciesInput; _this setVariable ['TFAR_freq_lr',_value,true]; }";
@@ -18873,7 +18908,7 @@ class Mission
 								};
 							};
 						};
-						nAttributes=4;
+						nAttributes=6;
 					};
 				};
 				class Item1
@@ -18919,7 +18954,7 @@ class Mission
 					};
 					id=48;
 					type="B_Survivor_F";
-					atlOffset=-3.8146973e-006;
+					atlOffset=-3.8146973e-06;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -19020,7 +19055,7 @@ class Mission
 					};
 					id=50;
 					type="B_Survivor_F";
-					atlOffset=-3.8146973e-006;
+					atlOffset=-3.8146973e-06;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -19121,7 +19156,7 @@ class Mission
 					};
 					id=52;
 					type="B_Survivor_F";
-					atlOffset=-3.8146973e-006;
+					atlOffset=-3.8146973e-06;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -19322,7 +19357,7 @@ class Mission
 					};
 					id=56;
 					type="B_Survivor_F";
-					atlOffset=3.8146973e-006;
+					atlOffset=3.8146973e-06;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -19423,7 +19458,7 @@ class Mission
 					};
 					id=58;
 					type="B_Survivor_F";
-					atlOffset=3.8146973e-006;
+					atlOffset=3.8146973e-06;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -19524,7 +19559,7 @@ class Mission
 					};
 					id=60;
 					type="B_Survivor_F";
-					atlOffset=3.8146973e-006;
+					atlOffset=3.8146973e-06;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -19725,7 +19760,7 @@ class Mission
 					};
 					id=64;
 					type="B_Survivor_F";
-					atlOffset=-7.6293945e-006;
+					atlOffset=-7.6293945e-06;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -20126,7 +20161,7 @@ class Mission
 					};
 					id=72;
 					type="B_Survivor_F";
-					atlOffset=-3.8146973e-006;
+					atlOffset=-3.8146973e-06;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -20727,7 +20762,7 @@ class Mission
 					};
 					id=84;
 					type="B_Survivor_F";
-					atlOffset=-3.8146973e-006;
+					atlOffset=-3.8146973e-06;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -21328,7 +21363,7 @@ class Mission
 					};
 					id=96;
 					type="B_Survivor_F";
-					atlOffset=3.8146973e-006;
+					atlOffset=3.8146973e-06;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -21429,7 +21464,7 @@ class Mission
 					};
 					id=98;
 					type="B_Survivor_F";
-					atlOffset=-3.8146973e-006;
+					atlOffset=-3.8146973e-06;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -21830,7 +21865,7 @@ class Mission
 					};
 					id=106;
 					type="B_Survivor_F";
-					atlOffset=-3.8146973e-006;
+					atlOffset=-3.8146973e-06;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -21931,7 +21966,7 @@ class Mission
 					};
 					id=108;
 					type="B_Survivor_F";
-					atlOffset=-3.8146973e-006;
+					atlOffset=-3.8146973e-06;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -21994,7 +22029,7 @@ class Mission
 			{
 			};
 			id=45;
-			atlOffset=-7.6293945e-006;
+			atlOffset=-3.8146973e-06;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -22011,6 +22046,93 @@ class Mission
 					};
 				};
 				nAttributes=1;
+			};
+		};
+		class Item1
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2.444,49.035259,12.121};
+			};
+			id=373;
+			type="ModuleCurator_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleCurator_F_Owner";
+					expression="_this setVariable ['Owner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="zoos";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleCurator_F_Forced";
+					expression="_this setVariable ['Forced',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleCurator_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleCurator_F_Addons";
+					expression="_this setVariable ['Addons',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=2;
+						};
+					};
+				};
+				nAttributes=4;
+			};
+		};
+	};
+	class Connections
+	{
+		class LinkIDProvider
+		{
+			nextID=1;
+		};
+		class Links
+		{
+			items=1;
+			class Item0
+			{
+				linkID=0;
+				item0=373;
+				item1=46;
+				class CustomData
+				{
+					type="Sync";
+				};
 			};
 		};
 	};

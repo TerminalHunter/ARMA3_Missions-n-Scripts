@@ -15,3 +15,6 @@ TODO:
 
 [] call updateArsenal;
 [exfilJackShack] call makePirateArsenal;
+
+//tfar tracking / radio signals
+["crowsew_spectrum_toggleRadioTracking", [true], "crowsew_spectrum_radioTracking"] call CBA_fnc_globalEventJIP; 
