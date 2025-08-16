@@ -11,7 +11,7 @@ It's the first one.
 
 Aping games like Mercenaries, features a bounty system for taking in HVT, whether alive, dead, or just their dogtags to confirm the kill
 
-Story-heavy and kinda ad-hoc
+Story-heavy and kinda ad-hoc but first time putting together cutscenes! Wow, cinema!
 
 Tech trees!
 
