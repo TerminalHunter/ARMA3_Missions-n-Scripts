@@ -1,31 +1,3 @@
-/*
-
-https://forums.bohemia.net/forums/topic/226608-simple-convoy-script-release/
-
-Needs a group with waypoints placed beforehand.
-
-spawn this. don't call. 
-
-[group] spawn TOV_fnc_SimpleConvoy;
-
-TODO
-    figure out path convoy will take. maybe put something at destination like a cache.
-    place convoy
-        make some factions? loadouts, etc. cool-looking units with proper inventories
-        make sure vics have fun ammo amounts and gas
-
-
-NOTE
-    The script doesn't exit himself, so once you reach your final waypoint, you'll have to end it with :
-
-    terminate convoyScript;
-    {(vehicle _x) limitSpeed 5000;(vehicle _x) setUnloadInCombat [true, false]} forEach (units convoyGroup);
-    convoyGroup enableAttack true;
-
-    SHIT. AI likes to lock up unless waypoints are kinda close. maybe 2km?
-
-*/
-
 TOV_fnc_SimpleConvoy = { 
     params ["_convoyGroup",["_convoySpeed",10],["_convoySeparation",15],["_pushThrough", false]];
     if (_pushThrough) then {
@@ -60,117 +32,19 @@ setupSimpleConvoy = {
     (vehicle leader _convoyGroup) limitSpeed 40;
 };
 
-/*
-
-testVehicles = [
-    "I_C_Offroad_02_LMG_F"
-];
-
-testUnits = [
-    "O_Soldier_F"
-];
-
-initializeConvoy = {
-
-};
-
-createConvoy = {
-    params ["_vicList", "_unitList", "_side", "_spawnPos", "_convoyGroup"];
-    //private _testConvoy = createGroup [_side, true];
-
-    for "_i" from 1 to ((floor (random 10)) + 2) do {
-        private _newVic = createVehicle [selectRandom _vicList, _spawnPos vectorAdd [0, _i * -10, 0]];
-        _convoyGroup addVehicle _newVic;
-        private _crewCount = [typeOf _newVic, true] call BIS_fnc_crewCount;
-        for "_j" from 1 to _crewCount do {
-            (selectRandom _unitList) createUnit [_spawnPos, _convoyGroup];
-        };
-    };
-
-    //{
-    //    [_x] orderGetIn true;
-    //} forEach units _convoyGroup;
-    _convoyGroup
-};
-
-getEndPoint = {
-    endPoint = [floor random worldSize, floor random worldSize, 0];
-
-    if (
-        (endPoint distance2D infilExfilArea < 3000)
-        or
-        (endPoint select 0 > worldSize - 4500)
-        or
-        (endPoint select 1 < 4500)
-        or
-        (endPoint select 1 > worldSize - 4500)
-    ) then {
-        endPoint = [] call getEndPoint;
-    };
-    endPoint
-};
-
-drawConvoyPath = {
-    params ["_group", "_endPointConvoy"];
-
-    _marker1 = createMarker ["ConvoyOrigin", _endPointConvoy];
-    _marker1 setMarkerType "hd_dot";
-
-    _randomDirection = (floor random 178) + 1;
-
-    private _offMapPos = [worldSize*2,worldSize*2,0];
-
-    for "_i" from 15 to 1 step -1 do {
-        private _newPos = _endPointConvoy getPos [500*_i, _randomDirection + ((random 10) - 5)];
-        if (_i == 15) then {
-            _offMapPos = _newPos;
-        };
-        private _newMarker = createMarker ["CONVOIBOI" + str(_i), _newPos];
-        _newMarker setMarkerType "hd_dot";
-        private _justMoveWaypoint = _group addWaypoint [_newPos, 0];
-        _justMoveWaypoint setWaypointType "MOVE";
-    };
-
-    _offMapPos
-};
-
-[] spawn {
-    private _convoyEnd = [] call getEndPoint;
-    private _convoyGroup = createGroup [west, true];
-    _convoySpawnPoint = [_convoyGroup, _convoyEnd] call drawConvoyPath;
-    private _okayGoNow = _convoyGroup addWaypoint [(_convoySpawnPoint vectorAdd [0, 50, 0]), 0, 1];
-    _okayGoNow setWaypointType "GETIN";
-    [testVehicles, testUnits, west, _convoySpawnPoint, _convoyGroup] call createConvoy;
-    [_convoyGroup] spawn TOV_fnc_SimpleConvoy;
-};
-
-
-
-
-pick spot on map -- pick direction (away from player) -- go maybe 16km -- convoy can start off map. oh well, I guess it's still straight
-
-*/
-
-/*
-
-OKAY - ALGORITHM 2
-
-*/
-
-
-//pick a spot off map.
+//pick a spot off map. NOPE, THAT BREAKS PATHFINDING, ITS NOW JUST INSIDE THE MAP
 pickSpotOffMap = {
     private _returnSpot = [0,0,0];
 
     switch (floor (random 3)) do {
         case 0: { //NORTH BORDER
-            _returnSpot = [((worldSize/2) + random(worldSize/2)),worldSize + 100,0];
+            _returnSpot = [((worldSize/2) + random(worldSize/2)),worldSize - 100,0];
         };
         case 1: { //SOUTH BORDER
-            _returnSpot = [((worldSize/2) + random(worldSize/2)),-100,0];
+            _returnSpot = [((worldSize/2) + random(worldSize/2)),+100,0];
         };
         case 2: { //EAST BORDER
-            _returnSpot = [worldSize + 100, random(worldSize), 0];
+            _returnSpot = [worldSize - 100, random(worldSize), 0];
         };
         default {["Holy shit how did you break this? Tell terminal the thing in convoy.sqf has broken completely and utterly."] remoteExec ["hint"]};
     };
@@ -203,7 +77,7 @@ insertAt = {
     _array set [_index, _value];
 };
 
-createTestConvoy = {
+createTestConvoyWhyTheFuckIsThisOneHere = {
     params ["_location"];
     private _newGroup = createGroup [east, true];
 
@@ -219,24 +93,33 @@ createTestConvoy = {
 
 };
 
-createTestConvoy = {
-    params ["_location"];
+enemyVics = [];
+
+createTestConvoy = { //jesus fuck we aint making the test anymore, rename this to something normal eventually
+    params ["_location", "_faction"];
     private _newGroups = [];
 
-    for "_i" from 1 to ((floor (random 10)) + 2) do {
+    for "_i" from 1 to ((floor (random 6)) + 6) do {
         private _newGroup = createGroup [east, true];
-        private _newVic = createVehicle [selectRandom testVehicles, _location vectorAdd [0, _i * -10, 0]];
+        private _newVic = createVehicle [selectRandom (_faction select 1), _location vectorAdd [0, _i * -25, 0]];
+
         _newGroup addVehicle _newVic;
-        private _crewCount = [typeOf _newVic, true] call BIS_fnc_crewCount;
+        clearItemCargoGlobal _newVic;
+        clearMagazineCargoGlobal _newVic;
+        clearWeaponCargoGlobal _newVic;
+        clearBackpackCargoGlobal _newVic;
+        private _crewCount = [typeOf _newVic, true] call BIS_fnc_crewCount; //sometimes this returns a wrong value
         for "_j" from 1 to _crewCount do {
-            (selectRandom testUnits) createUnit [_location, _newGroup];
+            private _freshFuckMan = "O_G_Survivor_F" createUnit [_location, _newGroup];
         };
+        enemyVics pushBack _newVic;
         _newGroups pushBack _newGroup;
     };
     _newGroups
 
 };
 
+/*
 createSingleVehicle = {
     params ["_location"];
     private _newGroup = createGroup [east, true];
@@ -248,12 +131,15 @@ createSingleVehicle = {
     };
     _newGroup
 };
+*/
 
 giveConvoyOrders = {
-    params ["_convoyGroup", "_startingPos", "_destinationsArray"];
+    params ["_convoyGroup", "_startingPos", "_destinationsArray", "_stops"];
     //get in your vehicles
-    private _okayGoNow = _convoyGroup addWaypoint [(_startingPos vectorAdd [0, 50, 0]), 0, 1];
-    _okayGoNow setWaypointType "GETIN";
+    //private _okayGoNow = _convoyGroup addWaypoint [(_startingPos vectorAdd [0, 50, 0]), 0, 1];
+    //_okayGoNow setWaypointType "GETIN";
+    //_okayGoNow setWaypointCompletionRadius 1500;
+    //_okayGoNow setWaypointTimeout [68,69,70];
 
     _convoyGroup setCombatBehaviour "COMBAT";
     [_convoyGroup] call setupSimpleConvoy;
@@ -261,14 +147,22 @@ giveConvoyOrders = {
     for "_i" from 1 to ((count _destinationsArray) - 1) do {
         private _nextPos = _destinationsArray select _i;
         private _nextWaypoint = _convoyGroup addWaypoint [_nextPos, 100];
+        _nextWaypoint setWaypointCompletionRadius 20;
         _nextWaypoint setWaypointType "MOVE";
+        if (_nextPos in _stops) then {
+            private _randWait = (floor (random 200)) + 50;
+            _nextWaypoint setWaypointTimeout [_randWait,_randWait,_randWait];
+            //TODO: any way to get vehicles to wait and all leave at the same time?
+        };
     };
 
-    private _okayButSeriouslyGoNow = _convoyGroup addWaypoint [(_startingPos vectorAdd [0, 150, 0]), 0, 2];
-    _okayButSeriouslyGoNow setWaypointType "MOVE";
+    //private _okayButSeriouslyGoNow = _convoyGroup addWaypoint [(_startingPos vectorAdd [0, 150, 0]), 0, 2];
+    //_okayButSeriouslyGoNow setWaypointType "MOVE";
+    //_okayButSeriouslyGoNow setWaypointCompletionRadius 50;
 
     private _fuckOffIntoTheSunset = _convoyGroup addWaypoint [_startingPos vectorAdd [worldSize-1000,0,0], 1000];
     _fuckOffIntoTheSunset setWaypointType "MOVE";
+    _fuckOffIntoTheSunset setWaypointCompletionRadius 50;
 };
 
     simpleMidPoint = {
@@ -287,7 +181,7 @@ giveConvoyOrders = {
         for "_i" from 0 to (count _destinations) -2 do {
             private _pointA = _destinations select _i;
             private _pointB = _destinations select (_i + 1);
-            if (_pointA distance _pointB > 1500) then {
+            if (_pointA distance _pointB > 800) then { //1500 too much?
                 private _newPoint = [_pointA, _pointB] call simpleMidPoint;
                 [_destinations, _i+1, _newPoint] call insertAt;
                 _repeat = true;
@@ -303,6 +197,7 @@ createTheWholeDamnConvoy = {
 
     //STEP 1 - INIT
     private _startingPosition = [] call pickSpotOffMap;
+    private _faction = selectRandom madnessFactions;
     private _convoyDestinations = [];
 
     //STEP 2 - BUILD ITENERARY
@@ -314,39 +209,52 @@ createTheWholeDamnConvoy = {
     _sortedConvoyDestinations pushBack (_startingPosition vectorAdd [worldSize-1000,0,0]); //fuckOffIntoSunset
 
     //STEP 3 - shit fucks up if points are too far away. fix by adding midpoints until it works.
-
     [_sortedConvoyDestinations] call addAllTheMidpoints;
-
-    //CHECK OFF-MAP POINTS.
 
     if (_debug) then {
         [_sortedConvoyDestinations] call debugPointDraw;
     };
 
-    //STEP 3
+    //STEP 4 -- MAKE THE CONVOY, GIVE IT ORDERS
     //TODO: use real values and not testing values
-    //TODO: each vehicle its own group?
-    private _convoyGroups = [_startingPosition] call createTestConvoy;
-    //private _testConvoy = [_startingPosition] call createSingleVehicle;
-    //private _testConvoy2 = [_startingPosition] call createSingleVehicle;
-    //private _testConvoy3 = [_startingPosition] call createSingleVehicle;
-
-    //STEP 4 -- RE-ENABLE ME ONCE FINISHED I GUESS
-    //[_convoyGroup, _startingPosition, _sortedConvoyDestinations] call giveConvoyOrders;
-    //[_testConvoy, _startingPosition, _sortedConvoyDestinations] call giveConvoyOrders;
-    //[_testConvoy2, _startingPosition vectorAdd [0,-10,0], _sortedConvoyDestinations] call giveConvoyOrders;
-    //[_testConvoy3, _startingPosition vectorAdd [0,-20,0], _sortedConvoyDestinations] call giveConvoyOrders;
-    //[_convoyGroup] spawn TOV_fnc_SimpleConvoy;
+    private _convoyGroups = [_startingPosition, _faction] call createTestConvoy;
 
     {
-        [_x, _startingPosition, _sortedConvoyDestinations] call giveConvoyOrders;
+        [_x, _startingPosition, _sortedConvoyDestinations, _convoyDestinations] call giveConvoyOrders;
     } forEach _convoyGroups;
 
-    _convoyDestinations
+    //STEP 5 -- PUT THINGS AT THE PLACE THE CONVOY STOPS
+    {
+        if (!(_x isEqualTo _startingPosition)) then {
+            [_x] call addCache;
+        };
+    } forEach _convoyDestinations;
+
+    //STEP 6 -- ARM THE MASSES
+    [_faction] spawn ArmTheMasses;
+
+    _convoyGroups
 
 };
 
+blinkies = ["Land_PortableHelipadLight_01_F","PortableHelipadLight_01_blue_F","PortableHelipadLight_01_green_F","PortableHelipadLight_01_red_F","PortableHelipadLight_01_white_F","PortableHelipadLight_01_yellow_F"];
 
+missionCaches = [];
+
+addCache = {
+    //a little thing to find, eventually the convoy finds it
+    //maybe blows it up when they leave?
+    params["_location"];
+    private _blinker = (selectRandom blinkies) createVehicle _location;
+    missionCaches pushBack _blinker;
+    
+    /*
+    ["crowsEW_spectrum_addBeacon", [_blinker, floor (random 400) + 600, 15000, "zeus"]] call CBA_fnc_serverEvent; //why no work?
+    */
+    
+    //"Land_House_Big_01_V1_ruins_F" createvehicle _location;
+    //the ruins clip into things, so might need to be spawn'd. or ensure that the blinkies are invincible.
+};
 
 debugPointDraw = {
     params["_pointArray"];
@@ -358,115 +266,68 @@ debugPointDraw = {
     } forEach _pointArray;
 };
 
-stupidDumbArrayPlz = [true] call createTheWholeDamnConvoy;
+giveUnitWeapon = {
+    params ["_unit", "_weaponArray"];
+    private _chosenWeapon = selectRandom _weaponArray;
+    _unit addWeapon (_chosenWeapon select 0);
+    _unit addItem (_chosenWeapon select 1);
+    _unit addItem (_chosenWeapon select 1);
+    _unit addItem (_chosenWeapon select 1);
+    _unit addItem (_chosenWeapon select 1);
+    _unit addItem (_chosenWeapon select 1);
+    _unit addItem (_chosenWeapon select 1);
+    _unit addItem (_chosenWeapon select 1);
+    _unit addItem (_chosenWeapon select 1);
+    _unit addItem (_chosenWeapon select 1);
+    _unit addItem (_chosenWeapon select 1);
+};
 
-//this shit still breaks on occasion. maybe just reset it if nothing's moving after 4-5 minutes
-//if the next waypoint is too far away, it seems to bork. 
-    //cool I guess I fixed it by arduously making a new travel point every x meters. 
+giveUnitLoot = {
+    params ["_unit", "_lootArray"];
+    private _WIPTESTLOOTDELETEME = selectRandom _lootArray;
+    _unit addItem _WIPTESTLOOTDELETEME;
+};
 
+armTheMasses = {
+    params ["_factionArray"];
+    {
+        _x setUnitLoadout (selectRandom (_factionArray select 2));
+        [_x, _factionArray select 3] call giveUnitWeapon;
+        [_x, _factionArray select 4] call giveUnitLoot;
+    } forEach units east;
+    //TODO: ADD LOOT
+    //AND MAYBE VEHICLE LOOT TOO?
+};
+
+putTheFuckmenInTheirSeats = {
+    {
+        private _theVic = assignedVehicles group _x;
+        _x moveInAny (_theVic select 0);
+    } forEach (units east);
+};
+
+if (isServer) then {
+    theConvoyGroups = [false] call createTheWholeDamnConvoy;
+    //[_selectedFaction] spawn ArmTheMasses;
+    [] spawn putTheFuckmenInTheirSeats;
+};
 
 /*
 
-TAKE 3 MOTHERFUCKERS!
+OLD NOTES ABOUT STUPID OLD CONVOY THINGS GOD I HATE CONVOYS WHY DID I DECIDE THIS WAS A GOOD IDEA
 
-    spawn all the vehicles and people, give it a load order, give it some time to load up.
+https://forums.bohemia.net/forums/topic/226608-simple-convoy-script-release/
+Needs a group with waypoints placed beforehand.
+spawn this. don't call. 
+[group] spawn TOV_fnc_SimpleConvoy;
 
+NOTE
+    The script doesn't exit himself, so once you reach your final waypoint, you'll have to end it with :
 
-[[0,[16484,2103.12,0]],[13169,[3826.98,5739.5,0]],[13366.9,[3236.84,3888.56,0]],[13965,[15728.9,16047.7,0]]]
+    terminate convoyScript;
+    {(vehicle _x) limitSpeed 5000;(vehicle _x) setUnloadInCombat [true, false]} forEach (units convoyGroup);
+    convoyGroup enableAttack true;
 
-[[[0,[16484,2103.12,0]],[13169,[3826.98,5739.5,0]],[13366.9,[3236.84,3888.56,0]],[13965,[15728.9,16047.7,0]]], 1000] call midPointAdder;
-
-THIS ONE WORKED!
-
-    private _newMidpoints = [];
-    for "_i" from 0 to ((count _convoyDestinations) - 2) do {
-        private _newMidpoint = [_convoyDestinations select _i, _convoyDestinations select _i + 1] call simpleMidPoint;
-        _newMidpoints pushBack _newMidpoint;
-    };
-    _convoyDestinations append _newMidpoints;
-
-
-THE FUCK
-
-    midPointAdder = {
-        params ["_arrayToEdit", "_maximumThePointArray"];
-        private _doWeNeedToRecurse = false;
-        private _rawPos = [];
-        for "_i" from 0 to (count _arrayToEdit - 2) do {
-            hint str(((_arrayToEdit select _i select 1) distance (_arrayToEdit select (_i+1) select 1)));
-            if (((_arrayToEdit select _i select 1) distance (_arrayToEdit select (_i+1) select 1)) > 1000) then {
-                
-                _rawPos = [(_arrayToEdit select _i) select 1, (_arrayToEdit select (_i+1)) select 1] call simpleMidPoint;
-                _distanceAverage = ((_arrayToEdit select _i) select 0) + ((_arrayToEdit select (_i+1) select 0)) / 2;
-                //hint str(_rawPos);
-                //_arrayToEdit pushBack [_rawPos distance ((_arrayToEdit select 0) select 1),_rawPos]; 
-                _arrayToEdit pushBack [_distanceAverage,_rawPos]; 
-                _doWeNeedToRecurse = true;
-            };
-        };
-        _doWeNeedToRecurse
-    };
-
-    
-    simpleMidPoint = {
-        params["_pointA", "_pointB"];
-        private _newPoint = [
-            ((_pointA select 0) + (_pointB select 0)) / 2,
-            ((_pointA select 1) + (_pointB select 1)) / 2,
-            0
-        ];
-        _newPoint
-    };
-
-    while {[_convoyDestinations, 1000] call midPointAdder} do {
-        _convoyDestinations sort true;
-    };
-
-pickConvoyDestinationPosition2 = {
-    params["_previousPos"];
-    private _returnSpot = [random(worldSize),random(worldSize),0];
-    if ((_returnSpot select 0) < 3000) then {
-        _returnSpot = [_previousPos] call pickConvoyDestinationPosition2;
-    };
-    if (_returnSpot distance _previousPos > 2000) then {
-        _returnSpot = [_previousPos] call pickConvoyDestinationPosition2;
-    };
-    _returnSpot
-};
-
-    //sort nearest to farthest, adjust array
-    //_convoyDestinations = _convoyDestinations apply {[_x distance _startingPosition, _x]};
-    //_convoyDestinations sort true;
-
-actuallyFuckingSortThePoints = {
-    params["_theFuckingPoints"];
-    private _newSortedArray = [];
-    //grab that last point since it's the start point
-    _newSortedArray pushBack (_theFuckingPoints select count _theFuckingPoints - 1);
-    _theFuckingPoints deleteAt ((count _theFuckingPoints) - 1);
-    while {count _theFuckingPoints > 1} do {
-        private _nextOnTheChoppingBlock = [];
-        private _lastPointDistance = 0;
-        {
-            if (_newSortedArray select (count _newSortedArray - 1) distance _x > _lastPointDistance) then {
-                _nextOnTheChoppingBlock = _x;
-                _lastPointDistance = _newSortedArray select (count _newSortedArray - 1) distance _x;
-            };
-        } forEach _theFuckingPoints;
-        _newSortedArray pushBack _nextOnTheChoppingBlock;
-        _theFuckingPoints = _theFuckingPoints - _nextOnTheChoppingBlock;
-    };
-    _newSortedArray
-};
-
-        // I don't know why the game is having issues with the timeout and statements. Apparently a scripted waypoint that just waits works the best?
-            //nah, I'm doing the director thing again because fuck this.
-
-        //_nextWaypoint setWaypointTimeout [30, 40, 50];
-        //_nextWaypoint setWaypointStatements ["true", '"FUCK SHIT PISS" remoteExec ["hint",0];'];
-        //private _waitWaypoint = _convoyGroup addWaypoint [_nextPos, -1];
-        //_waitWaypoint setWaypointType "SCRIPTED";
-        //_waitWaypoint setWaypointScript "dumbWait.sqf";
+    SHIT. AI likes to lock up unless waypoints are kinda close. maybe 2km? kinDA FIXED fuck I hate it here
 
 */
-

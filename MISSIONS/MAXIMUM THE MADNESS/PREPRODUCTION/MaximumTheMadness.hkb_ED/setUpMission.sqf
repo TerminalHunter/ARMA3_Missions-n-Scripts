@@ -17,7 +17,8 @@ initMission = {
     ["crowsEW_spectrum_toggleRadioTracking", [true]] call CBA_fnc_globalEventJIP;
 
     //
-    infilExfilFlagpole = "SC_Flag_AC" createVehicle (infilExfilArea);
+    //infilExfilFlagpole = "SC_Flag_AC" createVehicle (infilExfilArea);
+    infilExfilFlagpole = "Flag_Burstkoke_inverted_F" createVehicle (infilExfilArea);
 
     //Jack Shack setup
     exfilJackShack = "Land_FieldToilet_F" createVehicle (infilExfilArea vectorAdd [-40,0,0]);
@@ -63,6 +64,10 @@ initMission = {
     initRespawner = [west, exfilJackShack, "EXFIL"] call BIS_fnc_addRespawnPosition;
 
     setDate[2050,7,(floor random 25) + 1,floor random 25,0];
+
+    publicVariable "exfilJackShack";
+    publicVariable "exfilLoadoutBoxen";
+    publicVariable "infilExfilFlagpole";
 
 };
 

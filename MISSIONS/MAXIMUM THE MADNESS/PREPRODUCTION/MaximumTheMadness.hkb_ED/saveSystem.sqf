@@ -76,7 +76,7 @@ saveVehicle = {
     _vehicleSaveArray pushBack (call randomVehicleName);
     _vehicleSaveArray pushBack (getDescription _vehicle select 0);
     _vehicleSaveArray pushBack (fuel _vehicle);
-    _vehicleSaveArray pushBack (magazinesAllTurrets [_vehicle,true]);
+    _vehicleSaveArray pushBack (magazinesAllTurrets _vehicle);
     _vehicleSaveArray pushBack (getAllHitPointsDamage _vehicle);
     _vehicleSaveArray pushBack ([_vehicle] call saveBoxenInventory); //bluh. [itemCargo, MagazineCargo, weaponsItemsCargo, backpackCargo]
     _vehicleSaveArray pushBack (getObjectTextures _vehicle);
@@ -97,8 +97,10 @@ loadVehicle = {
     private _vehicleRespawn = [west, _newVehicle, _vehicleArray select 0] call BIS_fnc_addRespawnPosition;
     _newVehicle setFuel (_vehicleArray select 2);
     
+    _newVehicle setVehicleAmmo 0;
+
     {
-        _newVehicle removeMagazineTurret [_x select 0, _x select 1];
+        //_newVehicle removeMagazineTurret [_x select 0, _x select 1];
         _newVehicle addMagazineTurret [_x select 0, _x select 1, _x select 2];
     } forEach (_vehicleArray select 3);
     
@@ -182,7 +184,7 @@ THE BIG BUTTON
 */
 
 fullSave = {
-    private _grabbedVehicles = nearestObjects [infilExfilArea, ["LandVehicle"], 70, true];
+    private _grabbedVehicles = nearestObjects [infilExfilArea, ["LandVehicle"], 120, true];
     private _vehiclesToSave = [];
     {
         private _newVehicleArray = [_x] call saveVehicle;
@@ -220,3 +222,25 @@ if (isServer) then {
         [[_forEachIndex] call getExfilOffset, _x] call loadVehicle;
     } forEach _initVehicles;
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+[["vn_m2_v_100_mag",[1],100,1.00086e+07,2],["vn_m2_v_100_mag",[1],100,1.00086e+07,2],["vn_m2_v_100_mag",[1],100,1.00086e+07,2],["vn_m2_v_100_mag",[1],100,1.00086e+07,2],["vn_m2_v_100_mag",[1],100,1.00086e+07,2],["vn_m2_v_100_mag",[1],100,1.00086e+07,2],["vn_m2_v_100_mag",[2],100,1.00086e+07,2],["vn_m2_v_100_mag",[2],100,1.00086e+07,2],["vn_m2_v_100_mag",[2],100,1.00086e+07,2],["vn_m2_v_100_mag",[2],100,1.00086e+07,2],["vn_m2_v_100_mag",[2],100,1.00086e+07,2],["vn_m2_v_100_mag",[2],100,1.00086e+07,2],["vn_m2_v_100_mag",[3],100,1.00086e+07,2],["vn_m2_v_100_mag",[3],100,1.00086e+07,2],["vn_m2_v_100_mag",[3],100,1.00086e+07,2],["vn_m2_v_100_mag",[3],100,1.00086e+07,2],["vn_m2_v_100_mag",[3],100,1.00086e+07,2],["vn_m2_v_100_mag",[3],100,1.00086e+07,2]]
+*/

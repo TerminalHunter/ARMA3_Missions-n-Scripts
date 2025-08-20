@@ -1,4 +1,5 @@
 //PROFILE NAME SPACE "TESTING_MAXIMUMTHEMADNESS_ARSENALDATA" -- profileNamespace getVariable "TESTING_MAXIMUMTHEMADNESS_ARSENALDATA"
+//TODO THIS SHOULD SAY SOMETHING LIKE "YOU HAVE A LOADOUT STORED HERE!"
 
 playerArsenal = profileNamespace getVariable ["TESTING_MAXIMUMTHEMADNESS_ARSENALDATA",[""]];
 allArsenals = [exfilJackShack];
@@ -50,11 +51,12 @@ checkRaiderStorage = {
 	} else {
 		_boxenStorage addAction ["Take Stored Loadout [and box up current loadout]", {[] call takeRaiderLoadout;},[],1.5,true,true,"","true",10,false,"",""];
 	};
-	_boxenStorage addAction ["Grab Doohickey", {[] call grabNewDoohickey},[],1.5,true,true,"","true",10,false,"",""];
-	_boxenStorage addAction ["Grab Flares", {[] call grabFlares},[],1.5,true,true,"","true",10,false,"",""];
+	_boxenStorage addAction ["Grab Doohickey", {[] call grabNewDoohickey; hint "Doohickey Box Spawned!";},[],1.5,true,true,"","true",10,false,"",""];
+	_boxenStorage addAction ["Grab Flares", {[] call grabFlares; hint "Box of Flares Spawned!";},[],1.5,true,true,"","true",10,false,"",""];
+	_boxenStorage addAction ["!!!FORCE GRAB DOOHICKEY!!! - Only use if you don't own contact and don't mind ads", {player addweapon "hgun_esd_01_F";},[],1.5,true,true,"","true",10,false,"",""];
 };
 
-[exfilLoadoutBoxen] call checkRaiderStorage;
+
 
 extractRaiderCosmetics = {
 	params["_loadout"];
@@ -85,7 +87,7 @@ takeRaiderLoadout = {
 };
 
 grabNewDoohickey = {
-	private _newBoxen = "Land_MetalCase_01_small_F" createVehicle (getPos player);
+	private _newBoxen = "Land_PlasticCase_01_small_F" createVehicle (getPos player);
 	_newBoxen addItemCargoGlobal ["hgun_esd_01_F", 1];
 	_newBoxen addItemCargoGlobal ["acc_esd_01_flashlight", 1];
 	_newBoxen addItemCargoGlobal ["muzzle_antenna_02_f", 1];
@@ -95,10 +97,13 @@ grabNewDoohickey = {
 
 grabFlares = {
 	private _newBoxen = "Land_MetalCase_01_small_F" createVehicle (getPos player);
-	_newBoxen addItemCargoGlobal ["JCA_HandFlare_Red", 10];
-	_newBoxen addItemCargoGlobal ["rhs_weap_rsp30_red", 10];
-	_newBoxen addItemCargoGlobal ["rhs_weap_M320", 2];
+	_newBoxen addItemCargoGlobal ["JCA_HandFlare_Red", 25];
+	//_newBoxen addItemCargoGlobal ["rhs_weap_rsp30_red", 10]; if I put rhs back in, sure
+	//_newBoxen addItemCargoGlobal ["rhs_weap_M320", 2];
 	_newBoxen addItemCargoGlobal ["ACE_40mm_Flare_red", 20];
+	_newBoxen addItemCargoGlobal ["hgun_Pistol_Signal_F", 2];
+	_newBoxen addItemCargoGlobal ["6Rnd_GreenSignal_F", 15];
+	_newBoxen addItemCargoGlobal ["6Rnd_RedSignal_F", 15];
 };
 
 toggleLoadoutAutosave = {
@@ -132,6 +137,10 @@ startArsenalScan = {
 	[] call updateArsenal;
 };
 
+/*
+--- MAIN ---
+*/
+
 if(isServer)then{
 	[] spawn {
 		while{true}do{
@@ -146,3 +155,5 @@ if(isServer)then{
 		};
 	};
 };
+
+//[exfilLoadoutBoxen] call checkRaiderStorage; moved to init.sqf
