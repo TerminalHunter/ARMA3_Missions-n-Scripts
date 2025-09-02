@@ -73,13 +73,15 @@ saveVehicle = {
     params ["_vehicle"];
     //TODO: figure out how to save callsign/name between missions.
     _vehicleSaveArray = [];
-    _vehicleSaveArray pushBack (call randomVehicleName);
+    _vehicleSaveArray pushBack (_vehicle getVariable ["vehicleBirdName", call randomVehicleName]);
     _vehicleSaveArray pushBack (getDescription _vehicle select 0);
     _vehicleSaveArray pushBack (fuel _vehicle);
     _vehicleSaveArray pushBack (magazinesAllTurrets _vehicle);
     _vehicleSaveArray pushBack (getAllHitPointsDamage _vehicle);
     _vehicleSaveArray pushBack ([_vehicle] call saveBoxenInventory); //bluh. [itemCargo, MagazineCargo, weaponsItemsCargo, backpackCargo]
     _vehicleSaveArray pushBack (getObjectTextures _vehicle);
+    _vehicleSaveArray pushBack ([_vehicle] call ace_rearm_fnc_getSupplyCount);
+    _vehicleSaveArray pushBack ([_vehicle] call ACE_refuel_fnc_getFuel);
     //getObjectTextures
     //["cox_factionmod_framework\textures\vans\van_trashed.paa","a3\soft_f_orange\van_02\data\van_wheel_co.paa","a3\soft_f_orange\van_02\data\van_glass_utility_ca.paa","cox_factionmod_framework\textures\vans\van_trashed.paa"]
     _vehicleSaveArray
@@ -95,8 +97,9 @@ loadVehicle = {
     clearBackpackCargoGlobal _newVehicle;
 
     private _vehicleRespawn = [west, _newVehicle, _vehicleArray select 0] call BIS_fnc_addRespawnPosition;
+    _newVehicle setVariable ["vehicleBirdName", _vehicleArray select 0, true];
+
     _newVehicle setFuel (_vehicleArray select 2);
-    
     _newVehicle setVehicleAmmo 0;
 
     {
@@ -113,6 +116,9 @@ loadVehicle = {
     {
         _newVehicle setObjectTextureGlobal [_forEachIndex, _x];
     } forEach (_vehicleArray select 6);
+
+    [_newVehicle, _vehicleArray select 7] call ace_rearm_fnc_setSupplyCount;
+    [_newVehicle, _vehicleArray select 8] call ace_refuel_fnc_setFuel;
 };
 
 /*

@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=455;
+		nextID=458;
 	};
 	class MarkerIDProvider
 	{
@@ -61,7 +61,7 @@ class AddonsMetaData
 		class Item3
 		{
 			className="crowsEW_spectrum";
-			name="spectrum";
+			name="Crow's EW - Spectrum";
 			author="Crowdedlight";
 		};
 		class Item4
@@ -18782,7 +18782,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=3;
+		items=4;
 		class Item0
 		{
 			dataType="Group";
@@ -22168,7 +22168,86 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="Clicking and dragging non-BLUFOR uniforms from a container/enemy onto yourself doesn't work, but you should be able to right-click the uniform and it'll transfer over. I think this is caused by a small incompatability between the perfidy script I'm using and Better Inventory.";
+							value="Clicking and dragging non-BLUFOR uniforms from a container/enemy onto yourself doesn't work, but you should be able to right-click the uniform and it'll transfer over. I think this is caused by a small incompatability between the perfidy script I'm using and Better Inventory." \n "<br/><br/>" \n "The 'remove all backpacks and vests' action on a vehicle will also delete any items in the vests or backpacks.";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleCreateDiaryRecord_F_Owner";
+					expression="_this setVariable ['Owner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=3;
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleCreateDiaryRecord_F_Subject";
+					expression="_this setVariable ['Subject',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				nAttributes=5;
+			};
+		};
+		class Item3
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={5.5609999,49.110489,-2.1919999};
+			};
+			id=457;
+			type="ModuleCreateDiaryRecord_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleCreateDiaryRecord_F_PresetTitle";
+					expression="_this setVariable ['PresetTitle',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="Situation";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleCreateDiaryRecord_F_Title";
+					expression="_this setVariable ['Title',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="Hints and Tips";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleCreateDiaryRecord_F_Description";
+					expression="_this setVariable ['Description',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="Do your best to manage fuel, ammo, and sundries." \n "<br/><br/>" \n "Fuel: Siphon from enemy vehicle and add it to your own. " \n "<br/>" \n "Remember: use fuel canisters with a fuel truck's fuel *storage* and not just the gas tank." \n "<br/><br/>" \n "Ammo: Rip ammo out of enemy vehicles with guns and stick the boxen into your ammo truck. <br/>Remember: you can scrounge ammo for your primary weapon at any nearby ammo truck - you'll get 1 random magazine of ammo for 2 points." \n "<br/><br/>" \n "KNOWN BUG: adding ammo into a full ammo vehicle's storage will eat the ammo - trucks default to 1500 ammo points maximum." \n "<br/>" \n "TODO: refund arbitrary magazine with 1 ammo point" \n "<br/><br/>" \n "Sundries: steal.";
 						};
 					};
 				};

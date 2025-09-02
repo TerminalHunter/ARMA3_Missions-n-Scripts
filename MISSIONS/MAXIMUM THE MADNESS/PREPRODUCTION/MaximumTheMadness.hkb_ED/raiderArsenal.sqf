@@ -43,6 +43,11 @@ makePirateArsenal = {
 
 };
 
+doohickyCarePackageAvailable = true;
+flaresCarePackageAvailable = true;
+eToolCarePackageAvailable = true;
+pityToolkitCarePackageAvailable = true;
+
 checkRaiderStorage = {
 	params ["_boxenStorage"];
 	removeAllActions _boxenStorage;
@@ -51,8 +56,43 @@ checkRaiderStorage = {
 	} else {
 		_boxenStorage addAction ["Take Stored Loadout [and box up current loadout]", {[] call takeRaiderLoadout;},[],1.5,true,true,"","true",10,false,"",""];
 	};
-	_boxenStorage addAction ["Grab Doohickey", {[] call grabNewDoohickey; hint "Doohickey Box Spawned!";},[],1.5,true,true,"","true",10,false,"",""];
-	_boxenStorage addAction ["Grab Flares", {[] call grabFlares; hint "Box of Flares Spawned!";},[],1.5,true,true,"","true",10,false,"",""];
+
+	_boxenStorage addAction ["Grab Doohickey Care Package", 
+		{
+			[] call grabNewDoohickey;
+			hint "Doohickey Box Spawned!";
+			doohickyCarePackageAvailable = false;
+			publicVariable "doohickyCarePackageAvailable";
+		},
+	[],1.5,true,true,"","doohickyCarePackageAvailable",10,false,"",""];
+	
+	_boxenStorage addAction ["Grab Flares Care Package", 
+		{
+			[] call grabFlares; 
+			hint "Box of Flares Spawned!";
+			flaresCarePackageAvailable = false;
+			publicVariable "flaresCarePackageAvailable";
+		},
+	[],1.5,true,true,"","flaresCarePackageAvailable",10,false,"",""];
+
+	_boxenStorage addAction ["Grab E-Tool Care Package", 
+		{
+			[] call grabETools; 
+			hint "Box of E-Tools Spawned!";
+			eToolCarePackageAvailable = false;
+			publicVariable "eToolCarePackageAvailable";
+		},
+	[],1.5,true,true,"","eToolCarePackageAvailable",10,false,"",""];
+	
+	_boxenStorage addAction ["Grab Scrapper's Tribute", 
+		{
+			[] call grabTribute; 
+			hint "Scrapper's Toolkit Tribute Spawned!";
+			pityToolkitCarePackageAvailable = false;
+			publicVariable "pityToolkitCarePackageAvailable";
+		},
+	[],1.5,true,true,"","pityToolkitCarePackageAvailable",10,false,"",""];
+
 	_boxenStorage addAction ["!!!FORCE GRAB DOOHICKEY!!! - Only use if you don't own contact and don't mind ads", {player addweapon "hgun_esd_01_F";},[],1.5,true,true,"","true",10,false,"",""];
 };
 
@@ -88,22 +128,35 @@ takeRaiderLoadout = {
 
 grabNewDoohickey = {
 	private _newBoxen = "Land_PlasticCase_01_small_F" createVehicle (getPos player);
-	_newBoxen addItemCargoGlobal ["hgun_esd_01_F", 1];
-	_newBoxen addItemCargoGlobal ["acc_esd_01_flashlight", 1];
-	_newBoxen addItemCargoGlobal ["muzzle_antenna_02_f", 1];
-	_newBoxen addItemCargoGlobal ["muzzle_antenna_03_f", 1];
-	_newBoxen addItemCargoGlobal ["muzzle_antenna_01_f", 1];
+	_newBoxen addItemCargoGlobal ["hgun_esd_01_F", 8];
+	_newBoxen addItemCargoGlobal ["acc_esd_01_flashlight", 8];
+	_newBoxen addItemCargoGlobal ["muzzle_antenna_02_f", 8];
+	_newBoxen addItemCargoGlobal ["muzzle_antenna_03_f", 8];
+	_newBoxen addItemCargoGlobal ["muzzle_antenna_01_f", 8];
 };
 
 grabFlares = {
-	private _newBoxen = "Land_MetalCase_01_small_F" createVehicle (getPos player);
-	_newBoxen addItemCargoGlobal ["JCA_HandFlare_Red", 25];
+	private _newBoxen = "Box_IED_Exp_F" createVehicle (getPos player);
+	clearMagazineCargoGlobal _newBoxen;
+	clearBackpackCargoGlobal _newBoxen;
+	_newBoxen addItemCargoGlobal ["JCA_HandFlare_Red", 250];
 	//_newBoxen addItemCargoGlobal ["rhs_weap_rsp30_red", 10]; if I put rhs back in, sure
 	//_newBoxen addItemCargoGlobal ["rhs_weap_M320", 2];
-	_newBoxen addItemCargoGlobal ["ACE_40mm_Flare_red", 20];
-	_newBoxen addItemCargoGlobal ["hgun_Pistol_Signal_F", 2];
-	_newBoxen addItemCargoGlobal ["6Rnd_GreenSignal_F", 15];
-	_newBoxen addItemCargoGlobal ["6Rnd_RedSignal_F", 15];
+	//_newBoxen addItemCargoGlobal ["ACE_40mm_Flare_red", 50];
+	_newBoxen addItemCargoGlobal ["hgun_Pistol_Signal_F", 8];
+	_newBoxen addItemCargoGlobal ["6Rnd_GreenSignal_F", 40];
+	_newBoxen addItemCargoGlobal ["6Rnd_RedSignal_F", 40];
+};
+
+grabETools = {
+	private _newBoxen = "Land_MetalCase_01_small_F" createVehicle (getPos player);
+	_newBoxen addItemCargoGlobal ["ACE_EntrenchingTool", 50];
+};
+
+grabTribute = {
+	private _newBoxen = "Land_WoodenBox_F" createVehicle (getPos player);
+	_newBoxen addItemCargoGlobal ["ToolKit", 1]; //maybe increase this as players progress? I dunno.
+	_newBoxen addItemCargoGlobal ["diw_armor_plates_main_plate", 5 + (floor random 15)];
 };
 
 toggleLoadoutAutosave = {

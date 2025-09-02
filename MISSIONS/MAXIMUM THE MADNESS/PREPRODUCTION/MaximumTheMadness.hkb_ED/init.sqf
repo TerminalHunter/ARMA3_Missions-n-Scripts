@@ -2,16 +2,14 @@
 TODO:
 
     HIGH PRIORITY
+		all vehicles need to spawn on the map, off-map vehicles just kinda don't move
+			vehicles refuse to move offmap? maybe "sandstorm" them when they're 200m from map edge
 		Vic loot
-		VEHICLES FLIP!
-		do ammo trucks save current ammo value (ace thing)
-		huron containers REQUIRE items (they are not vehicles)
-		you can steal ammo from enemy vehicle
-			(it'd be funnier if it only took more time if vehicle is crewed by enemy)
-		FUEL LOCALITY ISSUE
-		LOOT TO VIC
-		box to vic
-		make sure boxes get ammo
+		better order of gameplay
+			LIGHT THE SACRED UNGENTS -> actually spawn the mission/game -> SAVE AT THE FLAGPOLE -> mission end screen
+			when saving vics, give feedback (little "this vehicle saved as BIRD 07" above it)
+			one button to see which vics will be saved, the other button saves and ends mission
+			time out the convoy better -- maybe get the number of waypoints and warn players if the game is going to be quick
 
     MEDIUM PRIORITY
 		----------
@@ -21,19 +19,19 @@ TODO:
             	wait X minutes after every car is within  Y meters? 10 minutes after all groups are detected to have the same waypoint
 			Vehicle will take contact but then just ignore all further orders?
 			maybe keep track of where the convoy is
+		break up the convoy's travel into legs. like, you should just have a list of points
 		-----------
 		make the factions better - more loot, weapons, designs, etc.
 		more, harder enemies spawn as players build up -- kinda like a rimworld wealth->difficulty thing
-        fuel siphoning and salvaging should take time (green bar ace thingy)
         toolkit market
             used cars salesmen. discounts for fucked up vics
-        when saving vics, give feedback (little "this vehicle saved as BIRD 07" above it)
-		autodoc at spawn?
 
     LOW PRIORITY
+		put a magazine back in the truck for +1 point
+		maybe magazines with >30 bullets are 3 points instead of 2
 		ammo stealing - putting a box of ammo into full ammo truck eats ammo
-        scrapping -- wrecks -> semi-random number of toolkits
         I guess also save arbitrary items? Let the players take things home.
+			huron containers REQUIRE items (they are not vehicles)
         Hidden Caches and side-treasures
         see if you can't do kitbashing better than other missions
         sandstorms! see if you can get npc's to actually lose sight or reset their awareness
@@ -41,7 +39,6 @@ TODO:
 			Start of game, no save game detected, what do the players start with?
 			No-Toes Donny and the Coloracle of Save Deletion
         make perfidy script a script kitten?
-        add lollipop suck sound to gas siphoning
         https://github.com/alezm00/ARMA-3-3D-Progress-Bar 
 		clean all of this up, maybe have like. path objects or otherwise.
 		add a check for DLC loaded?
@@ -64,7 +61,6 @@ waitUntil {time > 5};
 [] call updateArsenal;
 [exfilJackShack] call makePirateArsenal;
 [exfilLoadoutBoxen] call checkRaiderStorage;
-
 
 /*
 

@@ -1,4 +1,4 @@
-defaultLoadout = [[],[],[],["U_I_C_Soldier_Bandit_5_F",[]],[],[],"","",[],["ItemMap","ItemGPS","rhsusf_radio_anprc152","ItemCompass","ItemWatch",""]];
+defaultLoadout = [[],[],[],["U_I_C_Soldier_Bandit_5_F",[]],[],[],"","",[],["ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ItemWatch",""]];
 
 stripEm = {
     removeAllWeapons player;
@@ -15,7 +15,6 @@ stripEm = {
     if (isNil {profileNamespace getVariable "TESTING_MAXIMUMTHEMADNESS_RESPAWNLOADOUT"}) then {
         //do nothing since there's no saved loadout
     } else {
-        //player setUnitLoadout (getVariable "TESTING_MAXIMUMTHEMADNESS_LOADOUT");
         // head to toe: [helm, goggles, uniform, vest, backpack]
         private _unpackingLoadout = profileNamespace getVariable "TESTING_MAXIMUMTHEMADNESS_RESPAWNLOADOUT";
         player addHeadgear (_unpackingLoadout select 0);
@@ -31,6 +30,7 @@ Dark Souls-esque light source. Just a little thingy on the player.
 */
 
 localDarkSoulsLight = nil; //delete the old one if it exists
+//TODO?: This appears to not work, but it's nice to have your corpse a little lit up to find it easily at night, so bug is feature.
 
 lightUpExfil = {
     //staticLightPoint = "#lightpoint" createVehicleLocal [0,0,0]; 

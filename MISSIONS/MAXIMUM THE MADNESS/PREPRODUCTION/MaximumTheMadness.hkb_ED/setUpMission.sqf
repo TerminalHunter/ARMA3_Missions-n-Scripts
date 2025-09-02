@@ -24,23 +24,28 @@ initMission = {
     exfilJackShack = "Land_FieldToilet_F" createVehicle (infilExfilArea vectorAdd [-40,0,0]);
     exfilJackShack setDir 270;
     exfilJackShack setPos (infilExfilArea vectorAdd [-40,0,0]);
+    exfilJackShack allowDamage false;
+    //exfilJackShack enableSimulationGlobal false; can't be a respawn point if it does this?
     exfilJackShackTarp = "Tarp_01_Small_Black_F" createVehicle (infilExfilArea vectorAdd [-40,0,0]);
     exfilJackShackTarp setPos (infilExfilArea vectorAdd [-40.5,0,0.005]);
 
     //Loadout Boxen setup
     exfilLoadoutBoxen = "Land_WoodenCrate_01_stack_x5_F" createVehicle (infilExfilArea vectorAdd [-50,16,0]);
+    exfilLoadoutBoxen allowDamage false;
+    //exfilLoadoutBoxen enableSimulationGlobal false;
     exfilLoadoutBoxenTarp = "Tarp_01_Small_Black_F" createVehicle (infilExfilArea vectorAdd [-50,16,0]);
     exfilLoadoutBoxenTarp setPos (infilExfilArea vectorAdd [-50,16,0.005]);
 
     exfilTent = "Land_MedicalTent_01_NATO_generic_inner_F" createVehicle (infilExfilArea vectorAdd [-50,0,0]);
     exfilTent setDir 270;
     exfilTent setPos (infilExfilArea vectorAdd [-50,10,0]);
+    exfilTent allowDamage false;
     exfilTarp = "Tarp_01_Large_Black_F" createVehicle (infilExfilArea vectorAdd [-50,0,0]);
     exfilTarp setDir 270;
     exfilTarp setPos (infilExfilArea vectorAdd [-50,10,0]);
-    exfilFire = "Land_PortableLight_02_single_sand_F" createVehicle (infilExfilArea vectorAdd [-60,0,0]);
-    exfilFire setDir 270;
-    exfilFire setPos (infilExfilArea vectorAdd [-54,11,0]);
+    exfilLight = "Land_PortableLight_02_single_sand_F" createVehicle (infilExfilArea vectorAdd [-60,0,0]);
+    exfilLight setDir 270;
+    exfilLight setPos (infilExfilArea vectorAdd [-54,11,0]);
 
     exfilBorderN = "Land_Bunker_01_blocks_3_F" createVehicle (infilExfilArea vectorAdd [0,65,0]);
     exfilBorderN setDir 0;
@@ -75,3 +80,6 @@ initMission = {
 if (isServer) then {
     [] call initMission;
 };
+
+//we have other mods installed that take care of mass looting, so turn off the loot to box script kitten
+scriptKittenLootToBoxEnabled = false;
